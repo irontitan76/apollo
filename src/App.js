@@ -1,19 +1,21 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, { Component, Fragment } from 'react';
+import { BrowserRouter as Router, Redirect, Route } from 'react-router-dom';
 import './App.css';
+
+import Navigation from './components/Navigation/Navigation';
+import Splash from './components/Splash/Splash';
 
 class App extends Component {
   render() {
     return (
-      <div className='App'>
-        <div className='title'>
-          <img src={require('./logo.png')} />
-          <br />
-          <h1 className='brand'><span className='first'>APOLLO</span> <span className='second'>INDUSTRIES</span></h1>
-          <div style={{ marginTop: '8%' }}>COMING SOON</div>
-        </div>
+      <Router>
+        <Fragment>
+          <Navigation />
 
-      </div>
+          <Route exact path="/" render={() => <Redirect to='/splash' />} />
+          <Route exact path='/splash' component={ Splash } />
+        </Fragment>
+      </Router>
     );
   }
 }

@@ -1,5 +1,29 @@
-body {
+@import url('./assets/fonts/fonts.css');
+
+:root {
+  --color0: #F2F2F2;
+  --color1: #015085; /* 001, 080, 133 */
+  --color2: #3F4447; /* 063, 068, 071 */
+  --color3: #EF4747; /* 239, 071, 071 */
+  --color4: #DC8264; /* 220, 130, 100 */
+  --color5: #3E7859; /* 062, 120, 089 */
+  --color6: #5A466E; /* 090, 070, 110 */
+  --color7: #C29200; /* 194, 146, 000 */
+  --color8: #996633; /* 153, 102, 051 */
+  --color9: #A6A6A6; /* 166, 166, 166 */
+
+  --font-light:     'open_sanslight';
+  --font-regular:   'open_sansregular';
+  --font-semibold:  'open_sanssemibold';
+  --font-italic:    'open_sansitalic';
+  --font-bold:      'open_sansbold';
+  --font-extrabold: 'open_sansextrabold';
+}
+
+body, html, #root {
+  font-family: var(--font-regular), sans-serif;
+  height: calc(100vh - (100vh - 100%));
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', sans-serif;
+  width: calc(100vw - (100vw - 100%));
 }
