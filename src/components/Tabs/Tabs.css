@@ -79,3 +79,44 @@
     from {opacity: 0;}
     to {opacity: 1;}
 }
+
+@media screen and (max-width: 768px) {
+  .tab__header {
+    flex-wrap: wrap;
+  }
+
+  .tab__item {
+    border-bottom: none;
+    border-top: none;
+    color: var(--light);
+    cursor: pointer;
+    flex: 1;
+    flex-basis: 100%;
+    padding: 2%;
+  }
+
+  .tab__item:hover:first-child {
+    border-bottom: none;
+    border-top: none;
+    box-shadow: none;
+    filter: brightness(90%);
+  }
+
+  .tab__item:hover:not(:first-child) {
+    border-bottom: none;
+    border-top: none;
+    box-shadow: none;
+  }
+
+  .tab__item:first-child.active {
+    border-bottom: none;
+    border-top: none;
+    box-shadow: none;
+  }
+
+  .tab__item:not(:first-child).active {
+    border-bottom: none;
+    border-top: none;
+    box-shadow: none;
+  }
+}
