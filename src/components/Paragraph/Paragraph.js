@@ -24,7 +24,7 @@ class Paragraph extends Component {
 
     const classes = classnames(
       ROOT_CLASS,
-      `${ROOT_CLASS}__${size}`,
+      `${ROOT_CLASS}--size-${size}`,
       {
         [`${ROOT_CLASS}--align-${align}`]: align,
         [`${ROOT_CLASS}--nowrap`]: nowrap,

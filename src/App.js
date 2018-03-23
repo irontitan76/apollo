@@ -5,9 +5,9 @@ import './App.css';
 import Footer from './components/Footer/Footer';
 import Image from './components/Image/Image';
 import Navigation from './components/Navigation/Navigation';
-import Splash from './components/Splash/Splash';
 
 import Organizations from './views/Organizations/Organizations';
+import Splash from './views/Splash/Splash';
 import Values from './views/Values/Values';
 
 class App extends Component {
@@ -22,7 +22,7 @@ class App extends Component {
           <Route exact path='/org' component={ Organizations } />
           <Route exact path="/values" component={ Values } />
 
-          <Footer>
+          <Footer style={{ position: 'absolute', bottom: 0 }}>
             <Image src={ require('./assets/apollo-logo.png')} />
             &nbsp;
             <span style={{ fontFamily: 'open_sansbold' }}>APOLLO </span>

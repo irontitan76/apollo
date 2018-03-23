@@ -35,27 +35,27 @@
   max-width: 100%;
 }
 
-.image__xs {
-  height: 3rem;
-  width: 3rem;
-}
-
-.image__sm {
-  height: 8rem;
-  width: 8rem;
-}
-
-.image__md {
-  height: 16rem;
-  width: 16rem;
-}
-
-.image__lg {
+.image--size-lg {
   height: 24rem;
   width: 24rem;
 }
 
-.image__xl {
+.image--size-md {
+  height: 16rem;
+  width: 16rem;
+}
+
+.image--size-sm {
+  height: 8rem;
+  width: 8rem;
+}
+
+.image--size-xl {
   height: 32rem;
   width: 32rem;
+}
+
+.image--size-xs {
+  height: 3rem;
+  width: 3rem;
 }

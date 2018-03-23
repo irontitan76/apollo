@@ -58,6 +58,26 @@
   color: var(--color9);
 }
 
+.heading--size-lg {
+  font-size: 2rem;
+}
+
+.heading--size-md {
+  font-size: 1.5rem;
+}
+
+.heading--size-sm {
+  font-size: 1.2rem;
+}
+
+.heading--size-xl {
+  font-size: 3rem;
+}
+
+.heading--size-xs {
+  font-size: 1rem;
+}
+
 .heading--weight-light {
   font-family: 'open_sanslight';
 }
@@ -76,24 +96,4 @@
 
 .heading--weight-extra {
   font-family: 'open_sansextrabold';
-}
-
-.heading__xl {
-  font-size: 3rem;
-}
-
-.heading__lg {
-  font-size: 2rem;
-}
-
-.heading__md {
-  font-size: 1.5rem;
-}
-
-.heading__sm {
-  font-size: 1.2rem;
-}
-
-.heading__xs {
-  font-size: 1rem;
 }

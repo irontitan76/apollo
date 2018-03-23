@@ -78,14 +78,14 @@
   font-family: 'open_sansextrabold';
 }
 
-.subtitle__sm {
-  font-size: 1.2rem;
+.subtitle--size-lg {
+  font-size: 2rem;
 }
 
-.subtitle__md {
+.subtitle--size-md {
   font-size: 1.5rem;
 }
 
-.subtitle__lg {
-  font-size: 2rem;
+.subtitle--size-sm {
+  font-size: 1.2rem;
 }

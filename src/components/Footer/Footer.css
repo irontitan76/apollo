@@ -3,7 +3,7 @@
   background-color: var(--dark);
   color: var(--light);
   display: flex;
-  height: 100px;
+  height: 4rem;
   justify-content: flex-end;
   margin: 0 auto;
   max-width: 1200px;

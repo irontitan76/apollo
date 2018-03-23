@@ -29,12 +29,13 @@ class Footer extends Component {
 }
 
 Footer.defaultProps = {
+  align: 'start',
   children: null,
   content: null
 };
 
 Footer.propTypes = {
-
+  align: PropTypes.string
 }
 
 export default Footer;

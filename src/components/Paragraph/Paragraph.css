@@ -45,14 +45,14 @@
   text-overflow: ellipsis;
 }
 
-.paragraph__sm {
-  font-size: 0.8rem;
+.paragraph--size-lg {
+  font-size: 1.2rem;
 }
 
-.paragraph__md {
+.paragraph--size-md {
   font-size: 1rem;
 }
 
-.paragraph__lg {
-  font-size: 1.2rem;
+.paragraph--size-sm {
+  font-size: 0.8rem;
 }
