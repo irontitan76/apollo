@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import './Splash.css';
 
+import Button from './../Button/Button';
+import Image from './../Image/Image';
+
 class Splash extends Component {
   render() {
     return (
       <div className='splash'>
         <div className='title'>
-          <img className='logo' src={require('../../assets/logo.png')} alt='logo' />
-          <h1 className='brand'>
-            <span className='first'>APOLLO </span>
-            <span className='second'>INDUSTRIES</span>
-          </h1>
-          <div className='message'>COMING SOON</div>
+          <Image style={{ display: 'block', margin: 'auto' }} src={require('./../../assets/apollo-logo-text2.png')} alt='logo' />
+          <Button content='OUR IMMINENT PLAN' fill='blue' onClick={ () => window.location.pathname = '/values' } />
         </div>
       </div>
     )

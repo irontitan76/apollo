@@ -1,0 +1,91 @@
+.subtitle {
+  color: var(--color9);
+}
+
+.subtitle--align-center {
+  text-align: center;
+}
+
+.subtitle--align-end {
+  text-align: right;
+}
+
+.subtitle--align-start {
+  text-align: left;
+}
+
+.subtitle--form-capitalize {
+  text-transform: capitalize;
+}
+
+.subtitle--form-lowercase {
+  text-transform: lowercase;
+}
+
+.subtitle--form-uppercase {
+  text-transform: uppercase;
+}
+
+.subtitle--margin-lg {
+  margin: 4rem 0 1.67rem 0;
+}
+
+.subtitle--margin-md {
+  margin: 3rem 0 1rem 0;
+}
+
+.subtitle--margin-none {
+  margin: 0;
+}
+
+.subtitle--margin-sm {
+  margin: 2.4rem 0 0.8rem 0;
+}
+
+.subtitle--margin-xl {
+  margin: 6rem 0 2rem 0;
+}
+
+.subtitle--margin-xs {
+  margin: 2rem 0 0.67rem 0;
+}
+
+.subtitle--onClick {
+  cursor: pointer;
+}
+
+.subtitle--onClick:hover {
+  color: var(--color9);
+}
+
+.subtitle--weight-light {
+  font-family: 'open_sanslight';
+}
+
+.subtitle--weight-regular {
+  font-family: 'open_sansregular';
+}
+
+.subtitle--weight-semi {
+  font-family: 'open_sanssemibold';
+}
+
+.subtitle--weight-bold {
+  font-family: 'open_sansbold';
+}
+
+.subtitle--weight-extra {
+  font-family: 'open_sansextrabold';
+}
+
+.subtitle__sm {
+  font-size: 1.2rem;
+}
+
+.subtitle__md {
+  font-size: 1.5rem;
+}
+
+.subtitle__lg {
+  font-size: 2rem;
+}

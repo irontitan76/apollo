@@ -2,8 +2,13 @@ import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Redirect, Route } from 'react-router-dom';
 import './App.css';
 
+import Footer from './components/Footer/Footer';
+import Image from './components/Image/Image';
 import Navigation from './components/Navigation/Navigation';
 import Splash from './components/Splash/Splash';
+
+import Organizations from './views/Organizations/Organizations';
+import Values from './views/Values/Values';
 
 class App extends Component {
   render() {
@@ -14,6 +19,15 @@ class App extends Component {
 
           <Route exact path="/" render={() => <Redirect to='/splash' />} />
           <Route exact path='/splash' component={ Splash } />
+          <Route exact path='/org' component={ Organizations } />
+          <Route exact path="/values" component={ Values } />
+
+          <Footer>
+            <Image src={ require('./assets/apollo-logo.png')} />
+            &nbsp;
+            <span style={{ fontFamily: 'open_sansbold' }}>APOLLO </span>
+            <span style={{ fontFamily: 'open_sanslight' }}>&nbsp;INDUSTRIES</span>
+          </Footer>
         </Fragment>
       </Router>
     );

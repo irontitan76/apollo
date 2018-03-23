@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navigation.css';
 
-// import Logo from './../Logo/Logo';
-
 class Navigation extends Component {
   constructor(props) {
     super(props);
@@ -14,31 +12,29 @@ class Navigation extends Component {
   _onResponsive(e) {
     e.preventDefault();
     let nav = e.currentTarget.parentElement.parentElement;
-    nav.className === 'nav'
+    nav.className === 'navbar'
       ? nav.classList.add('responsive')
       : nav.classList.remove('responsive');
   }
 
   render() {
-
     return (
-      <div className='nav'>
-        <div className='container' style={{ textAlign: 'center' }}>
-          <NavLink to='/' exact activeClassName='active'>
-            Home
-            { /*<Logo style={{ height: '1rem' }}/>
-            <span style={{ fontFamily: 'open_sansextrabold'}}> APOLLO </span>
-            <span style={{ fontFamily: 'open_sanslight'}}>INDUSTRIES</span> */ }
+      <nav className='navbar'>
+        <nav className='wrapper'>
+          <NavLink to='/' className='logo'>
+              <img src={require('./../../assets/logo-28px.png')} alt='logo' />
           </NavLink>
-          <NavLink to='/about' activeClassName='active'>Our core</NavLink>
-          <NavLink to='/strategy' activeClassName='active'>Strategy</NavLink>
-          <NavLink to='/standards' activeClassName='active'>Standards</NavLink>
-          <NavLink to='/insights' activeClassName='active'>Insights</NavLink>
-          <NavLink to='/insights' activeClassName='active'>Organizations</NavLink>
-
-          <a href='' className='icon' onClick={(e) => this._onResponsive(e)}>&#9776;</a>
-        </div>
-      </div>
+          <input type='checkbox' id='menu-toggle'/>
+          <label htmlFor='menu-toggle' className='label-toggle' />
+          <ul>
+            <li><NavLink to='/values' activeClassName='active'>Values</NavLink></li>
+            <li><NavLink to='/strategy' activeClassName='active'>Strategy</NavLink></li>
+            <li><NavLink to='/standards' activeClassName='active'>Standards</NavLink></li>
+            <li><NavLink to='/insights' activeClassName='active'>Insights</NavLink></li>
+            <li><NavLink to='/org' activeClassName='active'>Organizations</NavLink></li>
+          </ul>
+        </nav>
+      </nav>
     );
   }
 }

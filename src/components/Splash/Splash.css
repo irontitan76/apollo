@@ -1,32 +1,36 @@
 .splash {
-  background-color: var(--color1);
+  background-color: var(--color2);
   /* background-image: url('./texture1.png');
   background-size: 2%; */
   height: calc(100vh - (100vh - 100%));
-  width: calc(100vw - (100vw - 100%));
-}
-
-.title {
-  color: var(--color0);
-  position: absolute;
   text-align: center;
-  top: 32%;
   width: calc(100vw - (100vw - 100%));
 }
 
-.brand > .first {
-  font-family: var(--font-extrabold);
+.splash .title {
+  color: var(--color0);
+  padding-top: 15%;
+  width: calc(100vw - (100vw - 100%));
 }
 
-.brand > .second {
-  font-family: var(--font-light);
-  font-weight: 300;
-}
-
-.message {
-  display: inline-block;
-  background-color: var(--color2);
+.splash .message {
+  background-color: var(--color1);
+  border: none;
+  color: var(--color0);
+  font-family: 'open_sanssemibold';
   font-size: 1rem;
-  padding: .5rem 1rem;
-  margin-top: 7%;
+  margin: 7% auto 0 auto;
+  padding: .75rem 5rem;
+}
+
+.splash .message:hover {
+  background-color: var(--color0);
+  color: var(--color2);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .splash .title {
+    padding-top: 20%;
+  }
 }
