@@ -11,7 +11,7 @@ class Splash extends Component {
         <div className='title'>
           <Image
             style={{ display: 'block', margin: 'auto' }}
-            src={require('./../../assets/apollo-logo-text2.png')}
+            src={require('./../../assets/apollo-logo-primary.png')}
             alt='logo' />
           <Button
             content='OUR COMPANY'

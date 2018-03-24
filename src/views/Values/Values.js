@@ -44,7 +44,7 @@ class Values extends Component {
 
         <Heading content='Our story' align='start' size='lg' />
         <div style={{
-            backgroundImage: `url(${require('./../../assets/path1.jpg')}`,
+            backgroundImage: `url(${require('./../../assets/path1-min.jpg')}`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             height: '400px',

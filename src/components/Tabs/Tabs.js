@@ -6,99 +6,6 @@ import './Tabs.css';
 import Heading from './../Heading/Heading';
 import Paragraph from './../Paragraph/Paragraph';
 
-const testItems = [
-  {
-    id: 'all',
-    header: 'ALL',
-    title: <div>
-      <span style={{ fontFamily: 'open_sansbold' }}>APOLLO</span>&nbsp;
-      <span style={{ fontFamily: 'open_sanslight' }}>INDUSTRIES</span>
-    </div>,
-    content: 'TEST'
-  },
-  {
-    id: 'tech',
-    header: 'TECHNOLOGY',
-    title: <div>
-      <span style={{ fontFamily: 'open_sansbold' }}>APOLLO</span>&nbsp;
-      <span style={{ fontFamily: 'open_sanslight' }}>TECHNOLOGIES</span>
-    </div>,
-    content: 'TEST'
-  },
-  {
-    id: 'ai',
-    header: 'AI',
-    title: <div>
-      <span style={{ fontFamily: 'open_sansbold' }}>APOLLO</span>&nbsp;
-      <span style={{ fontFamily: 'open_sanslight' }}>AI</span>
-    </div>,
-    content: 'TEST'
-  },
-  {
-    id: 'media',
-    header: 'MEDIA',
-    title: <div>
-      <span style={{ fontFamily: 'open_sansbold' }}>APOLLO</span>&nbsp;
-      <span style={{ fontFamily: 'open_sanslight' }}>MEDIA</span>
-    </div>,
-    content: 'TEST'
-  },
-  {
-    id: 'finance',
-    header: 'FINANCE',
-    title: <div>
-      <span style={{ fontFamily: 'open_sansbold' }}>APOLLO</span>&nbsp;
-      <span style={{ fontFamily: 'open_sanslight' }}>FINANCE</span>
-    </div>,
-    content: 'TEST'
-  },
-  {
-    id: 'legal',
-    header: 'LEGAL',
-    title: <div>
-      <span style={{ fontFamily: 'open_sansbold' }}>APOLLO</span>&nbsp;
-      <span style={{ fontFamily: 'open_sanslight' }}>LEGAL</span>
-    </div>,
-    content: 'TEST'
-  },
-  {
-    id: 'health',
-    header: 'HEALTH',
-    title: <div>
-      <span style={{ fontFamily: 'open_sansbold' }}>APOLLO</span>&nbsp;
-      <span style={{ fontFamily: 'open_sanslight' }}>HEALTH</span>
-    </div>,
-    content: 'TEST'
-  },
-  {
-    id: 'transport',
-    header: 'TRANSPORT',
-    title: <div>
-      <span style={{ fontFamily: 'open_sansbold' }}>APOLLO</span>&nbsp;
-      <span style={{ fontFamily: 'open_sanslight' }}>TRANSPORT</span>
-    </div>,
-    content: 'TEST'
-  },
-  {
-    id: 'energy',
-    header: 'ENERGY',
-    title: <div>
-      <span style={{ fontFamily: 'open_sansbold' }}>APOLLO</span>&nbsp;
-      <span style={{ fontFamily: 'open_sanslight' }}>ENERGY</span>
-    </div>,
-    content: 'TEST'
-  },
-  {
-    id: 'cosmos',
-    header: 'COSMOS',
-    title: <div>
-      <span style={{ fontFamily: 'open_sansbold' }}>APOLLO</span>&nbsp;
-      <span style={{ fontFamily: 'open_sanslight' }}>COSMOS</span>
-    </div>,
-    content: 'TEST'
-  }
-]
-
 class Tabs extends Component {
   _open(e, tab) {
     const tabs = document.getElementsByClassName('tab__content');
@@ -118,7 +25,8 @@ class Tabs extends Component {
   }
 
   componentDidMount() {
-    return document.getElementById('defaultOpen').click();
+    let e = document.getElementById('defaultOpen');
+    return e !== null ? e.click() : null;
   }
 
   _renderHeaders(items) {
@@ -142,15 +50,24 @@ class Tabs extends Component {
   }
 
   render() {
-    return(
-      <section className='tab'>
-        <div className='tab__header'>
-          { this._renderHeaders(testItems) }
-        </div>
+    const { items } = this.props;
 
-        { this._renderContent(testItems) }
-      </section>
-    );
+    let result;
+
+    if ( typeof items === 'undefined'
+      || (typeof items !== 'object' && !(items.length > 0)) ) {
+      return null;
+    } else {
+      return (
+        <section className='tab'>
+          <div className='tab__header'>
+            { this._renderHeaders(items) }
+          </div>
+
+          { this._renderContent(items) }
+        </section>
+      );
+    }
   }
 }
 
