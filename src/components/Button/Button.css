@@ -1,5 +1,5 @@
 .button {
-  color: var(--color0);
+  color: var(--light);
   cursor: pointer;
   font-family: 'open_sanssemibold';
   font-size: 1rem;

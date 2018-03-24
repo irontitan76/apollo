@@ -1,5 +1,5 @@
 .subtitle {
-  color: var(--color9);
+  color: var(--gray);
 }
 
 .subtitle--align-center {
@@ -55,7 +55,7 @@
 }
 
 .subtitle--onClick:hover {
-  color: var(--color9);
+  color: var(--gray);
 }
 
 .subtitle--weight-light {

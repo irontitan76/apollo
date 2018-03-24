@@ -22,11 +22,11 @@ class App extends Component {
           <Route exact path='/org' component={ Organizations } />
           <Route exact path="/values" component={ Values } />
 
-          <Footer style={{ position: 'absolute', bottom: 0 }}>
+          <Footer>
             <Image src={ require('./assets/apollo-logo.png')} />
             &nbsp;
-            <span style={{ fontFamily: 'open_sansbold' }}>APOLLO </span>
-            <span style={{ fontFamily: 'open_sanslight' }}>&nbsp;INDUSTRIES</span>
+            <span style={{ fontFamily: 'var(--font-bold)' }}>APOLLO </span>
+            <span style={{ fontFamily: 'var(--font-light)' }}>&nbsp;INDUSTRIES</span>
           </Footer>
         </Fragment>
       </Router>

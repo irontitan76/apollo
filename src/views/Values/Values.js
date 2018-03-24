@@ -21,23 +21,23 @@ class Values extends Component {
         </Paragraph>
         <ul className='list'>
           <li className='item'>
-            <div style={{ color: 'var(--color5)'}}>Innovators at heart</div>
+            <div style={{ color: 'var(--green)'}}>Innovators at heart</div>
             Approach innovation with a structured thought process.
           </li>
           <li>
-            <div style={{ color: 'var(--color4)'}}>Bias for action</div>
+            <div style={{ color: 'var(--orange)'}}>Bias for action</div>
             Anticipate and respond to opportunities to improve and resolve righteously.
           </li>
           <li>
-            <div style={{ color: 'var(--color6)'}}>Challenge respectfully</div>
+            <div style={{ color: 'var(--purple)'}}>Challenge respectfully</div>
             Think logically and generate ideas that challenge the status quo in a respectful way.
           </li>
           <li>
-            <div style={{ color: 'var(--color1)'}}>Collaborate effectively</div>
+            <div style={{ color: 'var(--blue)'}}>Collaborate effectively</div>
             Form meaningful, effectual relationships and produce results together.
           </li>
           <li>
-            <div style={{ color: 'var(--color2)'}}>Be compassionate</div>
+            <div style={{ color: 'var(--red)'}}>Be compassionate</div>
             Every moment is an opportunity to improve lives.
           </li>
         </ul>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Organizations.css';
 
+import Image from './../../components/Image/Image';
 import Heading from './../../components/Heading/Heading';
 import Subtitle from './../../components/Subtitle/Subtitle';
 import Tabs from './../../components/Tabs/Tabs';
@@ -8,7 +9,7 @@ import Tabs from './../../components/Tabs/Tabs';
 class Organizations extends Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       items: [
         {

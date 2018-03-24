@@ -1,5 +1,5 @@
 .heading {
-  color: var(--color2);
+  color: var(--dark);
 }
 
 .heading--align-center {
@@ -55,7 +55,7 @@
 }
 
 .heading--onClick:hover {
-  color: var(--color9);
+  color: var(--gray);
 }
 
 .heading--size-lg {

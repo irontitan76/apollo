@@ -20,7 +20,7 @@ class Tabs extends Component {
       tabLinks[i].className = tabLinks[i].className.replace(' active', '');
     }
 
-    document.getElementById(tab.toLowerCase()).style.display = 'block';
+    document.getElementById(tab).style.display = 'block';
     e.currentTarget.className += ' active';
   }
 
@@ -30,10 +30,12 @@ class Tabs extends Component {
   }
 
   _renderHeaders(items) {
+    const { direction } = this.props;
+
     return items.map((item, i) => (
       <button key={ `key__${i}` }
         id={ i === 0 ? 'defaultOpen' : null }
-        className='tab__item'
+        className={ `tab__item tab__item--${direction}` }
         onClick={ (e) => this._open(e, item.id)}>{ item.header }</button>
     ));
   }
@@ -69,6 +71,10 @@ class Tabs extends Component {
       );
     }
   }
+}
+
+Tabs.defaultProps = {
+  direction: 'vertical'
 }
 
 export default Tabs;

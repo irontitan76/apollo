@@ -1,32 +1,15 @@
 .splash {
-  background-color: var(--color2);
-  /* background-image: url('./texture1.png');
-  background-size: 2%; */
-  height: calc(100vh - (100vh - 100%));
+  background-color: var(--dark);
+  color: var(--light);
+  /* height: calc(100vh - (100vh - 100%)); */
+  min-height: 100vh;
   text-align: center;
-  width: calc(100vw - (100vw - 100%));
+  /* width: calc(100vw - (100vw - 100%)); */
 }
 
 .splash .title {
-  color: var(--color0);
   padding-top: 15%;
-  width: calc(100vw - (100vw - 100%));
-}
-
-.splash .message {
-  background-color: var(--color1);
-  border: none;
-  color: var(--color0);
-  font-family: 'open_sanssemibold';
-  font-size: 1rem;
-  margin: 7% auto 0 auto;
-  padding: .75rem 5rem;
-}
-
-.splash .message:hover {
-  background-color: var(--color0);
-  color: var(--color2);
-  cursor: pointer;
+  /* width: calc(100vw - (100vw - 100%)); */
 }
 
 @media screen and (max-width: 768px) {

@@ -1,3 +1,5 @@
+/* WIP */
+
 .tab {
   margin: 0 auto;
   max-width: 1200px;
@@ -6,28 +8,28 @@
 
 .tab__header {
   background-color: var(--blue);
-  display: flex; /* */
+  float: left;
   font-family: 'open_sansregular';
   justify-content: space-between;
   list-style-type: none;
-  margin: 3% auto 0 auto;
   overflow: hidden;
   padding: 0;
+  width: 30%;
 }
 
 .tab__item {
   background-color: var(--blue);
   border: none;
-  border-bottom: 4px solid #fff; /* */
-  border-top: 4px solid #fff; /* */
+  border-left: 4px solid #fff; /* */
+  border-right: 4px solid #fff; /* */
   color: var(--light);
   cursor: pointer;
-  flex-basis: 11.11%; /* */
-  float: left; /* */
+  display: block;
   font-family: 'open_sansregular';
   font-size: 1rem;
   outline: none;
   padding: 2%;
+  width: 100%;
 }
 
 .tab__item:first-child {
@@ -36,29 +38,29 @@
 
 .tab__item:hover:not(:first-child) {
   background-color: var(--blue);
-  border-bottom: 4px solid var(--blue);
-  border-top: 4px solid var(--blue);
+  border-left: 4px solid var(--blue);
+  border-right: 4px solid var(--blue);
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
   filter: brightness(90%);
   color: var(--light);
 }
 
 .tab__item:hover:first-child {
-  border-bottom: 4px solid var(--dark);
-  border-top: 4px solid var(--dark);
+  border-left: 4px solid var(--dark);
+  border-right: 4px solid var(--dark);
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
 }
 
 .tab__item:first-child.active {
-  border-bottom: 4px solid var(--dark);
-  border-top: 4px solid var(--dark);
+  border-left: 4px solid var(--dark);
+  border-right: 4px solid var(--dark);
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
 }
 
 .tab__item:not(:first-child).active {
   background-color: var(--blue);
-  border-bottom: 4px solid var(--blue);
-  border-top: 4px solid var(--blue);
+  border-left: 4px solid var(--blue);
+  border-right: 4px solid var(--blue);
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
   filter: brightness(90%);
   color: var(--light);
@@ -66,8 +68,9 @@
 
 .tab__content {
   animation: fadeEffect 1s;
-  display: none;
+  float: left;
   padding: 6px 12px;
+  width: 65%;
 }
 
 @keyframes fadeEffect {
@@ -81,8 +84,8 @@
   }
 
   .tab__item {
-    border-bottom: none;
-    border-top: none;
+    border-left: none;
+    border-right: none;
     color: var(--light);
     cursor: pointer;
     flex: 1;
@@ -91,21 +94,21 @@
   }
 
   .tab__item:hover:first-child {
-    border-bottom: none;
-    border-top: none;
+    border-left: none;
+    border-right: none;
     box-shadow: none;
     filter: brightness(90%);
   }
 
   .tab__item:hover:not(:first-child) {
-    border-bottom: none;
-    border-top: none;
+    border-left: none;
+    border-right: none;
     box-shadow: none;
   }
 
   .tab__item:first-child.active {
-    border-bottom: none;
-    border-top: none;
+    border-left: none;
+    border-right: none;
     box-shadow: none;
   }
 
