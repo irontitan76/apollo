@@ -1,41 +1,60 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
-import './Footer.css';
+import styled from 'styled-components';
 
 class Footer extends Component {
   render() {
-    const { align, children, className, content } = this.props;
+    const { alignItems, bgColor, border, children, className, color, content,
+      full, height, justify, size, style, width } = this.props;
 
-    const ROOT_CLASS = 'footer';
+    const Footer = styled.div`
+      background-color: ${full ? `var(--${bgColor})` : 'transparent'};
+    `;
 
-    const classes = classnames(
-      ROOT_CLASS,
-      {
-        [`${ROOT_CLASS}--align-${align}`]: align,
-      },
-      className
-    );
+    let ht;
+    if ( height === 'xs' ) ht = '50px';
+    else if ( height === 'sm' ) ht = '75px';
+    else if ( height === 'md' ) ht = '100px';
+    else if ( height === 'lg' ) ht = '200px';
+    else if ( height === 'xl' ) ht = '300px';
+    else ht = height;
 
+    const Container = styled.div`
+      align-items: ${alignItems};
+      background-color: var(--${bgColor});
+      color: var(--${color});
+      display: flex;
+      height: ${ht};
+      justify-content: flex-${justify};
+      margin: ${width === 'none' ? 'auto' : '0 auto'};
+      max-width: ${width};
+    `;
 
     return (
-      <div style={{ backgroundColor: 'var(--dark)' }}>
-        <div className={ classes }>
+      <Footer>
+        <Container className={ className } style={ style }>
           { [ content, children ] }
-        </div>
-      </div>
+        </Container>
+      </Footer>
     )
   }
 }
 
 Footer.defaultProps = {
-  align: 'start',
+  alignItems: 'left',
+  bgColor: 'transparent',
+  border: 'none',
   children: null,
-  content: null
+  color: 'dark',
+  content: null,
+  full: true,
+  height: 'md',
+  justify: null,
+  width: 'none'
 };
 
 Footer.propTypes = {
-  align: PropTypes.string
+  alignItems: PropTypes.string
 }
 
 export default Footer;

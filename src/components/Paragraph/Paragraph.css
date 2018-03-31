@@ -1,58 +1,44 @@
 .paragraph {
-  font-family: 'open_sansregular';
-}
+  font-family: 'open_sansregular'; }
 
 .paragraph--align-center {
-  text-align: center;
-}
+  text-align: center; }
 
 .paragraph--align-end {
-  text-align: right;
-}
+  text-align: right; }
 
 .paragraph--align-start {
-  text-align: left;
-}
+  text-align: left; }
 
 .paragraph--margin-lg {
-  margin: 5.334% 0 2% 0;
-}
+  margin: 5.334% 0 2% 0; }
 
 .paragraph--margin-md {
-  margin: 4% 0 1.334% 0;
-}
+  margin: 4% 0 1.334% 0; }
 
 .paragraph--margin-none {
-  margin: 0;
-}
+  margin: 0; }
 
 .paragraph--margin-sm {
-  margin: 3% 0 1% 0;
-}
+  margin: 3% 0 1% 0; }
 
 .paragraph--margin-xl {
-  margin: 8% 0 2.667% 0;
-}
+  margin: 8% 0 2.667% 0; }
 
 .paragraph--margin-xs {
-  margin: 2.667% 0 0.667% 0;
-}
+  margin: 2.667% 0 0.667% 0; }
 
 .paragraph--nowrap {
   flex: 1;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
-}
+  text-overflow: ellipsis; }
 
 .paragraph--size-lg {
-  font-size: 1.2rem;
-}
+  font-size: 1.2rem; }
 
 .paragraph--size-md {
-  font-size: 1rem;
-}
+  font-size: 1rem; }
 
 .paragraph--size-sm {
-  font-size: 0.8rem;
-}
+  font-size: 0.8rem; }

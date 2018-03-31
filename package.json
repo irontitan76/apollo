@@ -3,18 +3,30 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.5",
+    "@fortawesome/fontawesome-free-brands": "^5.0.9",
+    "@fortawesome/fontawesome-free-regular": "^5.0.9",
+    "@fortawesome/fontawesome-free-solid": "^5.0.9",
+    "@fortawesome/fontawesome-pro-light": "^5.0.9",
+    "@fortawesome/fontawesome-pro-regular": "^5.0.9",
+    "@fortawesome/fontawesome-pro-solid": "^5.0.9",
+    "@fortawesome/react-fontawesome": "0.0.18",
     "classnames": "^2.2.5",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-ionicons": "^2.1.6",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.1"
+    "react-scripts": "1.1.1",
+    "styled-components": "^3.2.3"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build-css": "node-sass-chokidar src/ -o src/",
     "build-deploy": "react-scripts build && aws s3 cp build/ s3://apolloindustries --recursive",
     "deploy": "aws s3 cp build/ s3://apolloindustries --recursive",
+    "eject": "react-scripts eject",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive"
   }
 }

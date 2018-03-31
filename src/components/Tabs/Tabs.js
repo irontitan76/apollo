@@ -1,6 +1,4 @@
-import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import React, { Component } from 'react';
 import './Tabs.css';
 
 import Heading from './../Heading/Heading';
@@ -53,8 +51,6 @@ class Tabs extends Component {
 
   render() {
     const { items } = this.props;
-
-    let result;
 
     if ( typeof items === 'undefined'
       || (typeof items !== 'object' && !(items.length > 0)) ) {

@@ -1,0 +1,12 @@
+.splash {
+  background-color: var(--dark);
+  color: var(--light);
+  min-height: 100vh;
+  text-align: center; }
+
+.splash .title {
+  padding-top: 15%; }
+
+@media screen and (max-width: 768px) {
+  .splash .title {
+    padding-top: 20%; } }

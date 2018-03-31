@@ -14,12 +14,15 @@ class Splash extends Component {
             src={require('./../../assets/apollo-logo-primary.png')}
             alt='logo' />
           <Button
-            content='OUR COMPANY'
+            color='light'
             fill='blue'
-            onClick={ () => window.location.pathname = '/values' } />
+            label='OUR COMPANY'
+            onClick={ () => window.location.pathname = '/values' }
+            style={{ marginTop: '7%' }}
+            width='20%'/>
         </div>
       </div>
-    )
+    );
   }
 }
 

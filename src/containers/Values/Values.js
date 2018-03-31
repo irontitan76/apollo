@@ -13,7 +13,7 @@ class Values extends Component {
         <Heading content='Our mission' align='center' size='xl' />
         <Subtitle content='We strive to reshape industries for the good of humanity' align='center' />
         <Image src={ require('./../../assets/bg4.jpg' )} alt='future of tech' margin='md' />
-        <Heading content='Our values' align='start' size='lg' margin='xs' />
+        <Heading content='Our values' align='left' size='lg' margin='xs' />
         <Paragraph align='start' margin='none'>
           The foundation of our company is key to pushing humanity forward. Our
           values are ingrained into our DNA. Taken together, they identify
@@ -37,12 +37,12 @@ class Values extends Component {
             Form meaningful, effectual relationships and produce results together.
           </li>
           <li>
-            <div style={{ color: 'var(--red)'}}>Be compassionate</div>
+            <div style={{ color: 'var(--red)'}}>Do good</div>
             Every moment is an opportunity to improve lives.
           </li>
         </ul>
 
-        <Heading content='Our story' align='start' size='lg' />
+        <Heading content='Our story' align='left' size='lg' />
         <div style={{
             backgroundImage: `url(${require('./../../assets/path1-min.jpg')}`,
             backgroundPosition: 'center',
@@ -50,8 +50,8 @@ class Values extends Component {
             height: '400px',
             width: '100%',
         }}>h</div>
-        <Paragraph align='start'>
-          The path
+      <Paragraph align='start' style={{ marginLeft: '5%', marginRight: '5%' }}>
+          Our company's path started in 2018 with a vision to change each significant industry in the world. Our vision was grand, but we knew that we needed to start small. With that in mind, we created Apollo Industries as a professional services company with offerings in the web application development space.
         </Paragraph>
       </article>
     )
