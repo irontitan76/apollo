@@ -19,7 +19,7 @@ class Splash extends Component {
             label='OUR COMPANY'
             onClick={ () => window.location.pathname = '/values' }
             style={{ marginTop: '7%' }}
-            width='20%'/>
+            width='300px' />
         </div>
       </div>
     );

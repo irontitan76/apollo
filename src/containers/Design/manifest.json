@@ -1,0 +1,396 @@
+{
+  "structure": {
+    "app": {
+      "name": "App",
+      "family": "Structure",
+      "properties": [
+        {
+          "property": "children",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the children description."
+        },
+        {
+          "property": "content",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the content description."
+        }
+      ]
+    },
+    "article": {
+      "name": "Article",
+      "family": "Structure",
+      "properties": [
+        {
+          "property": "children",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the children description."
+        },
+        {
+          "property": "content",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the content description."
+        }
+      ]
+    },
+    "box": {
+      "name": "Box",
+      "family": "Structure",
+      "properties": [
+        {
+          "property": "children",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the children description."
+        },
+        {
+          "property": "content",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the content description."
+        }
+      ]
+    },
+    "card": {
+      "name": "Card",
+      "family": "Structure",
+      "properties": [
+        {
+          "property": "children",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the children description."
+        },
+        {
+          "property": "content",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the content description."
+        }
+      ]
+    },
+    "columns": {
+      "name": "Columns",
+      "family": "Structure",
+      "properties": [
+        {
+          "property": "children",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the children description."
+        },
+        {
+          "property": "content",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the content description."
+        }
+      ]
+    },
+    "grid": {
+      "name": "Grid",
+      "family": "Structure",
+      "properties": [
+        {
+          "property": "children",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the children description."
+        },
+        {
+          "property": "content",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the content description."
+        }
+      ]
+    },
+    "layer": {
+      "name": "Layer",
+      "family": "Structure",
+      "properties": [
+        {
+          "property": "children",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the children description."
+        },
+        {
+          "property": "content",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the content description."
+        }
+      ]
+    },
+    "section": {
+      "name": "Section",
+      "family": "Structure",
+      "properties": [
+        {
+          "property": "children",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the children description."
+        },
+        {
+          "property": "content",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the content description."
+        }
+      ]
+    },
+    "split": {
+      "name": "Split",
+      "family": "Structure",
+      "properties": [
+        {
+          "property": "children",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the children description."
+        },
+        {
+          "property": "content",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the content description."
+        }
+      ]
+    }
+  },
+  "text": {
+    "heading": {
+      "name": "Heading",
+      "family": "Text",
+      "properties": [
+      ]
+    },
+    "paragraph": {
+      "name": "Paragraph",
+      "family": "Text",
+      "properties": [
+      ]
+    },
+    "quote": {
+      "name": "Quote",
+      "family": "Text",
+      "properties": [
+      ]
+    },
+    "title": {
+      "name": "Title",
+      "family": "Text",
+      "properties": [
+      ]
+    }
+  },
+  "navigation": {
+    "footer": {
+      "name": "Footer",
+      "family": "Navigation",
+      "properties": [
+        {
+          "property": "children",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the children description."
+        },
+        {
+          "property": "content",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the content description."
+        }
+      ]
+    },
+    "menu": {
+      "name": "Menu",
+      "family": "Navigation",
+      "properties": [
+        {
+          "property": "children",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the children description."
+        },
+        {
+          "property": "content",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the content description."
+        }
+      ]
+    },
+    "navbar": {
+      "name": "Navbar",
+      "family": "Navigation",
+      "properties": [
+        {
+          "property": "children",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the children description."
+        },
+        {
+          "property": "content",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the content description."
+        }
+      ]
+    },
+    "menu": {
+      "name": "Menu",
+      "family": "Navigation",
+      "properties": [
+        {
+          "property": "children",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the children description."
+        },
+        {
+          "property": "content",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the content description."
+        }
+      ]
+    },
+    "tabs": {
+      "name": "Tabs",
+      "family": "Navigation",
+      "properties": [
+        {
+          "property": "children",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the children description."
+        },
+        {
+          "property": "content",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the content description."
+        }
+      ]
+    }
+  },
+  "controls": {
+    "anchor": {
+      "name": "Anchor",
+      "family": "Controls",
+      "properties": [
+        {
+          "property": "children",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the children description."
+        },
+        {
+          "property": "content",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the content description."
+        }
+      ]
+    },
+    "button": {
+      "name": "Button",
+      "family": "Controls",
+      "properties": [
+        {
+          "property": "children",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the children description."
+        },
+        {
+          "property": "content",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the content description."
+        }
+      ]
+    }
+  },
+  "Data Models": {
+    "list": {
+      "name": "List",
+      "family": "Data Models",
+      "properties": [
+        {
+          "property": "children",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the children description."
+        },
+        {
+          "property": "content",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the content description."
+        }
+      ]
+    },
+    "Table": {
+      "name": "Table",
+      "family": "Data Models",
+      "properties": [
+        {
+          "property": "children",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the children description."
+        },
+        {
+          "property": "content",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the content description."
+        }
+      ]
+    }
+  }
+}

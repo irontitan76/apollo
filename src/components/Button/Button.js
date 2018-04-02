@@ -7,7 +7,7 @@ import styled from 'styled-components';
 class Button extends Component {
   render() {
     const { children, className, color, fill, hoverColor, hoverFill, hoverLine,
-      icon, label, line, onClick, pad, size, style, width } = this.props;
+      icon, label, line, onClick, pad, style, width } = this.props;
 
     const l = line || fill;
     const hf = hoverFill || (fill === 'light' ? 'dark' : 'light');

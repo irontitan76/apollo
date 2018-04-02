@@ -11,9 +11,7 @@ import Organizations from './../Organizations/Organizations';
 import Splash from './../Splash/Splash';
 import Values from './../Values/Values';
 
-
 import fontawesome from '@fortawesome/fontawesome';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import faAngleDown from '@fortawesome/fontawesome-pro-light/faAngleDown';
 
 fontawesome.library.add(faAngleDown);
