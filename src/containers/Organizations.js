@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { items } from './../data/info.js';
 
 import Heading from './../components/Heading';
-import Subtitle from './../components/Subtitle/Subtitle';
+import Subtitle from './../components/Subtitle';
 import Tabs from './../components/Tabs/Tabs';
 
 class Organizations extends Component {

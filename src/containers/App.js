@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Redirect, Route } from 'react-router-dom';
 
 import Footer from './../components/Footer';
 import Image from './../components/Image';
-import Navigation from './../components/Navigation/Navigation';
+import Navigation from './../components/Navigation';
 
 import Design from './Design';
 import Organizations from './Organizations';

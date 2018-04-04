@@ -5,7 +5,7 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import Button from './../components/Button';
 import Heading from './../components/Heading';
 import Search from './../components/Search';
-import Subtitle from './../components/Subtitle/Subtitle';
+import Subtitle from './../components/Subtitle';
 import Table from './../components/Table';
 
 import items from './../data/manifest.json';

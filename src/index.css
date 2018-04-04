@@ -87,6 +87,17 @@
   --paragraph-size-lg: 1.2rem;
   --paragraph-size-xl: 1.5rem;
 
+  /* Subtitle Styles */
+  --subtitle-margin-xs: 2.0rem 0.0rem .70rem 0.0rem;
+  --subtitle-margin-sm: 2.4rem 0.0rem .80rem 0.0rem;
+  --subtitle-margin-md: 3.0rem 0.0rem 1.0rem 0.0rem;
+  --subtitle-margin-lg: 4.0rem 0.0rem 1.7rem 0.0rem;
+  --subtitle-margin-xl: 6.0rem 0.0rem 2.0rem 0.0rem;
+  --subtitle-size-xs: 1.0rem;
+  --subtitle-size-sm: 1.2rem;
+  --subtitle-size-md: 1.5rem;
+  --subtitle-size-lg: 2.0rem;
+  --subtitle-size-xl: 2.5rem;
 
 }
 

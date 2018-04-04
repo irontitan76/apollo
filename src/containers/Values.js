@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Heading from './../components/Heading';
 import Image from './../components/Image';
 import Paragraph from './../components/Paragraph';
-import Subtitle from './../components/Subtitle/Subtitle';
+import Subtitle from './../components/Subtitle';
 
 class Values extends Component {
   render() {
@@ -72,7 +72,7 @@ class Values extends Component {
     return (
       <Values>
         <Heading content='Our mission' align='center' size='xl' />
-        <Subtitle content='We strive to reshape industries for the good of humanity' align='center' />
+        <Subtitle content='We strive to reshape industries for the good of humanity' align='center'/>
         <Image src={ require('./../assets/bg4.jpg' )} alt='future of tech' margin='md' />
         <Heading content='Our values' align='left' size='lg' margin='xs' />
         <Paragraph>
