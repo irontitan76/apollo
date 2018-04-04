@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import Heading from './../components/Heading';
-import Image from './../components/Image';
-import Paragraph from './../components/Paragraph';
-import Subtitle from './../components/Subtitle';
+import { Heading, Image, Paragraph, Subtitle } from './../components';
 
 class Values extends Component {
   render() {
@@ -70,7 +67,7 @@ class Values extends Component {
     `;
 
     return (
-      <Values>
+      <Values style={{ animation: 'fadeEffect 1s' }}>
         <Heading content='Our mission' align='center' size='xl' />
         <Subtitle content='We strive to reshape industries for the good of humanity' align='center'/>
         <Image src={ require('./../assets/bg4.jpg' )} alt='future of tech' margin='md' />
@@ -108,10 +105,9 @@ class Values extends Component {
             backgroundImage: `url(${require('./../assets/path1-min.jpg')}`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
-            height: '400px',
-            width: '100%',
-        }}>h</div>
-      <Paragraph align='start' style={{ marginLeft: '5%', marginRight: '5%' }}>
+            height: '400px'
+        }}></div>
+      <Paragraph align='left' margin='sm'>
           Our company's path started in 2018 with a vision to change each significant industry in the world. Our vision was grand, but we knew that we needed to start small. With that in mind, we created Apollo Industries as a professional services company with offerings in the web application development space.
         </Paragraph>
       </Values>

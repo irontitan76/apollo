@@ -1,14 +1,13 @@
 import React from 'react';
 
+import Brand from './../components/Brand';
+
 export const items = [
   {
     id: 'all',
     header: 'ALL',
-    title: <div>
-      <span style={{ fontFamily: 'open_sansbold' }}>APOLLO</span>&nbsp;
-      <span style={{ fontFamily: 'open_sanslight' }}>INDUSTRIES</span>
-    </div>,
-    content: <div style={{ textAlign: 'left' }}>
+    title: <Brand key='key__industries' org='INDUSTRIES'/>,
+    content: <div key='key' style={{ textAlign: 'left' }}>
       Apollo Industries is a startup venture with the following characteristics:
       <ul>
         <li>The company employs a flattened and modular business model.</li>
@@ -21,82 +20,55 @@ export const items = [
   {
     id: 'tech',
     header: 'TECHNOLOGY',
-    title: <div>
-      <span style={{ fontFamily: 'open_sansbold' }}>APOLLO</span>&nbsp;
-      <span style={{ fontFamily: 'open_sanslight' }}>TECHNOLOGIES</span>
-    </div>,
+    title: <Brand key='key__technology' org='TECHNOLOGY'/>,
     content: 'TEST'
   },
   {
     id: 'ai',
     header: 'AI',
-    title: <div>
-      <span style={{ fontFamily: 'open_sansbold' }}>APOLLO</span>&nbsp;
-      <span style={{ fontFamily: 'open_sanslight' }}>AI</span>
-    </div>,
+    title: <Brand key='key__ai' org='AI'/>,
     content: 'TEST'
   },
   {
     id: 'media',
     header: 'MEDIA',
-    title: <div>
-      <span style={{ fontFamily: 'open_sansbold' }}>APOLLO</span>&nbsp;
-      <span style={{ fontFamily: 'open_sanslight' }}>MEDIA</span>
-    </div>,
+    title: <Brand key='key__media' org='MEDIA'/>,
     content: 'TEST'
   },
   {
     id: 'finance',
     header: 'FINANCE',
-    title: <div>
-      <span style={{ fontFamily: 'open_sansbold' }}>APOLLO</span>&nbsp;
-      <span style={{ fontFamily: 'open_sanslight' }}>FINANCE</span>
-    </div>,
+    title: <Brand key='key__finance' org='FINANCE'/>,
     content: 'TEST'
   },
   {
     id: 'legal',
     header: 'LEGAL',
-    title: <div>
-      <span style={{ fontFamily: 'open_sansbold' }}>APOLLO</span>&nbsp;
-      <span style={{ fontFamily: 'open_sanslight' }}>LEGAL</span>
-    </div>,
+    title: <Brand key='key__legal' org='LEGAL'/>,
     content: 'TEST'
   },
   {
     id: 'health',
     header: 'HEALTH',
-    title: <div>
-      <span style={{ fontFamily: 'open_sansbold' }}>APOLLO</span>&nbsp;
-      <span style={{ fontFamily: 'open_sanslight' }}>HEALTH</span>
-    </div>,
+    title: <Brand key='key__health' org='HEALTH'/>,
     content: 'TEST'
   },
   {
     id: 'transport',
     header: 'TRANSPORT',
-    title: <div>
-      <span style={{ fontFamily: 'open_sansbold' }}>APOLLO</span>&nbsp;
-      <span style={{ fontFamily: 'open_sanslight' }}>TRANSPORT</span>
-    </div>,
+    title: <Brand key='key__transport' org='TRANSPORT'/>,
     content: 'TEST'
   },
   {
     id: 'energy',
     header: 'ENERGY',
-    title: <div>
-      <span style={{ fontFamily: 'open_sansbold' }}>APOLLO</span>&nbsp;
-      <span style={{ fontFamily: 'open_sanslight' }}>ENERGY</span>
-    </div>,
+    title: <Brand key='key__energy' org='ENERGY'/>,
     content: 'TEST'
   },
   {
     id: 'cosmos',
     header: 'COSMOS',
-    title: <div>
-      <span style={{ fontFamily: 'open_sansbold' }}>APOLLO</span>&nbsp;
-      <span style={{ fontFamily: 'open_sanslight' }}>COSMOS</span>
-    </div>,
+    title: <Brand key='key__cosmos' org='COSMOS'/>,
     content: 'TEST'
   }
 ];

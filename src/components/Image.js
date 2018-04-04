@@ -6,7 +6,6 @@ class Image extends Component {
   render() {
     const {
       alt,
-      avatar,
       className,
       height,
       onClick,
@@ -33,12 +32,12 @@ class Image extends Component {
       width: ${w};
     `;
 
-    return <Image alt={ alt } className={ className } src={ src } style={ style } />;
+    return <Image alt={ alt } onClick={ onClick } className={ className } src={ src } style={ style } />;
   }
 }
 
 Image.defaultProps = {
-  align: 'start',
+  align: 'left',
   alt: 'unknown',
   avatar: false,
   onClick: null,

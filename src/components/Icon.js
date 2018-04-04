@@ -29,4 +29,23 @@ class Icon extends Component {
   }
 }
 
+const COLORS = [
+  'blue', 'brown', 'dark', 'gray', 'green', 'light', 'orange', 'purple', 'red',
+  'yellow', PropTypes.string
+ ];
+
+Icon.propTypes = {
+  color: PropTypes.oneOf(COLORS),
+  hoverColor: PropTypes.oneOf(COLORS),
+  icon: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.array
+  ])
+};
+
+Icon.defaultProps = {
+  color: 'dark',
+  hoverColor: 'light'
+};
+
 export default Icon;

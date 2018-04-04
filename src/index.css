@@ -98,11 +98,17 @@
   --subtitle-size-md: 1.5rem;
   --subtitle-size-lg: 2.0rem;
   --subtitle-size-xl: 2.5rem;
-
 }
 
 body, html, #root {
   font-family: var(--font-regular);
   margin: 0;
   padding: 0;
+}
+
+@keyframes fadeEffect {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; }
 }

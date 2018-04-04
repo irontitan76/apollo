@@ -79,4 +79,9 @@ class Table extends Component {
   }
 }
 
+Table.propTypes = {
+  headers: PropTypes.array,
+  rows: PropTypes.array
+};
+
 export default Table;

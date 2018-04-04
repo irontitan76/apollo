@@ -30,9 +30,13 @@ class Search extends Component {
   }
 }
 
+Search.propTypes = {
+  className: PropTypes.string
+};
+
 Search.defaultProps = {
   placeholder: 'Search...',
   type: 'text'
-}
+};
 
 export default Search;

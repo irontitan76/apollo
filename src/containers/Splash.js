@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-
-import Button from './../components/Button';
-import Image from './../components/Image';
+import { Button, Image } from './../components';
 
 class Splash extends Component {
   render() {
@@ -23,7 +21,7 @@ class Splash extends Component {
     `;
 
     return (
-      <Splash>
+      <Splash style={{ animation: 'fadeEffect 1s' }}>
         <Title>
           <Image
             style={{ display: 'block', margin: 'auto auto 7% auto' }}

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 class Applet extends Component {
   render() {
-    const { center, children, className, maxWidth ...props } = this.props;
+    const { center, children, className, maxWidth, ...props } = this.props;
 
     let margin, width;
 
@@ -26,9 +26,9 @@ class Applet extends Component {
     `;
 
     return (
-      <div className={ className } {...props}>
+      <App {...props}>
         { children }
-      </div>
+      </App>
     )
   }
 }

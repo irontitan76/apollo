@@ -5,7 +5,7 @@ import styled from 'styled-components';
 class Footer extends Component {
   render() {
     const { alignItems, bgColor, border, children, className, color, content,
-      full, height, justify, size, style, width } = this.props;
+      full, height, justify, style, width } = this.props;
 
     const Footer = styled.div`
       background-color: ${full ? `var(--${bgColor})` : 'transparent'};
@@ -14,6 +14,7 @@ class Footer extends Component {
     const Container = styled.div`
       align-items: ${alignItems};
       background-color: var(--${bgColor});
+      border: ${border};
       color: var(--${color});
       display: flex;
       height: ${height.length > 2 ? height : `var(--footer-height-${height})`};
@@ -42,7 +43,7 @@ Footer.defaultProps = {
   full: true,
   height: 'md',
   justify: null,
-  width: 'none'
+  width: '1200px'
 };
 
 Footer.propTypes = {

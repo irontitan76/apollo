@@ -45,20 +45,10 @@ Paragraph.defaultProps = {
 
 Paragraph.propTypes = {
   align: PropTypes.oneOf(['start', 'center', 'end']),
-  children: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.object
-  ]),
-  content: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.object
-  ]),
-  margin: PropTypes.oneOf([
-    'xs', 'sm', 'md', 'lg', 'xl', 'none'
-  ]),
-  size: PropTypes.oneOf([
-    'sm', 'md', 'lg'
-  ])
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  content: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  margin: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl', 'none']),
+  size: PropTypes.oneOf(['sm', 'md', 'lg'])
 }
 
 export default Paragraph;

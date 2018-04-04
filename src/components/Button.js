@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import Icon from './Icon';
+import { Icon } from './';
 
 import { parseProperty } from './utils.js';
 
@@ -94,11 +94,12 @@ class Button extends Component {
 
     const LinkOrButton = !!path ? Button.withComponent(Link) : Button;
 
+    let order;
     let one = icon !== undefined
       ? <Icon key={ 0 } icon={ icon } color={ color } hoverColor={ hoverColor } />
       : null;
     let two = [ label, children ];
-    let order = reverse ? order = [two, one] : [one, two];
+    order = reverse ? order = [two, one] : [one, two];
 
     return (
       <LinkOrButton

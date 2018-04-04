@@ -1,9 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Redirect, Route } from 'react-router-dom';
 
-import Footer from './../components/Footer';
-import Image from './../components/Image';
-import Navigation from './../components/Navigation';
+import { Brand, Footer, Navigation } from './../components';
 
 import Design from './Design';
 import Organizations from './Organizations';
@@ -20,11 +18,8 @@ class App extends Component {
     } else {
       nav = <Navigation />;
       footer = (
-        <Footer alignItems='center' bgColor='dark' color='light' justify='end' width='1200px'>
-          <Image src={ require('./../assets/apollo-logo.png')} />
-          &nbsp;
-          <span style={{ fontFamily: 'var(--font-bold)' }}>APOLLO </span>
-          <span style={{ fontFamily: 'var(--font-light)' }}>&nbsp;INDUSTRIES</span>
+        <Footer alignItems='center' bgColor='dark' color='light' justify='end'>
+          <Brand />
         </Footer>
       );
     }

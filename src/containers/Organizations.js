@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import { items } from './../data/info.js';
 
-import Heading from './../components/Heading';
-import Subtitle from './../components/Subtitle';
-import Tabs from './../components/Tabs/Tabs';
+import { Heading, Subtitle, Tabs } from './../components';
 
 class Organizations extends Component {
   constructor(props) {
@@ -13,8 +12,12 @@ class Organizations extends Component {
   }
 
   render() {
+    const Organizations = styled.article`
+      animation: fadeEffect 1s;
+    `;
+
     return (
-      <article className='organizations'>
+      <Organizations>
         <div className='container'>
           <Heading content='Our structure' align='center' size='xl' />
           <Subtitle
@@ -22,7 +25,7 @@ class Organizations extends Component {
             content='An organization is only as good as the people within' />
         </div>
         <Tabs items={ this.state.items }/>
-      </article>
+      </Organizations>
     );
   }
 }

@@ -2,14 +2,10 @@ import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
-import Button from './../components/Button';
-import Heading from './../components/Heading';
-import Search from './../components/Search';
-import Subtitle from './../components/Subtitle';
-import Table from './../components/Table';
+import { Brand, Heading, Search, Subtitle, Table } from './../components';
 
-import items from './../data/manifest.json';
-import { ButtonExamples } from './../data/components.js';
+import items from './../data/props.json';
+import { ButtonExamples } from './../data/examples.js';
 
 class Design extends Component {
   constructor(props) {
@@ -78,18 +74,6 @@ class Design extends Component {
       &.active {
         background-color: green;
         color: white;
-      }
-    `;
-
-    const Dropdown = styled.div`
-      background-color: #004575;
-      padding-left: 5%;
-      }
-    `;
-
-    const DropdownLink = Link.extend`
-      &:hover {
-        color: var(--gray);
       }
     `;
 
@@ -174,32 +158,21 @@ class Design extends Component {
       }
     `;
 
-    const Brand = styled.div`
-      color: var(--light);
-      display: flex;
-      font-size: 1rem;
-      justify-content: start;
-      padding: 10% 0 10% 10%;
-    `;
-
     const { currentItem: { name, family, properties }, headers } = this.state;
 
     return (
       <Fragment>
-        <Nav>
-          <Brand>
+        <Nav style={{ animation: 'fadeEffect 0.75s' }}>
+
             {/*<Image style={{ float: 'left',  height: 'auto', maxWidth: '24px', width: '100%' }} src={ require('./../../assets/apollo-logo.png')} />
           &nbsp;&nbsp;&nbsp;*/}
-            <div>
-              <span style={{ fontFamily: 'var(--font-bold)' }}>APOLLO </span>
-              <span style={{ fontFamily: 'var(--font-light)' }}>&nbsp;INDUSTRIES</span>
-            </div>
-          </Brand>
+          <Brand style={{ padding: '10% 0 10% 10%' }} />
+
           <Search placeholder='Search components...' onKeyUp={(e) => this._filterMenu(e)} />
           { this._renderMenu() }
         </Nav>
 
-        <section style={{ marginLeft: '270px', marginRight: '20px' }}>
+        <section style={{ marginLeft: '270px', marginRight: '20px', animation: 'fadeEffect 1s' }}>
           <Heading id={ family } content={ family } margin='xs' size='lg' weight='regular' style={{ display: 'inline-block' }} />
           <Subtitle content={ name } margin='none' size='md' style={{ display: 'inline-block', marginLeft: '1.5%' }}/>
           <Heading content='Properties' size='md' weight='light' margin='xs' />
