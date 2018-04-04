@@ -2,26 +2,21 @@ import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
-// import Button from './../../components/Button/Button';
-// import Card from './../../components/Card/Card';
-// import Footer from './../../components/Footer/Footer';
-import Heading from './../../components/Heading/Heading';
-// import Hero from './../../components/Hero/Hero';
-// import Image from './../../components/Image/Image';
-// import Logo from './../../components/Logo/Logo';
-// import Navigation from './../../components/Navigation/Navigation';
-// import Paragraph from './../../components/Paragraph/Paragraph';
-import Subtitle from './../../components/Subtitle/Subtitle';
-import Table from './../../components/Table/Table';
-// import Tabs from './../../components/Tabs/Tabs';
+import Button from './../components/Button';
+import Heading from './../components/Heading';
+import Search from './../components/Search';
+import Subtitle from './../components/Subtitle/Subtitle';
+import Table from './../components/Table';
 
-import items from './manifest.json';
+import items from './../data/manifest.json';
+import { ButtonExamples } from './../data/components.js';
 
 class Design extends Component {
   constructor(props) {
     super(props);
 
     this._onDropdown = this._onDropdown.bind(this);
+    this._filterMenu = this._filterMenu.bind(this);
 
     this.state = {
       headers: ['Property', 'Default', 'Options', 'Type', 'Description'],
@@ -52,6 +47,16 @@ class Design extends Component {
         items[i].style.display = 'none';
       }
     }
+  }
+
+  _getComponent(e) {
+    e.preventDefault();
+    let targetId = e.target.id;
+    let parentId = e.target.parentElement.previousSibling.id;
+
+    this.setState({
+      currentItem: this.state.items[parentId][targetId]
+    });
   }
 
   _renderMenu() {
@@ -139,16 +144,6 @@ class Design extends Component {
     );
   }
 
-  _getComponent(e) {
-    e.preventDefault();
-    let targetId = e.target.id;
-    let parentId = e.target.parentElement.previousSibling.id;
-
-    this.setState({
-      currentItem: this.state.items[parentId][targetId]
-    });
-  }
-
   render() {
     const Nav = styled.div`
       background-color: var(--blue);
@@ -175,7 +170,7 @@ class Design extends Component {
       }
 
       ::-webkit-scrollbar-thumb:hover {
-        background: var(--blue);
+        background: var(--dark);
       }
     `;
 
@@ -185,26 +180,6 @@ class Design extends Component {
       font-size: 1rem;
       justify-content: start;
       padding: 10% 0 10% 10%;
-    `;
-
-    const SearchBar = styled.input`
-      background-color: var(--blue);
-      border: none;
-      border-bottom: 1px solid #004575;
-      border-top: 1px solid #004575;
-      box-sizing: border-box;
-      color: var(--light);
-      display: flex;
-      outline: none;
-      overflow: hidden;
-      padding: 8% 0 8% 8%;
-      width: 100%;
-
-      ::placeholder {
-        color: var(--light);
-        font-family: var(--font-light);
-        opacity: 0.6;
-      }
     `;
 
     const { currentItem: { name, family, properties }, headers } = this.state;
@@ -220,7 +195,7 @@ class Design extends Component {
               <span style={{ fontFamily: 'var(--font-light)' }}>&nbsp;INDUSTRIES</span>
             </div>
           </Brand>
-          <SearchBar type='text' placeholder='Search components...' onKeyUp={(e) => this._filterMenu(e)} />
+          <Search placeholder='Search components...' onKeyUp={(e) => this._filterMenu(e)} />
           { this._renderMenu() }
         </Nav>
 
@@ -230,6 +205,9 @@ class Design extends Component {
           <Heading content='Properties' size='md' weight='light' margin='xs' />
 
           <Table headers={ headers } rows={ properties } />
+
+          <Heading content='Examples' size='md' weight='light' margin='xs' />
+          { ButtonExamples }
         </section>
 
       </Fragment>

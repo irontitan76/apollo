@@ -3,15 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 class Table extends Component {
-  _renderRows(TableRow, rows) {
-    return rows.map((row, key) => (
-      <TableRow key={`key_${key}`}>
-        { this._renderCells(row) }
-      </TableRow>
-    ));
-  }
-
-  _renderHeaders(headers) {
+  _headers(headers) {
     const TableHeader = styled.th`
       border-bottom: 1px solid var(--gray);
       font-family: var(--font-semibold);
@@ -26,7 +18,15 @@ class Table extends Component {
     ));
   }
 
-  _renderCells(row) {
+  _rows(TableRow, rows) {
+    return rows.map((row, key) => (
+      <TableRow key={`key_${key}`}>
+        { this._cells(row) }
+      </TableRow>
+    ));
+  }
+
+  _cells(row) {
     const TableCell = styled.td`
       text-align: left;
       font-family: var(--font-regular);
@@ -60,8 +60,8 @@ class Table extends Component {
       border-bottom: 1px solid var(--light);
 
       &:not(:first-child):hover {
-        background-color: var(--light);
-        color: var(--blue);
+        background-color: var(--green);
+        color: var(--light);
         cursor: pointer;
       }
     `;
@@ -70,9 +70,9 @@ class Table extends Component {
       <Table>
         <TableBody>
           <TableRow>
-            { this._renderHeaders(headers) }
+            { this._headers(headers) }
           </TableRow>
-          { this._renderRows(TableRow, rows) }
+          { this._rows(TableRow, rows) }
         </TableBody>
       </Table>
     );

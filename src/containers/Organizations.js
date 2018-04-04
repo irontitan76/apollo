@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import './Organizations.css';
-import { items } from './info.js';
+import { items } from './../data/info.js';
 
-import Heading from './../../components/Heading/Heading';
-import Subtitle from './../../components/Subtitle/Subtitle';
-import Tabs from './../../components/Tabs/Tabs';
+import Heading from './../components/Heading';
+import Subtitle from './../components/Subtitle/Subtitle';
+import Tabs from './../components/Tabs/Tabs';
 
 class Organizations extends Component {
   constructor(props) {

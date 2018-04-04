@@ -1,20 +1,14 @@
 import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Redirect, Route } from 'react-router-dom';
-import './App.css';
 
-import Footer from './../../components/Footer/Footer';
-import Image from './../../components/Image/Image';
-import Navigation from './../../components/Navigation/Navigation';
+import Footer from './../components/Footer';
+import Image from './../components/Image';
+import Navigation from './../components/Navigation/Navigation';
 
-import Design from './../Design/Design';
-import Organizations from './../Organizations/Organizations';
-import Splash from './../Splash/Splash';
-import Values from './../Values/Values';
-
-import fontawesome from '@fortawesome/fontawesome';
-import faAngleDown from '@fortawesome/fontawesome-pro-light/faAngleDown';
-
-fontawesome.library.add(faAngleDown);
+import Design from './Design';
+import Organizations from './Organizations';
+import Splash from './Splash';
+import Values from './Values';
 
 class App extends Component {
   render() {
@@ -27,22 +21,12 @@ class App extends Component {
       nav = <Navigation />;
       footer = (
         <Footer alignItems='center' bgColor='dark' color='light' justify='end' width='1200px'>
-          <Image src={ require('./../../assets/apollo-logo.png')} />
+          <Image src={ require('./../assets/apollo-logo.png')} />
           &nbsp;
           <span style={{ fontFamily: 'var(--font-bold)' }}>APOLLO </span>
           <span style={{ fontFamily: 'var(--font-light)' }}>&nbsp;INDUSTRIES</span>
         </Footer>
       );
-
-      // align-items: center;
-      // background-color: var(--dark);
-      // color: var(--light);
-      // display: flex;
-      // height: 75px;
-      // justify-content: flex-end;
-      // margin: 0 auto;
-      // max-width: 1200px;
-      // padding: 0 2%;
     }
 
     return (

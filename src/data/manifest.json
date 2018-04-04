@@ -5,18 +5,46 @@
       "family": "Structure",
       "properties": [
         {
+          "property": "center",
+          "default": "true",
+          "options": "true, false",
+          "type": "{ bool }",
+          "description": "Whether to center the elements within the App"
+        },
+        {
           "property": "children",
           "default": "null",
           "options": "n/a",
           "type": "{ string || object }",
-          "description": "This is the children description."
+          "description": "Pass child elements using the prop space between the JSX tags"
         },
         {
           "property": "content",
           "default": "null",
           "options": "n/a",
           "type": "{ string || object }",
-          "description": "This is the content description."
+          "description": "Pass child elements using the content prop within the JSX tag"
+        },
+        {
+          "property": "margin",
+          "default": 0,
+          "options": "xs, sm, md, lg, xl, [actual]",
+          "type": "{ string }",
+          "description": "Margin size around the App element"
+        },
+        {
+          "property": "maxWidth",
+          "default": "1200px",
+          "options": "n/a",
+          "type": "{ string }",
+          "description": "Maximum width of elements within App element"
+        },
+        {
+          "property": "width",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string }",
+          "description": "Width of the App element"
         }
       ]
     },
@@ -44,6 +72,13 @@
       "name": "Box",
       "family": "Structure",
       "properties": [
+        {
+          "property": "align",
+          "default": "left",
+          "options": "left, center, right",
+          "type": "{ string }",
+          "description": "Horizontal alignment of the Box"
+        },
         {
           "property": "children",
           "default": "null",
@@ -186,6 +221,62 @@
       "name": "Heading",
       "family": "Text",
       "properties": [
+        {
+          "property": "align",
+          "default": "left",
+          "options": "left, center, right",
+          "type": "{ string }",
+          "description": "Horizontal alignment of the Heading"
+        },
+        {
+          "property": "children",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "Pass child elements using the prop space between the JSX tags"
+        },
+        {
+          "property": "content",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "Pass child elements using the content prop within the JSX tag"
+        },
+        {
+          "property": "form",
+          "default": "none",
+          "options": "capitalize, lowercase, none, uppercase",
+          "type": "{ string }",
+          "description": "Whether to capitalize, lowercase, uppercase or pass child string as is"
+        },
+        {
+          "property": "margin",
+          "default": "null",
+          "options": "xs, sm, md, lg, xl, none, [actual]",
+          "type": "{ string }",
+          "description": "Margin size around the Heading element"
+        },
+        {
+          "property": "onClick",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ function }",
+          "description": "Function for when Heading is clicked"
+        },
+        {
+          "property": "size",
+          "default": "md",
+          "options": "xs, sm, md, lg, xl, [actual]",
+          "type": "{ string }",
+          "description": "Font size of the Heading"
+        },
+        {
+          "property": "weight",
+          "default": "semi",
+          "options": "light, regular, semi, bold, extra, [actual]",
+          "type": "{ string || number }",
+          "description": "Font weight of the Heading"
+        }
       ]
     },
     "paragraph": {
@@ -335,18 +426,109 @@
       "family": "Controls",
       "properties": [
         {
+          "property": "circle",
+          "default": "false",
+          "options": "true, false",
+          "type": "{ bool }",
+          "description": "Whether to render the element as a circular Button"
+        },
+        {
           "property": "children",
           "default": "null",
           "options": "n/a",
           "type": "{ string || object }",
-          "description": "This is the children description."
+          "description": "Pass child elements using the prop space between the JSX tags"
         },
         {
-          "property": "content",
+          "property": "className",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string }",
+          "description": "Additional classes"
+        },
+        {
+          "property": "color",
+          "default": "dark",
+          "options": "blue, brown, dark, gray, green, light, orange, purple, red, yellow, ![hex]",
+          "type": "{ string }",
+          "description": "Text color"
+        },
+        {
+          "property": "fill",
+          "default": "light",
+          "options": "blue, brown, dark, gray, green, light, orange, purple, red, yellow, ![hex]",
+          "type": "{ string }",
+          "description": "Background color"
+        },
+        {
+          "property": "hoverColor",
+          "default": "null",
+          "options": "blue, brown, dark, gray, green, light, orange, purple, red, yellow, ![hex]",
+          "type": "{ string }",
+          "description": "Text color on hover"
+        },
+        {
+          "property": "hoverFill",
+          "default": "null",
+          "options": "blue, brown, dark, gray, green, light, orange, purple, red, yellow, [hex]",
+          "type": "{ string }",
+          "description": "Background color on hover "
+        },
+        {
+          "property": "hoverLine",
+          "default": "null",
+          "options": "blue, brown, dark, gray, green, light, orange, purple, red, yellow, ![hex]",
+          "type": "{ string }",
+          "description": "Border color on hover"
+        },
+        {
+          "property": "icon",
+          "default": "null",
+          "options": "refer to Icon component",
+          "type": "{ string || object }",
+          "description": "Border color on hover"
+        },
+        {
+          "property": "label",
           "default": "null",
           "options": "n/a",
           "type": "{ string || object }",
-          "description": "This is the content description."
+          "description": "Pass child elements using the prop space between the JSX tags"
+        },
+        {
+          "property": "line",
+          "default": "null",
+          "options": "blue, brown, dark, gray, green, light, orange, purple, red, yellow, ![hex]",
+          "type": "{ string }",
+          "description": "Border color"
+        },
+        {
+          "property": "onClick",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ function }",
+          "description": "Function for when the element is clicked"
+        },
+        {
+          "property": "pad",
+          "default": "null",
+          "options": "xs, sm, md, lg, xl, ![actual]",
+          "type": "{ string }",
+          "description": "Border color"
+        },
+        {
+          "property": "reverse",
+          "default": "false",
+          "options": "true, false",
+          "type": "{ boolean }",
+          "description": "Whether icon is on right or left of any text"
+        },
+        {
+          "property": "round",
+          "default": "null",
+          "options": "true, false, ![radius]",
+          "type": "{ string || boolean }",
+          "description": "Whether button has rounded corners"
         }
       ]
     }

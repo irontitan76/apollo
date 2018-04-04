@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './Tabs.css';
 
-import Heading from './../Heading/Heading';
-import Paragraph from './../Paragraph/Paragraph';
+import Heading from './../Heading';
+import Paragraph from './../Paragraph';
 
 class Tabs extends Component {
   _open(e, tab) {

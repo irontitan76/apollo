@@ -8,9 +8,12 @@
   --orange: #DC8264; /* 220, 130, 100 */
   --green: #3E7859; /* 062, 120, 089 */
   --purple: #5A466E; /* 090, 070, 110 */
-  --yellow: #C29200; /* 194, 146, 000 */
+  --yellow: #F0BB20; /* 194, 146, 000 */
   --brown: #996633; /* 153, 102, 051 */
   --gray: #A6A6A6; /* 166, 166, 166 */
+
+  --primary: var(--blue);
+  --secondary: var(--purple);
 
   --font-light:     'open_sanslight';
   --font-regular:   'open_sansregular';
@@ -18,6 +21,73 @@
   --font-italic:    'open_sansitalic';
   --font-bold:      'open_sansbold';
   --font-extrabold: 'open_sansextrabold';
+
+  /* Default Component Styles */
+  /* --[component]-[attr] */
+
+  /* App Styles */
+  --app-height: 100%;
+  --app-margin: 0;
+  --app-maxWidth: 1200px;
+  --app-width: 100%;
+
+  /* Article Styles */
+
+  /* Button Styles */
+  --btn-background: var(--dark);
+  --btn-border: none;
+  --btn-color: var(--light);
+  --btn-cursor: pointer;
+  --btn-fontFamily: var(--font-semibold);
+  --btn-padding-sm: .50rem 1rem;
+  --btn-padding-md: .75rem 2rem;
+  --btn-padding-lg: 1.0rem 3rem;
+  --btn-padding-none: none;
+  --btn-width-xs: 75px;
+  --btn-width-sm: 150px;
+  --btn-width-md: 250px;
+  --btn-width-lg: 400px;
+  --btn-width-xl: 600px;
+  --btn-width-full: 100%;
+  --btn-width-auto: auto;
+  --btn-hover-background: none;
+  --btn-hover-color: auto;
+  --btn-text-padding: 1.2% 0 0 0;
+  --btn-icon-color: var(--light);
+  --btn-icon-padding: 0 0.5rem 0 0;
+  --btn-icon-hover-color: auto;
+
+  /* Card Styles */
+
+  /* Dropdown Styles */
+
+  /* Footer Styles */
+  --footer-alignItems: left;
+  --footer-background: transparent;
+  --footer-border: none;
+  --footer-height-xs: 50px;
+  --footer-height-sm: 75px;
+  --footer-height-md: 100px;
+  --footer-height-lg: 200px;
+  --footer-height-xl: 300px;
+  --footer-text-color: var(--dark);
+  --footer-width: none;
+
+  /* Paragraph Styles */
+  --paragraph-margin-xs: 2.667% 0 0.667% 0;
+  --paragraph-margin-sm: 3% 0 1% 0;
+  --paragraph-margin-md: 4% 0 1.334% 0;
+  --paragraph-margin-lg: 5.334% 0 2% 0;
+  --paragraph-margin-xl: 8% 0 2.667% 0;
+  --paragraph-margin-none: 0;
+  --paragraph-margin-auto: auto;
+  --paragraph-size-xs: 0.6rem;
+  --paragraph-size-sm: 0.8rem;
+  --paragraph-size-md: 1.0rem;
+  --paragraph-size-lg: 1.2rem;
+  --paragraph-size-xl: 1.5rem;
+
+
 }
 
 body, html, #root {

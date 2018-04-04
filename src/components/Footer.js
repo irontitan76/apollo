@@ -11,20 +11,12 @@ class Footer extends Component {
       background-color: ${full ? `var(--${bgColor})` : 'transparent'};
     `;
 
-    let ht;
-    if ( height === 'xs' ) ht = '50px';
-    else if ( height === 'sm' ) ht = '75px';
-    else if ( height === 'md' ) ht = '100px';
-    else if ( height === 'lg' ) ht = '200px';
-    else if ( height === 'xl' ) ht = '300px';
-    else ht = height;
-
     const Container = styled.div`
       align-items: ${alignItems};
       background-color: var(--${bgColor});
       color: var(--${color});
       display: flex;
-      height: ${ht};
+      height: ${height.length > 2 ? height : `var(--footer-height-${height})`};
       justify-content: flex-${justify};
       margin: ${width === 'none' ? 'auto' : '0 auto'};
       max-width: ${width};
