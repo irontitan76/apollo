@@ -2,7 +2,8 @@ import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
-import { App, Brand, Container, Heading, Search, Subtitle, Table } from './../components';
+import { Brand, Container, Dropdown, Heading, Search,
+  Subtitle, Table } from './../components';
 
 import items from './../data/props.json';
 import { ButtonExamples } from './../data/examples.js';
@@ -173,8 +174,8 @@ class Design extends Component {
         </Nav>
 
         <section wrap='wrap' style={{ marginLeft: '270px', marginRight: '20px', animation: 'fadeEffect 1s' }}>
-          <Heading id={ family } content={ family } margin='xs' size='lg' weight='regular' style={{ display: 'flex' }} />
-          <Subtitle content={ name } margin='none' size='md' style={{ display: 'flex', marginLeft: '1.5%' }}/>
+          <Heading id={ family } content={ family } margin='xs' size='lg' weight='regular' style={{ display: 'inline-block' }} />
+          <Subtitle content={ name } margin='none' size='md' style={{ display: 'inline-block', marginLeft: '1.5%' }}/>
           <Heading content='Properties' size='md' weight='light' margin='xs' />
 
           <Table headers={ headers } rows={ properties } />
@@ -183,8 +184,7 @@ class Design extends Component {
           { ButtonExamples }
 
           <Container>
-            Hello
-            <div>Hello 2</div>
+            <Dropdown />
           </Container>
         </section>
 

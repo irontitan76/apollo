@@ -59,6 +59,12 @@
 
   /* Card Styles */
 
+  /* Container Styles */
+  --container-height-md: 100px;
+  --container-margin-md: auto;
+  --container-pad-md: auto;
+  --container-width-md: auto;
+
   /* Dropdown Styles */
 
   /* Footer Styles */
