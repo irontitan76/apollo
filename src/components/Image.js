@@ -27,9 +27,9 @@ class Image extends Component {
     else { h = height; w = width; }
 
     const Image = styled.img`
-      height: ${h};
+      height:     ${h};
       ${maxWidth}
-      width: ${w};
+      width:      ${w};
     `;
 
     return <Image alt={ alt } onClick={ onClick } className={ className } src={ src } style={ style } />;

@@ -5,10 +5,10 @@ import styled from 'styled-components';
 class Table extends Component {
   _headers(headers) {
     const TableHeader = styled.th`
-      border-bottom: 1px solid var(--gray);
-      font-family: var(--font-semibold);
-      padding: 12px 8px;
-      text-align: left;
+      border-bottom:      1px solid var(--gray);
+      font-family:        var(--font-semibold);
+      padding:            12px 8px;
+      text-align:         left;
     `;
 
     return headers.map((header, key) => (
@@ -28,9 +28,9 @@ class Table extends Component {
 
   _cells(row) {
     const TableCell = styled.td`
-      text-align: left;
-      font-family: var(--font-regular);
-      padding: 8px;
+      text-align:       left;
+      font-family:      var(--font-regular);
+      padding:          8px;
     `;
 
     return Object.keys(row).map((cell, key) => (
@@ -44,12 +44,12 @@ class Table extends Component {
     const { headers, rows } = this.props;
 
     const Table = styled.table`
-      border-bottom: 1px solid var(--light);
-      border-top: 1px solid var(--light);
-      border-collapse: collapse;
-      border-spacing: 0;
-      font-size: 0.8rem;
-      width: 100%;
+      border-bottom:    1px solid var(--light);
+      border-top:       1px solid var(--light);
+      border-collapse:  collapse;
+      border-spacing:   0;
+      font-size:        0.8rem;
+      width:            100%;
     `;
 
     const TableBody = styled.tbody`
@@ -57,12 +57,12 @@ class Table extends Component {
     `;
 
     const TableRow = styled.tr`
-      border-bottom: 1px solid var(--light);
+      border-bottom:    1px solid var(--light);
 
       &:not(:first-child):hover {
         background-color: var(--green);
-        color: var(--light);
-        cursor: pointer;
+        color:            var(--light);
+        cursor:           pointer;
       }
     `;
 

@@ -35,10 +35,10 @@ class Subtitle extends Component {
 
 const COLORS = [
   'blue', 'brown', 'dark', 'gray', 'green', 'light', 'orange', 'purple', 'red',
-  'yellow', PropTypes.string
+  'yellow'
  ];
 
-const SIZES = ['xs', 'sm', 'md', 'lg', 'xl', PropTypes.string];
+const SIZES = ['xs', 'sm', 'md', 'lg', 'xl', 'none'];
 
 Subtitle.propTypes = {
   align: PropTypes.oneOf(['left', 'center', 'right']),
@@ -57,7 +57,6 @@ Subtitle.defaultProps = {
   form: 'none',
   hoverColor: 'blue',
   margin: 'md',
-  onClick: null,
   size: 'md'
 };
 

@@ -5,29 +5,32 @@ import { Image } from './';
 
 class Brand extends Component {
   render() {
-    const { company, org, ...props } = this.props;
+    const { color, company, justify, noLogo, org, size, ...props } = this.props;
 
     const Container = styled.div`
-      box-sizing: border-box;
-      display: flex;
-      font-size: 1rem;
-      justify-content: start;
+      box-sizing:       border-box;
+      display:          flex;
+      font-size:        ${size};
+      justify-content:  ${justify};
     `
 
     return (
       <Container key={ `key__${org}` } {...props}>
-        <Image src={ require('./../assets/apollo-logo.png')} />
+        {noLogo ? null : <Image src={ require('./../assets/apollo-logo.png')} />}
         &nbsp;
-        <span style={{ color: 'var(--light)', fontFamily: 'open_sansbold' }}>{company}</span>&nbsp;
-        <span style={{ color: 'var(--light)', fontFamily: 'open_sanslight' }}>{org}</span>
+        <span style={{ color: `var(--${color})`, fontFamily: 'open_sansbold' }}>{company}</span>&nbsp;
+        <span style={{ color: `var(--${color})`, fontFamily: 'open_sanslight' }}>{org}</span>
       </Container>
     );
   }
 }
 
 Brand.defaultProps = {
+  color: 'light',
   company: 'APOLLO',
-  org: 'INDUSTRIES'
+  justify: 'start',
+  org: 'INDUSTRIES',
+  size: '1rem'
 }
 
 export default Brand;

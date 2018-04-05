@@ -8,19 +8,19 @@ class Footer extends Component {
       full, height, justify, style, width } = this.props;
 
     const Footer = styled.div`
-      background-color: ${full ? `var(--${bgColor})` : 'transparent'};
+      background-color:   ${full ? `var(--${bgColor})` : 'transparent'};
     `;
 
     const Container = styled.div`
-      align-items: ${alignItems};
-      background-color: var(--${bgColor});
-      border: ${border};
-      color: var(--${color});
-      display: flex;
-      height: ${height.length > 2 ? height : `var(--footer-height-${height})`};
-      justify-content: flex-${justify};
-      margin: ${width === 'none' ? 'auto' : '0 auto'};
-      max-width: ${width};
+      align-items:        ${alignItems};
+      background-color:   var(--${bgColor});
+      border:             ${border};
+      color:              var(--${color});
+      display:            flex;
+      height:             ${height.length > 2 ? height : `var(--footer-height-${height})`};
+      justify-content:    flex-${justify};
+      margin:             ${width === 'none' ? 'auto' : '0 auto'};
+      max-width:          ${width};
     `;
 
     return (

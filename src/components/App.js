@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-class Applet extends Component {
+class App extends Component {
   render() {
-    const { center, children, className, maxWidth, ...props } = this.props;
+    const { center, maxWidth, ...props } = this.props;
 
     let margin, width;
 
@@ -14,34 +14,30 @@ class Applet extends Component {
     }
 
     const App = styled.div`
-      bottom: 0;
-      height: 100%;
-      left: 0;
-      margin: ${margin};
-      max-width: ${maxWidth};
-      overflow: visible;
-      right: 0;
-      top: 0;
-      width: ${width};
+      bottom:     0;
+      height:     100%;
+      left:       0;
+      margin:     ${margin};
+      max-width:  ${maxWidth};
+      overflow:   visible;
+      right:      0;
+      top:        0;
+      width:      ${width};
     `;
 
-    return (
-      <App {...props}>
-        { children }
-      </App>
-    )
+    return <App {...props} />;
   }
 }
 
-Applet.propTypes = {
+App.propTypes = {
   center: PropTypes.bool,
-  margin: PropTypes.oneOf([PropTypes.number, PropTypes.string])
+  margin: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
 }
 
-Applet.defaultProps = {
-  center: true,
+App.defaultProps = {
+  center: false,
   margin: 0,
   maxWidth: '1200px'
 }
 
-export default Applet;
+export default App;

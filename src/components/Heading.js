@@ -33,10 +33,10 @@ class Heading extends Component {
     else mgn = margin;
 
     const Heading = styled.div`
-      cursor: ${onClick === null ? 'auto' : 'pointer'}
-      font-size: ${fontSize};
-      margin: ${mgn};
-      text-align: ${align};
+      cursor:         ${onClick === null ? 'auto' : 'pointer'}
+      font-size:      ${fontSize};
+      margin:         ${mgn};
+      text-align:     ${align};
       text-transform: ${form};
       ${wgt};
     `;

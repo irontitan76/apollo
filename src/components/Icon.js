@@ -11,10 +11,10 @@ class Icon extends Component {
     let result;
 
     let Icon = styled.span`
-      color: ${parseProperty(color, 'var(--!)')};
+      color:    ${parseProperty(color, 'var(--!)')};
 
       &:hover, &:focus {
-        color: var(--${hoverColor});
+        color:  var(--${hoverColor});
       }
     `;
 

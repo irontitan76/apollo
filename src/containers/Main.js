@@ -1,14 +1,14 @@
 import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Redirect, Route } from 'react-router-dom';
 
-import { Brand, Footer, Navigation } from './../components';
+import { App, Brand, Footer, Navigation } from './../components';
 
 import Design from './Design';
 import Organizations from './Organizations';
 import Splash from './Splash';
 import Values from './Values';
 
-class App extends Component {
+class Main extends Component {
   render() {
     let nav, footer;
 
@@ -28,13 +28,13 @@ class App extends Component {
       <Router>
         <Fragment>
           { nav }
-
-          <Route exact path="/" render={() => <Redirect to='/splash' />} />
-          <Route exact path='/design' component={ Design } />
-          <Route exact path='/org' component={ Organizations } />
-          <Route exact path='/splash' component={ Splash } />
-          <Route exact path="/values" component={ Values } />
-
+          <App maxWidth='100%'>
+            <Route exact path="/" render={() => <Redirect to='/splash' />} />
+            <Route exact path='/design' component={ Design } />
+            <Route exact path='/org' component={ Organizations } />
+            <Route exact path='/splash' component={ Splash } />
+            <Route exact path="/values" component={ Values } />
+          </App>
           { footer }
         </Fragment>
       </Router>
@@ -42,4 +42,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Main;

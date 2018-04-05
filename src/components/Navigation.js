@@ -19,59 +19,59 @@ class Navigation extends Component {
 
   render() {
     const Nav = styled.nav`
-      background-color: var(--dark);
-      min-width: 100%;
+      background-color:     var(--dark);
+      min-width:            100%;
     `;
 
     const Container = styled.nav`
-      align-items: center;
-      display: flex;
-      justify-content: space-between;
-      margin: 0 auto;
-      max-width: 1200px;
-      padding: 0 2%;
+      align-items:          center;
+      display:              flex;
+      justify-content:      space-between;
+      margin:               0 auto;
+      max-width:            1200px;
+      padding:              0 2%;
 
       @media (max-width: 768px) {
-        display: block;
-        padding: 0 2%;
+        display:            block;
+        padding:            0 2%;
       }
     `;
 
     const Brand = styled(NavLink)`
-      padding-right: 3rem;
+      padding-right:        3rem;
 
       &:hover {
-        filter: brightness(75%);
+        filter:             brightness(75%);
       }
 
       @media (max-width: 768px) {
-        padding-left: 0;
-        padding-right: 0;
+        padding-left:       0;
+        padding-right:      0;
 
         img {
-          margin-top: 1em;
+          margin-top:       1em;
         }
       }
     `;
 
     const Menu = styled.ul`
-      display: flex;
-      justify-content: space-between;
-      list-style-type: none;
-      width: 50%;
+      display:            flex;
+      justify-content:    space-between;
+      list-style-type:    none;
+      width:              50%;
 
       @media (max-width: 768px) {
-        border-bottom: 12px solid var(--blue);
-        display: block;
-        height: 0;
+        border-bottom:    12px solid var(--blue);
+        display:          block;
+        height:           0;
         list-style-type: none;
-        margin: 0;
-        opacity: 0;
-        padding: 0;
-        text-align: center;
-        transition: all .25s ease;
-        width: 100%;
-        visibility: hidden;
+        margin:           0;
+        opacity:          0;
+        padding:          0;
+        text-align:       center;
+        transition:       all .25s ease;
+        width:            100%;
+        visibility:       hidden;
       }
     `;
 
