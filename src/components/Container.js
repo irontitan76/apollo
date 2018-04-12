@@ -7,8 +7,9 @@ import { parseProperty } from './utils.js';
 class Container extends Component {
   render() {
     const {
-      alignContent, alignItems, basis, children, color, direction, height,
-      justify, margin, pad, reverse, size, textAlign, width, wrap, ...props
+      alignContent, alignItems, animation, basis, bgColor, border, children,
+      color, direction, height, justify, margin, pad, onClick, reverse, size,
+      textAlign, width, wrap, ...props
     } = this.props;
 
     let itemAlign, contentAlign, just;
@@ -37,9 +38,14 @@ class Container extends Component {
     let h = height || size;
 
     const Container = styled.div`
+      animation:        ${animation};
       align-content:    ${contentAlign};
       align-items:      ${itemAlign};
+      background:       ${parseProperty(bgColor, 'var(--!)')};
+      border:           2px solid ${parseProperty(border, 'var(--!)')};
+      box-sizing:       border-box;
       color:            ${color};
+      cursor:           ${!!onClick ? 'pointer': 'auto'}
       display:          flex;
       flex-basis:       ${basis};
       flex-direction:   ${direction};
@@ -47,13 +53,13 @@ class Container extends Component {
       height:           ${parseProperty(h, 'var(--container-height-!)')};
       justify-content:  ${just};
       margin:           ${parseProperty(margin, 'var(--container-margin-!)')};
-      pad:              ${parseProperty(pad, 'var(--container-pad-!)')};
+      padding:          ${parseProperty(pad, 'var(--container-pad-!)')};
       text-align:       ${textAlign};
       width:            ${parseProperty(w, 'var(--container--width-!)')};
     `;
 
     let result = [];
-    let numChildren = Object.keys(children).length - 1;
+    let numChildren = children !== undefined ? Object.keys(children).length - 1 : 0;
 
     if ( reverse && children.length > 0 ) {
       children.map(child => {
@@ -72,8 +78,11 @@ class Container extends Component {
 }
 
 Container.defaultProps = {
+  animation: 'none',
   alignContent: 'stretch',
   alignItems: 'stretch',
+  bgColor: 'light',
+  border: 'none',
   direction: 'row',
   justify: 'start',
   height: 'md',

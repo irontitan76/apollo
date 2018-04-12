@@ -6,6 +6,7 @@ import { Heading, Image, Paragraph, Subtitle } from './../components';
 class Values extends Component {
   render() {
     const Values = styled.article`
+      animation: fadeEffect 1s;
       margin: 0 auto;
       max-width: 1200px;
       padding: 0 1rem;
@@ -67,7 +68,7 @@ class Values extends Component {
     `;
 
     return (
-      <Values style={{ animation: 'fadeEffect 1s' }}>
+      <Values>
         <Heading content='Our mission' align='center' size='xl' />
         <Subtitle content='We strive to reshape industries for the good of humanity' align='center'/>
         <Image src={ require('./../assets/bg4.jpg' )} alt='future of tech' margin='md' />

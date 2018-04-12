@@ -10,9 +10,9 @@ import { parseProperty } from './utils.js';
 class Button extends Component {
   render() {
     const {
-      children, className, color, fill, hoverColor, hoverFill, hoverLine, href,
-      icon, label, line, onClick, pad, path, primary, reverse, round, secondary,
-      style, width
+      children, color, fill, hoverColor, hoverFill, hoverLine, href,  icon,
+      label, line, onClick, pad, path, primary, reverse, round, secondary,
+      width, ...props
     } = this.props;
 
     let Button = styled.button`
@@ -103,11 +103,10 @@ class Button extends Component {
 
     return (
       <LinkOrButton
-        className={ className }
         href={ href }
         onClick={ onClick }
         to={ path }
-        style={ style }>
+        { ...props }>
         { order }
       </LinkOrButton>
     );

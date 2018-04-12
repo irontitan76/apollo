@@ -2,8 +2,9 @@ import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
-import { Brand, Container, Dropdown, Heading, Search,
-  Subtitle, Table } from './../components';
+import {
+  Brand, Card, Container, Heading, Menu, Search, Sidebar, Subtitle, Table
+} from './../components';
 
 import items from './../data/props.json';
 import { ButtonExamples } from './../data/examples.js';
@@ -58,15 +59,15 @@ class Design extends Component {
 
   _renderMenu() {
     const Link = styled.a`
-      background: none;
-      border: none;
-      color: var(--light);
-      cursor: pointer;
-      display: block;
-      outline: none;
-      padding: 4% 3.5% 3% 8%;
-      text-align: left;
-      text-decoration: none;
+      background:       none;
+      border:           none;
+      color:            var(--light);
+      cursor:           pointer;
+      display:          block;
+      outline:          none;
+      padding:          4% 3.5% 3% 8%;
+      text-align:       left;
+      text-decoration:  none;
 
       &:hover {
         background-color: #004575;
@@ -118,8 +119,8 @@ class Design extends Component {
           Object.keys(items[item]).map((subItem, key) => (
             <DropdownLink
               key={`key_${key}`}
-              id={subItem.toLowerCase()}
-              href={`#${subItem.toLowerCase()}`}
+              id={subItem}
+              href={`#${subItem}`}
               onClick={(e) => this._getComponent(e) }>
               { items[item][subItem].name }
             </DropdownLink>
@@ -130,64 +131,58 @@ class Design extends Component {
   }
 
   render() {
-    const Nav = styled.div`
-      background-color: var(--blue);
-      font-size: 0.8rem;
-      height: 100%;
-      left: 0;
-      overflow-x: hidden;
-      overflow-y: scroll;
-      position: fixed;
-      top: 0;
-      width: 250px;
-      z-index: 1;
-
-      ::-webkit-scrollbar {
-        width: 10px;
-      }
-
-      ::-webkit-scrollbar-track {
-        background: var(--light);
-      }
-
-      ::-webkit-scrollbar-thumb {
-        background: #ddd;
-      }
-
-      ::-webkit-scrollbar-thumb:hover {
-        background: var(--dark);
-      }
-    `;
-
     const { currentItem: { name, family, properties }, headers } = this.state;
 
     return (
       <Fragment>
-        <Nav style={{ animation: 'fadeEffect 0.75s' }}>
-
-            {/*<Image style={{ float: 'left',  height: 'auto', maxWidth: '24px', width: '100%' }} src={ require('./../../assets/apollo-logo.png')} />
-          &nbsp;&nbsp;&nbsp;*/}
-          <Brand style={{ padding: '10% 0 10% 10%' }} />
-
-          <Search placeholder='Search components...' onKeyUp={(e) => this._filterMenu(e)} />
+        <Sidebar bgColor='blue'>
+          <Brand
+            alignItems='center'
+            bgColor='blue'
+            justify='start'
+            height='!75px'
+            pad='!10% 0 10% 10%' />
+          <Search
+            placeholder='Search components...'
+            onKeyUp={(e) => this._filterMenu(e)} />
           { this._renderMenu() }
-        </Nav>
+          <Menu items={ items } />
+        </Sidebar>
 
-        <section wrap='wrap' style={{ marginLeft: '270px', marginRight: '20px', animation: 'fadeEffect 1s' }}>
-          <Heading id={ family } content={ family } margin='xs' size='lg' weight='regular' style={{ display: 'inline-block' }} />
-          <Subtitle content={ name } margin='none' size='md' style={{ display: 'inline-block', marginLeft: '1.5%' }}/>
-          <Heading content='Properties' size='md' weight='light' margin='xs' />
-
-          <Table headers={ headers } rows={ properties } />
-
-          <Heading content='Examples' size='md' weight='light' margin='xs' />
-          { ButtonExamples }
-
-          <Container>
-            <Dropdown />
-          </Container>
-        </section>
-
+        <Container
+          animation='fadeEffect 1s'
+          direction='column'
+          margin='!auto 20px auto 270px'>
+          <div>
+            <Heading
+              id={ family }
+              content={ family }
+              margin='xs'
+              size='lg'
+              style={{ display: 'inline-block' }}
+              weight='regular' />
+            <Subtitle
+              content={ name }
+              margin='none'
+              size='md'
+              style={{ display: 'inline-block', marginLeft: '1.5%' }} />
+          </div>
+          <div>
+            <Heading content='Properties' size='md' weight='light' margin='xs' />
+            <Table headers={ headers } rows={ properties } />
+          </div>
+          <div>
+            <Heading content='Examples' size='md' weight='light' margin='xs' />
+            { ButtonExamples }
+          </div>
+          <div>
+            <Card
+              heading='Card'
+              content='This is content for a card component'
+              meta='Meta'
+              style={{ boxShadow: '2px 4px 8px 2px var(--gray)'}} />
+          </div>
+        </Container>
 
       </Fragment>
     );

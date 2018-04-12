@@ -5,15 +5,8 @@ import styled from 'styled-components';
 class Image extends Component {
   render() {
     const {
-      alt,
-      className,
-      height,
-      onClick,
-      responsive,
-      size,
-      src,
-      style,
-      width } = this.props;
+      alt, height, responsive, size, width, ...props
+    } = this.props;
 
     let h, maxWidth, w;
 
@@ -28,11 +21,11 @@ class Image extends Component {
 
     const Image = styled.img`
       height:     ${h};
-      ${maxWidth}
       width:      ${w};
+      ${maxWidth}
     `;
 
-    return <Image alt={ alt } onClick={ onClick } className={ className } src={ src } style={ style } />;
+    return <Image { ...props } />;
   }
 }
 

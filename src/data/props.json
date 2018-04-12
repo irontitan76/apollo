@@ -48,8 +48,8 @@
         }
       ]
     },
-    "article": {
-      "name": "Article",
+    "card": {
+      "name": "Card",
       "family": "Structure",
       "properties": [
         {
@@ -68,8 +68,8 @@
         }
       ]
     },
-    "box": {
-      "name": "Box",
+    "container": {
+      "name": "Container",
       "family": "Structure",
       "properties": [
         {
@@ -79,26 +79,6 @@
           "type": "{ string }",
           "description": "Horizontal alignment of the Box"
         },
-        {
-          "property": "children",
-          "default": "null",
-          "options": "n/a",
-          "type": "{ string || object }",
-          "description": "This is the children description."
-        },
-        {
-          "property": "content",
-          "default": "null",
-          "options": "n/a",
-          "type": "{ string || object }",
-          "description": "This is the content description."
-        }
-      ]
-    },
-    "card": {
-      "name": "Card",
-      "family": "Structure",
-      "properties": [
         {
           "property": "children",
           "default": "null",
@@ -175,9 +155,9 @@
         }
       ]
     },
-    "section": {
-      "name": "Section",
-      "family": "Structure",
+    "sidebar": {
+      "name": "Sidebar",
+      "family": "Navigation",
       "properties": [
         {
           "property": "children",
@@ -299,6 +279,137 @@
     }
   },
   "navigation": {
+    "anchor": {
+      "name": "Anchor",
+      "family": "Controls",
+      "properties": [
+        {
+          "property": "children",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the children description."
+        },
+        {
+          "property": "content",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the content description."
+        }
+      ]
+    },
+    "button": {
+      "name": "Button",
+      "family": "Controls",
+      "properties": [
+        {
+          "property": "circle",
+          "default": "false",
+          "options": "true, false",
+          "type": "{ bool }",
+          "description": "Whether to render the element as a circular Button"
+        },
+        {
+          "property": "children",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "Pass child elements using the prop space between the JSX tags"
+        },
+        {
+          "property": "className",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string }",
+          "description": "Additional classes"
+        },
+        {
+          "property": "color",
+          "default": "dark",
+          "options": "color, ![hex]",
+          "type": "{ string }",
+          "description": "Text color"
+        },
+        {
+          "property": "fill",
+          "default": "light",
+          "options": "color, ![hex]",
+          "type": "{ string }",
+          "description": "Background color"
+        },
+        {
+          "property": "hoverColor",
+          "default": "null",
+          "options": "color, ![hex]",
+          "type": "{ string }",
+          "description": "Text color on hover"
+        },
+        {
+          "property": "hoverFill",
+          "default": "null",
+          "options": "color, [hex]",
+          "type": "{ string }",
+          "description": "Background color on hover "
+        },
+        {
+          "property": "hoverLine",
+          "default": "null",
+          "options": "color, ![hex]",
+          "type": "{ string }",
+          "description": "Border color on hover"
+        },
+        {
+          "property": "icon",
+          "default": "null",
+          "options": "refer to Icon component",
+          "type": "{ string || object }",
+          "description": "Border color on hover"
+        },
+        {
+          "property": "label",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "Pass child elements using the prop space between the JSX tags"
+        },
+        {
+          "property": "line",
+          "default": "null",
+          "options": "color, ![hex]",
+          "type": "{ string }",
+          "description": "Border color"
+        },
+        {
+          "property": "onClick",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ function }",
+          "description": "Function for when the element is clicked"
+        },
+        {
+          "property": "pad",
+          "default": "null",
+          "options": "xs, sm, md, lg, xl, ![actual]",
+          "type": "{ string }",
+          "description": "Border color"
+        },
+        {
+          "property": "reverse",
+          "default": "false",
+          "options": "true, false",
+          "type": "{ boolean }",
+          "description": "Whether icon is on right or left of any text"
+        },
+        {
+          "property": "round",
+          "default": "null",
+          "options": "true, false, ![radius]",
+          "type": "{ string || boolean }",
+          "description": "Whether button has rounded corners"
+        }
+      ]
+    },
     "footer": {
       "name": "Footer",
       "family": "Navigation",
@@ -379,6 +490,26 @@
         }
       ]
     },
+    "search": {
+      "name": "Search",
+      "family": "Navigation",
+      "properties": [
+        {
+          "property": "children",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the children description."
+        },
+        {
+          "property": "content",
+          "default": "null",
+          "options": "n/a",
+          "type": "{ string || object }",
+          "description": "This is the content description."
+        }
+      ]
+    },
     "tabs": {
       "name": "Tabs",
       "family": "Navigation",
@@ -400,143 +531,10 @@
       ]
     }
   },
-  "controls": {
-    "anchor": {
-      "name": "Anchor",
-      "family": "Controls",
-      "properties": [
-        {
-          "property": "children",
-          "default": "null",
-          "options": "n/a",
-          "type": "{ string || object }",
-          "description": "This is the children description."
-        },
-        {
-          "property": "content",
-          "default": "null",
-          "options": "n/a",
-          "type": "{ string || object }",
-          "description": "This is the content description."
-        }
-      ]
-    },
-    "button": {
-      "name": "Button",
-      "family": "Controls",
-      "properties": [
-        {
-          "property": "circle",
-          "default": "false",
-          "options": "true, false",
-          "type": "{ bool }",
-          "description": "Whether to render the element as a circular Button"
-        },
-        {
-          "property": "children",
-          "default": "null",
-          "options": "n/a",
-          "type": "{ string || object }",
-          "description": "Pass child elements using the prop space between the JSX tags"
-        },
-        {
-          "property": "className",
-          "default": "null",
-          "options": "n/a",
-          "type": "{ string }",
-          "description": "Additional classes"
-        },
-        {
-          "property": "color",
-          "default": "dark",
-          "options": "blue, brown, dark, gray, green, light, orange, purple, red, yellow, ![hex]",
-          "type": "{ string }",
-          "description": "Text color"
-        },
-        {
-          "property": "fill",
-          "default": "light",
-          "options": "blue, brown, dark, gray, green, light, orange, purple, red, yellow, ![hex]",
-          "type": "{ string }",
-          "description": "Background color"
-        },
-        {
-          "property": "hoverColor",
-          "default": "null",
-          "options": "blue, brown, dark, gray, green, light, orange, purple, red, yellow, ![hex]",
-          "type": "{ string }",
-          "description": "Text color on hover"
-        },
-        {
-          "property": "hoverFill",
-          "default": "null",
-          "options": "blue, brown, dark, gray, green, light, orange, purple, red, yellow, [hex]",
-          "type": "{ string }",
-          "description": "Background color on hover "
-        },
-        {
-          "property": "hoverLine",
-          "default": "null",
-          "options": "blue, brown, dark, gray, green, light, orange, purple, red, yellow, ![hex]",
-          "type": "{ string }",
-          "description": "Border color on hover"
-        },
-        {
-          "property": "icon",
-          "default": "null",
-          "options": "refer to Icon component",
-          "type": "{ string || object }",
-          "description": "Border color on hover"
-        },
-        {
-          "property": "label",
-          "default": "null",
-          "options": "n/a",
-          "type": "{ string || object }",
-          "description": "Pass child elements using the prop space between the JSX tags"
-        },
-        {
-          "property": "line",
-          "default": "null",
-          "options": "blue, brown, dark, gray, green, light, orange, purple, red, yellow, ![hex]",
-          "type": "{ string }",
-          "description": "Border color"
-        },
-        {
-          "property": "onClick",
-          "default": "null",
-          "options": "n/a",
-          "type": "{ function }",
-          "description": "Function for when the element is clicked"
-        },
-        {
-          "property": "pad",
-          "default": "null",
-          "options": "xs, sm, md, lg, xl, ![actual]",
-          "type": "{ string }",
-          "description": "Border color"
-        },
-        {
-          "property": "reverse",
-          "default": "false",
-          "options": "true, false",
-          "type": "{ boolean }",
-          "description": "Whether icon is on right or left of any text"
-        },
-        {
-          "property": "round",
-          "default": "null",
-          "options": "true, false, ![radius]",
-          "type": "{ string || boolean }",
-          "description": "Whether button has rounded corners"
-        }
-      ]
-    }
-  },
-  "Data Models": {
+  "models": {
     "list": {
       "name": "List",
-      "family": "Data Models",
+      "family": "Models",
       "properties": [
         {
           "property": "children",
@@ -554,7 +552,7 @@
         }
       ]
     },
-    "Table": {
+    "table": {
       "name": "Table",
       "family": "Data Models",
       "properties": [
@@ -571,6 +569,34 @@
           "options": "n/a",
           "type": "{ string || object }",
           "description": "This is the content description."
+        }
+      ]
+    }
+  },
+  "animation": {
+    "fadeIn": {
+      "name": "Fade In",
+      "family": "Animation",
+      "properties": [
+        {
+          "property": "ts",
+          "default": "0.5",
+          "options": "n/a",
+          "type": "{ string || number }",
+          "description": "The time in seconds of the animation"
+        }
+      ]
+    },
+    "fadeOut": {
+      "name": "Fade Out",
+      "family": "Animation",
+      "properties": [
+        {
+          "property": "ts",
+          "default": "0.5",
+          "options": "n/a",
+          "type": "{ string || number }",
+          "description": "The time in seconds of the animation"
         }
       ]
     }

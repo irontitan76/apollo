@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Stucture",
+    "path": "/structure",
+    "children": [
+      {
+        "name": "App",
+        "path": "/app",
+        "description": "A container for the entire web application",
+        "properties": [
+          {
+            "property": "center",
+            "path": "/app/#center",
+            "default": "true",
+            "options": "true, false",
+            "type": "{ bool }",
+            "description": "Whether to center the elements within the App",
+            "content": ""
+          },
+          {
+            "property": "children",
+            "path": "#children",
+            "property": "children",
+            "default": "null",
+            "options": "n/a",
+            "type": "{ string || object }",
+            "description": "Pass child elements using the prop space between the JSX tags",
+            "content": ""
+          },
+          {
+            "property": "content",
+            "path": "#content",
+            "default": "null",
+            "options": "n/a",
+            "type": "{ string || object }",
+            "description": "Pass child elements using the content prop within the JSX tag",
+            "content": ""
+          },
+          {
+            "property": "margin",
+            "path": "#margin",
+            "default": 0,
+            "options": "xs, sm, md, lg, xl, [actual]",
+            "type": "{ string }",
+            "description": "Margin size around the App element",
+            "content": ""
+          },
+          {
+            "property": "maxWidth",
+            "path": "maxWidth",
+            "default": "1200px",
+            "options": "n/a",
+            "type": "{ string }",
+            "description": "Maximum width of elements within App element",
+            "content": ""
+          },
+          {
+            "property": "width",
+            "path": "width",
+            "default": "null",
+            "options": "n/a",
+            "type": "{ string }",
+            "description": "Width of the App element",
+            "content": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Animation",
+    "path": "/animation",
+    "children": [
+      {
+        "name": "Fade In",
+        "path": "/fadein",
+        "description": "An effect that increases opacity to 1 on component entry",
+        "properties": [
+          {
+            "property": "ts",
+            "path": "#ts",
+            "default": "0.5",
+            "options": "n/a",
+            "type": "{ string || number }",
+            "description": "The time of the animation in seconds",
+            "content": ""
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -4,7 +4,9 @@ import styled from 'styled-components';
 
 class Heading extends Component {
   render() {
-    const { align, children, className, content, form, onClick, size, style } = this.props;
+    const {
+      align, children, className, content, form, onClick, size, style
+    } = this.props;
 
     let { margin, weight } = this.props;
 

@@ -6,6 +6,7 @@ import { Button, Image } from './../components';
 class Splash extends Component {
   render() {
     const Splash = styled.div`
+      animation:        fadeEffect 1s;
       background-color: var(--dark);
       color:            var(--light);
       min-height:       100vh;
@@ -21,7 +22,7 @@ class Splash extends Component {
     `;
 
     return (
-      <Splash style={{ animation: 'fadeEffect 1s' }}>
+      <Splash>
         <Title>
           <Image
             style={{ display: 'block', margin: 'auto auto 7% auto' }}

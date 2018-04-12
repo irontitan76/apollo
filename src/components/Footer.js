@@ -4,8 +4,10 @@ import styled from 'styled-components';
 
 class Footer extends Component {
   render() {
-    const { alignItems, bgColor, border, children, className, color, content,
-      full, height, justify, style, width } = this.props;
+    const {
+      alignItems, bgColor, border, children, color, content, full,
+      height, justify, width, ...props
+    } = this.props;
 
     const Footer = styled.div`
       background-color:   ${full ? `var(--${bgColor})` : 'transparent'};
@@ -25,7 +27,7 @@ class Footer extends Component {
 
     return (
       <Footer>
-        <Container className={ className } style={ style }>
+        <Container { ...props }>
           { [ content, children ] }
         </Container>
       </Footer>

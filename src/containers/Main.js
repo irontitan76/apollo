@@ -18,7 +18,7 @@ class Main extends Component {
     } else {
       nav = <Navigation />;
       footer = (
-        <Footer alignItems='center' bgColor='dark' color='light' justify='end'>
+        <Footer bgColor='dark' color='light'>
           <Brand />
         </Footer>
       );
@@ -30,7 +30,10 @@ class Main extends Component {
           { nav }
           <App maxWidth='100%'>
             <Route exact path="/" render={() => <Redirect to='/splash' />} />
-            <Route exact path='/design' component={ Design } />
+            <Route path='/design' component={ Design } />
+            <Route exact path='/design' render={() => {
+                return window.location.pathname
+              }} />
             <Route exact path='/org' component={ Organizations } />
             <Route exact path='/splash' component={ Splash } />
             <Route exact path="/values" component={ Values } />
