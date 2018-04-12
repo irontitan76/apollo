@@ -13,7 +13,7 @@ class Organizations extends Component {
 
   render() {
     const Organizations = styled.article`
-      animation: fadeEffect 1s;
+      animation: fadeIn 1s;
     `;
 
     return (

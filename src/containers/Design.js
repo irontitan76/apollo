@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
@@ -136,12 +137,15 @@ class Design extends Component {
     return (
       <Fragment>
         <Sidebar bgColor='blue'>
-          <Brand
-            alignItems='center'
-            bgColor='blue'
-            justify='start'
-            height='!75px'
-            pad='!10% 0 10% 10%' />
+          <Link to='/'>
+            <Brand
+              alignItems='center'
+              bgColor='blue'
+              justify='start'
+              height='!75px'
+              pad='!10% 0 10% 10%'
+              style={{ cursor: 'pointer' }} />
+          </Link>
           <Search
             placeholder='Search components...'
             onKeyUp={(e) => this._filterMenu(e)} />
@@ -150,7 +154,7 @@ class Design extends Component {
         </Sidebar>
 
         <Container
-          animation='fadeEffect 1s'
+          animation='fadeIn 1s'
           direction='column'
           margin='!auto 20px auto 270px'>
           <div>

@@ -10,7 +10,7 @@
         "properties": [
           {
             "property": "center",
-            "path": "/app/#center",
+            "path": "/app#center",
             "default": "true",
             "options": "true, false",
             "type": "{ bool }",

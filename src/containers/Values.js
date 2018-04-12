@@ -6,7 +6,7 @@ import { Heading, Image, Paragraph, Subtitle } from './../components';
 class Values extends Component {
   render() {
     const Values = styled.article`
-      animation: fadeEffect 1s;
+      animation: fadeIn 1s;
       margin: 0 auto;
       max-width: 1200px;
       padding: 0 1rem;

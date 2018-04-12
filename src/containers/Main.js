@@ -2,11 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Redirect, Route } from 'react-router-dom';
 
 import { App, Brand, Footer, Navigation } from './../components';
-
-import Design from './Design';
-import Organizations from './Organizations';
-import Splash from './Splash';
-import Values from './Values';
+import { Design, Organizations, Splash, Values } from './';
 
 class Main extends Component {
   render() {
@@ -32,7 +28,7 @@ class Main extends Component {
             <Route exact path="/" render={() => <Redirect to='/splash' />} />
             <Route path='/design' component={ Design } />
             <Route exact path='/design' render={() => {
-                return window.location.pathname
+                return window.location.pathname.slice(1);
               }} />
             <Route exact path='/org' component={ Organizations } />
             <Route exact path='/splash' component={ Splash } />

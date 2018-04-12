@@ -12,7 +12,7 @@ class Sidebar extends Component {
 
     const Sidebar = styled.nav`
       background:           ${parseProperty(bgColor, 'var(--!)')};
-      font-size:            0.8rem;
+      font-size:            var(--font-size-sm);
       height:               100%;
       overflow-x:           hidden;
       overflow-y:           scroll;
