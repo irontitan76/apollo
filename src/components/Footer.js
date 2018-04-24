@@ -1,55 +1,42 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
+
+import { Container } from './';
 
 class Footer extends Component {
   render() {
     const {
-      alignItems, bgColor, border, children, color, content, full,
-      height, justify, width, ...props
+      children, color, ...props
     } = this.props;
 
-    const Footer = styled.div`
-      background-color:   ${full ? `var(--${bgColor})` : 'transparent'};
-    `;
-
-    const Container = styled.div`
-      align-items:        ${alignItems};
-      background-color:   var(--${bgColor});
-      border:             ${border};
-      color:              var(--${color});
-      display:            flex;
-      height:             ${height.length > 2 ? height : `var(--footer-height-${height})`};
-      justify-content:    flex-${justify};
-      margin:             ${width === 'none' ? 'auto' : '0 auto'};
-      max-width:          ${width};
-    `;
-
     return (
-      <Footer>
-        <Container { ...props }>
-          { [ content, children ] }
-        </Container>
-      </Footer>
-    )
+      <Container
+        as='footer'
+        justify='center'
+        fontFamily='light'
+        height='sm'
+        pad='!0 2%'
+        { ...props }>
+          <Container
+            alignItems='center'
+            color='gray'
+            justify='between'
+            width='!1200px'>
+            &copy; 2018 Apollo Industries, Inc.
+            { children }
+          </Container>
+      </Container>
+    );
   }
 }
 
 Footer.defaultProps = {
-  alignItems: 'left',
-  bgColor: 'transparent',
-  border: 'none',
-  children: null,
+  bgColor: '!transparent',
   color: 'dark',
-  content: null,
-  full: true,
-  height: 'md',
-  justify: null,
-  width: '1200px'
+  size: 'md'
 };
 
 Footer.propTypes = {
-  alignItems: PropTypes.string
+
 }
 
 export default Footer;

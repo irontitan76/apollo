@@ -13,7 +13,7 @@ class App extends Component {
       width = '100%';
     }
 
-    const App = styled.div`
+    const App = styled.article`
       bottom:     0;
       height:     100%;
       left:       0;

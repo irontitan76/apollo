@@ -1,19 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
 
-import { Button, Image } from './../components';
+import { Container, Image } from './../components';
+import { Button } from './../lib';
 
 class Splash extends Component {
   render() {
-    const Splash = styled.div`
-      animation:        fadeIn 1s;
-      background-color: var(--dark);
-      color:            var(--light);
-      min-height:       100vh;
-      text-align:       center;
-    }`
-
-    const Title = styled.div`
+    const Title = styled(Container)`
       padding-top: 15%;
 
       @media (max-width: 768px) {
@@ -22,25 +15,29 @@ class Splash extends Component {
     `;
 
     return (
-      <Splash>
-        <Title>
+      <Fragment>
+        <Title
+          alignItems='center'
+          bgColor='dark'
+          direction='column'
+          grow='1'
+          justify='center'>
           <Image
-            style={{ display: 'block', margin: 'auto auto 7% auto' }}
             src={require('./../assets/apollo-logo-primary.png')}
             alt='logo' />
-          <Button
+          <Button alignSelf='center'
             color='light'
             fill='blue'
             hoverColor='dark'
             hoverFill='light'
-            hoverLine='light'
-            label='OUR COMPANY'
-            line='blue'
+            hoverBorder='light'
+            children='OUR COMPANY'
+            border='blue'
             path='/values'
-            width='lg'
-            />
+            style={{ marginTop: '7%' }}
+            width='lg' />
         </Title>
-      </Splash>
+      </Fragment>
     );
   }
 }

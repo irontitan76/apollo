@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import { parseProperty } from './utils';
@@ -22,19 +21,19 @@ class Sidebar extends Component {
       z-index:              1;
       ${side}:              0;
 
-      ::-webkit-scrollbar {
+      ::scrollbar {
         width:              10px;
       }
 
-      ::-webkit-scrollbar-track {
+      ::scrollbar-track {
         background:         ${parseProperty(scrollColor, 'var(--!)')};
       }
 
-      ::-webkit-scrollbar-thumb {
+      ::scrollbar-thumb {
         background:         ${parseProperty(scrollThumbColor, 'var(--!)')};;
       }
 
-      ::-webkit-scrollbar-thumb:hover {
+      ::scrollbar-thumb:hover {
         background:         ${parseProperty(scrollThumbHoverColor, 'var(--!)')};
       }
     `;

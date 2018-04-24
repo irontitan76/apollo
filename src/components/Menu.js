@@ -1,23 +1,20 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component, Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-
-import { Drop } from './';
-
-import items from './../data/props2.json';
 
 class Menu extends Component {
   _onDrop(e) {
     e.preventDefault();
     let target = e.target.nextElementSibling
-      || e.target.parentElement.nextElementSibling;
+      || e.target.parentElement.nextElementSibling
+      || e.target.parentElement.parentElement.nextElementSibling;
 
     target.style.display = target.style.display !== 'block' ? 'block' : 'none';
   }
 
   renderItems(items, drop) {
-    const MenuItem = styled.a`
+    const MenuItem = styled(Link)`
       background:       none;
       border:           none;
       color:            var(--light);
@@ -29,7 +26,7 @@ class Menu extends Component {
       text-decoration:  none;
 
       &:hover {
-        background-color: #004575;
+        background-color: #00375d;
       }
 
       &.active {
@@ -41,10 +38,6 @@ class Menu extends Component {
     const Drop = MenuItem.extend`
       background-color: #004575;
       padding-left: 10%;
-
-      &:hover {
-        color: var(--gray);
-      }
     `;
 
     const Icon = styled(FontAwesomeIcon)`
@@ -52,7 +45,7 @@ class Menu extends Component {
       transform: 'none';
     `;
 
-    let isDrop = 0, attr, icon, subItems;
+    let isDrop = 0, attr, icon;
 
     return items.map((item, key) => {
       isDrop = item.children ? item.children.length > 0 : false;
@@ -60,26 +53,30 @@ class Menu extends Component {
       attr = {
         key: `key_${key}`,
         id: item.id,
-        href: item.path,
+        to: item.path ? item.path : '',
         onClick: isDrop ? e => this._onDrop(e) : null
       }
 
       icon = isDrop ? <Icon icon={[ 'fal', 'angle-down' ]} /> : null
-      subItems = isDrop ? this.renderItems(item.children, 'drop') : null
 
-      return <div key={ `key_${key}` } style={{ display: 'block' }}>
+      return <Fragment key={ `key_${key}` }>
         { drop
           ? <Drop { ...attr }>{ item.name }{ icon }</Drop>
           : <MenuItem { ...attr }>{ item.name }{ icon }</MenuItem>
         }
-        { isDrop ? this.renderItems(item.children, 'drop') : null }
-      </div>
+        { isDrop
+          ? <div style={{ display: 'block' }}>
+              { this.renderItems(item.children, 'drop') }
+            </div>
+          : null
+        }
+      </Fragment>
     });
   }
 
   render() {
-    const { ...props } = this.props;
-    return this.renderItems(items);
+    const { items } = this.props;
+    return <div>{ this.renderItems(items) }</div>;
   }
 }
 

@@ -1,33 +1,68 @@
 @import url('./assets/fonts/fonts.css');
 
+.active {
+  max-height: 56px;
+}
+
+.non-active {
+  max-height: 0;
+}
+
 :root {
-  --light: #f2f2f2;
-  --dark: #3f4447; /* 063, 068, 071 */
-  --blue: #015085; /* 001, 080, 133 */
-  --red: #ef4747; /* 239, 071, 071 */
+  --white:  #fff;
+  --black:  #000;
+  --light:  #f2f2f2;
+  --dark:   #3f4447; /* 063, 068, 071 */
+  --blue:   #015085; /* 001, 080, 133 */
+  --red:    #ef4747; /* 239, 071, 071 */
   --orange: #dc8264; /* 220, 130, 100 */
-  --green: #3e7859; /* 062, 120, 089 */
+  --green:  #3e7859; /* 062, 120, 089 */
   --purple: #5a466e; /* 090, 070, 110 */
   --yellow: #f0bb20; /* 194, 146, 000 */
-  --brown: #996633; /* 153, 102, 051 */
-  --gray: #a6a6a6; /* 166, 166, 166 */
+  --brown:  #996633; /* 153, 102, 051 */
+  --gray:   #a6a6a6; /* 166, 166, 166 */
+  --clear:  transparent;
 
-  --primary: var(--blue);
-  --secondary: var(--purple);
-  --tertiary: var(--gray);
+  --primary:    var(--blue);
+  --secondary:  var(--purple);
+  --tertiary:   var(--gray);
 
   --font-light:     'open_sanslight';
   --font-regular:   'open_sansregular';
-  --font-semibold:  'open_sanssemibold';
+  --font-semi:      'open_sanssemibold';
   --font-italic:    'open_sansitalic';
   --font-bold:      'open_sansbold';
-  --font-extrabold: 'open_sansextrabold';
+  --font-extra:     'open_sansextrabold';
 
   --font-size-xs: 0.60rem;
   --font-size-sm: 0.80rem;
   --font-size-md: 1.00rem;
   --font-size-lg: 1.25rem;
   --font-size-xl: 1.50rem;
+
+  --font-size-h1: 3.0rem;
+  --font-size-h2: 2.5rem;
+  --font-size-h3: 2.0rem;
+  --font-size-h4: 1.5rem;
+  --font-size-h5: 1.2rem;
+  --font-size-h6: 1.0rem;
+
+  /*
+              fontSize:       --fontSize-{component}
+    [global]  fontWeight:     --fontWeight
+              animation:      --animation-{component}
+              alignContent:   --alignContent-{val}-{component}
+              alignItems:     --alignItems-{val}-{component}
+              alignSelf:      --alignSelf-{val}-{component}
+    [global]  {color}:        --{color}
+              cursor:         --cursor-{component}
+              padBottom:      --padBottom-{val}-{component}
+              padLeft:        --padLeft-{val}-{component}
+              padRight:       --padRight-{val}-{component}
+              padTop:         --padTop-{val}-{component}
+
+
+  */
 
   /* Default Component Styles */
   /* --[component]-[attr] */
@@ -67,56 +102,62 @@
   /* Card Styles */
 
   /* Container Styles */
-  --container-height-md: 100px;
-  --container-margin-md: auto;
-  --container-pad-md: auto;
-  --container-width-md: auto;
+  --base-animation: none 0 ease 0 1 normal none running;
+  --base-border: none;
+  --base-height-xs: 50px;
+  --base-height-sm: 75px;
+  --base-height-md: 100px;
+  --base-height-lg: 150px;
+  --base-height-xl: 200px;
+  --base-justify: start;
+  --base-margin-xs: 1%;
+  --base-margin-sm: 2%;
+  --base-margin-md: 4%;
+  --base-margin-lg: 8%;
+  --base-margin-xl: 10%;
+  --base-pad-xs: 1%;
+  --base-pad-sm: 2%;
+  --base-pad-md: 4%;
+  --base-pad-lg: 8%;
+  --base-pad-xl: 10%;
+  --base-textAlign: left;
+  --base-weight-xs: 200;
+  --base-weight-sm: 300;
+  --base-weight-md: 400;
+  --base-weight-lg: 600;
+  --base-weight-xl: 800;
+  --base-width-xs: 7.5%;
+  --base-width-sm: 15%;
+  --base-width-md: 25%;
+  --base-width-lg: 50%;
+  --base-width-xl: 75%;
 
   /* Dropdown Styles */
 
+  /* Heading Styles */
+  --heading-margin-xs: 1% 0;
+  --heading-margin-sm: 2% 0;
+  --heading-margin-md: 3% 0;
+  --heading-margin-lg: 4% 0;
+  --heading-margin-xl: 5% 0;
+
   /* Footer Styles */
-  --footer-alignItems: left;
-  --footer-background: transparent;
-  --footer-border: none;
-  --footer-height-xs: 50px;
-  --footer-height-sm: 75px;
-  --footer-height-md: 100px;
-  --footer-height-lg: 200px;
-  --footer-height-xl: 300px;
-  --footer-text-color: var(--dark);
-  --footer-width: none;
+
 
   /* Paragraph Styles */
-  --paragraph-margin-xs: 2.667% 0 0.667% 0;
-  --paragraph-margin-sm: 3% 0 1% 0;
-  --paragraph-margin-md: 4% 0 1.334% 0;
-  --paragraph-margin-lg: 5.334% 0 2% 0;
-  --paragraph-margin-xl: 8% 0 2.667% 0;
-  --paragraph-margin-none: 0;
-  --paragraph-margin-auto: auto;
-  --paragraph-size-xs: 0.6rem;
-  --paragraph-size-sm: 0.8rem;
-  --paragraph-size-md: 1.0rem;
-  --paragraph-size-lg: 1.2rem;
-  --paragraph-size-xl: 1.5rem;
+
 
   /* Subtitle Styles */
-  --subtitle-margin-xs: 2.0rem 0.0rem .70rem 0.0rem;
-  --subtitle-margin-sm: 2.4rem 0.0rem .80rem 0.0rem;
-  --subtitle-margin-md: 3.0rem 0.0rem 1.0rem 0.0rem;
-  --subtitle-margin-lg: 4.0rem 0.0rem 1.7rem 0.0rem;
-  --subtitle-margin-xl: 6.0rem 0.0rem 2.0rem 0.0rem;
-  --subtitle-size-xs: 1.0rem;
-  --subtitle-size-sm: 1.2rem;
-  --subtitle-size-md: 1.5rem;
-  --subtitle-size-lg: 2.0rem;
-  --subtitle-size-xl: 2.5rem;
+
 }
 
 body, html, #root {
+  display: flex;
+  flex-direction: column;
   font-family: var(--font-regular);
   font-size: var(--font-size-md);
   margin: 0;
+  min-height: 100vh;
   padding: 0;
 }
 

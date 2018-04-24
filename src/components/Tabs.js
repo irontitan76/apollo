@@ -134,8 +134,8 @@ class Tabs extends Component {
 
     return items.map((item, i) => (
       <TabContent key={ `key__${i}` } id={ item.id }>
-        <Heading align='center' content={ item.title } margin='sm' />
-        <Paragraph align='center' content={ item.content } margin='sm' />
+        <Heading align='center' children={ item.title } margin='sm' />
+        <Paragraph align='center' children={ item.content } margin='sm' />
       </TabContent>
     ));
   }

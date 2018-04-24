@@ -1,46 +1,28 @@
 import React, { Component, Fragment } from 'react';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import ReactDOM from 'react-dom';
+import { Route, Link } from 'react-router-dom';
 
 import {
-  Brand, Card, Container, Heading, Menu, Search, Sidebar, Subtitle, Table
+  Brand, Container, Menu, Search, Sidebar
 } from './../components';
 
-import items from './../data/props.json';
-import { ButtonExamples } from './../data/examples.js';
+import ComponentData from './../docs';
+import menu from './../data/menu.json';
 
 class Design extends Component {
   constructor(props) {
     super(props);
 
-    this._onDropdown = this._onDropdown.bind(this);
-    this._filterMenu = this._filterMenu.bind(this);
-
-    this.state = {
-      headers: ['Property', 'Default', 'Options', 'Type', 'Description'],
-      currentItem: items.structure.app,
-      items
-    }
+    this._onChange = this._onChange.bind(this);
   }
 
-  _onDropdown(e) {
+  _onChange(e) {
     e.preventDefault();
-    let target = e.target.nextElementSibling
-      || e.target.parentElement.nextElementSibling;
-
-    target.style.display = target.style.display !== 'block' ? 'block' : 'none';
-  }
-
-  _filterMenu(e) {
-    e.preventDefault();
-    let search = e.target.value.toLowerCase();
-    let menu = e.target.parentElement;
-    let items = menu.getElementsByTagName('a');
+    let value = ReactDOM.findDOMNode(this.refs.search).value.toLowerCase().trim();
+    let items = ReactDOM.findDOMNode(this.refs.menu).getElementsByTagName('a');
 
     for ( let i = 0; i < items.length; i++ ) {
-      if ( items[i].innerHTML.toLowerCase().indexOf(search) > -1) {
-        items[i].parentElement.style.display = '';
+      if ( items[i].innerHTML.toLowerCase().indexOf(value) > -1) {
         items[i].style.display = '';
       } else {
         items[i].style.display = 'none';
@@ -48,92 +30,32 @@ class Design extends Component {
     }
   }
 
-  _getComponent(e) {
-    e.preventDefault();
-    let targetId = e.target.id;
-    let parentId = e.target.parentElement.previousSibling.id;
+  _getRoutes(items) {
+    let stack = [], routes = [], node, i = 0;
+    stack.push(...items);
 
-    this.setState({
-      currentItem: this.state.items[parentId][targetId]
-    });
-  }
+    while ( stack.length > 0 ) {
+      node = stack.pop();
 
-  _renderMenu() {
-    const Link = styled.a`
-      background:       none;
-      border:           none;
-      color:            var(--light);
-      cursor:           pointer;
-      display:          block;
-      outline:          none;
-      padding:          4% 3.5% 3% 8%;
-      text-align:       left;
-      text-decoration:  none;
-
-      &:hover {
-        background-color: #004575;
+      if ( node.children && node.children.length ) {
+        node.children.forEach(child => stack.push(child));
       }
 
-      &.active {
-        background-color: green;
-        color: white;
+      if ( node.render ) {
+        let rendered = node.render ? ComponentData[node.render] : null;
+
+        routes.push(<Route
+          key={ `key__${i}` }
+          path={ node.path }
+          render={ () => rendered } />);
       }
-    `;
 
-    const Icon = styled(FontAwesomeIcon)`
-      float: right;
-      transform: 'none';
-    `;
-
-    return Object.keys(items).map((item, key) => {
-      let isDropdown = Object.keys(item).length > 0;
-
-      return <Fragment key={`key_${key}`}>
-        <Link
-          id={ item }
-          href={`#${item}`}
-          onClick={ isDropdown ? (e) => this._onDropdown(e) : null }>
-          { item.toLowerCase().charAt().toUpperCase() + item.slice(1) }
-          { isDropdown ? <Icon icon={[ 'fal', 'angle-down' ]} /> : null }
-        </Link>
-        { isDropdown ? this._renderDropdown(Link, item) : null }
-      </Fragment>
-    });
-  }
-
-  _renderDropdown(Link, item) {
-    const Dropdown = styled.div`
-      background-color: #004575;
-      padding-left: 5%;
-      }
-    `;
-
-    const DropdownLink = Link.extend`
-      &:hover {
-        color: var(--gray);
-      }
-    `;
-
-    return (
-      <Dropdown style={{ display: 'block' }}>
-        {
-          Object.keys(items[item]).map((subItem, key) => (
-            <DropdownLink
-              key={`key_${key}`}
-              id={subItem}
-              href={`#${subItem}`}
-              onClick={(e) => this._getComponent(e) }>
-              { items[item][subItem].name }
-            </DropdownLink>
-          ))
-        }
-      </Dropdown>
-    );
+      i++;
+    }
+    return routes;
   }
 
   render() {
-    const { currentItem: { name, family, properties }, headers } = this.state;
-
     return (
       <Fragment>
         <Sidebar bgColor='blue'>
@@ -147,47 +69,21 @@ class Design extends Component {
               style={{ cursor: 'pointer' }} />
           </Link>
           <Search
+            ref='search'
             placeholder='Search components...'
-            onKeyUp={(e) => this._filterMenu(e)} />
-          { this._renderMenu() }
-          <Menu items={ items } />
+            onKeyUp={(e) => this._onChange(e)} />
+          <Menu ref='menu' items={ menu } />
         </Sidebar>
 
         <Container
           animation='fadeIn 1s'
+          as='section'
           direction='column'
-          margin='!auto 20px auto 270px'>
+          margin='!0 20px auto 285px'>
           <div>
-            <Heading
-              id={ family }
-              content={ family }
-              margin='xs'
-              size='lg'
-              style={{ display: 'inline-block' }}
-              weight='regular' />
-            <Subtitle
-              content={ name }
-              margin='none'
-              size='md'
-              style={{ display: 'inline-block', marginLeft: '1.5%' }} />
-          </div>
-          <div>
-            <Heading content='Properties' size='md' weight='light' margin='xs' />
-            <Table headers={ headers } rows={ properties } />
-          </div>
-          <div>
-            <Heading content='Examples' size='md' weight='light' margin='xs' />
-            { ButtonExamples }
-          </div>
-          <div>
-            <Card
-              heading='Card'
-              content='This is content for a card component'
-              meta='Meta'
-              style={{ boxShadow: '2px 4px 8px 2px var(--gray)'}} />
+            { this._getRoutes(menu) }
           </div>
         </Container>
-
       </Fragment>
     );
   }

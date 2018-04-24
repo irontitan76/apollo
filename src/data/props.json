@@ -470,26 +470,6 @@
         }
       ]
     },
-    "menu": {
-      "name": "Menu",
-      "family": "Navigation",
-      "properties": [
-        {
-          "property": "children",
-          "default": "null",
-          "options": "n/a",
-          "type": "{ string || object }",
-          "description": "This is the children description."
-        },
-        {
-          "property": "content",
-          "default": "null",
-          "options": "n/a",
-          "type": "{ string || object }",
-          "description": "This is the content description."
-        }
-      ]
-    },
     "search": {
       "name": "Search",
       "family": "Navigation",

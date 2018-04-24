@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
+import { Container } from './';
+
 class Navigation extends Component {
   constructor(props) {
     super(props);
@@ -18,25 +20,6 @@ class Navigation extends Component {
   }
 
   render() {
-    const Nav = styled.nav`
-      background-color:     var(--dark);
-      min-width:            100%;
-    `;
-
-    const Container = styled.nav`
-      align-items:          center;
-      display:              flex;
-      justify-content:      space-between;
-      margin:               0 auto;
-      max-width:            1200px;
-      padding:              0 2%;
-
-      @media (max-width: 768px) {
-        display:            block;
-        padding:            0 2%;
-      }
-    `;
-
     const Brand = styled(NavLink)`
       padding-right:        3rem;
 
@@ -141,28 +124,26 @@ class Navigation extends Component {
     `;
 
     return (
-      <Nav className='navbar'>
-        <Container>
-          <Brand to='/'>
+      <Container as='nav' bgColor='dark' justify='center' pad='!0 2%'>
+        <Container alignItems='center' height='xs' width='!1200px'>
+          <Brand to='/' justify='start'>
               <img src={require('./../assets/logo-28px.png')} alt='logo' />
           </Brand>
-          <Toggle type='checkbox' id='menu-toggle'/>
-          <ToggleLabel htmlFor='menu-toggle' className='label-toggle' />
-          <Menu>
-            <MenuItem><Link to='/values'>Values</Link></MenuItem>
-            <MenuItem><Link to='/strategy'>Strategy</Link></MenuItem>
-            <MenuItem><Link to='/standards'>Standards</Link></MenuItem>
-            <MenuItem><Link to='/insights'>Insights</Link></MenuItem>
-            <MenuItem><Link to='/org'>Organizations</Link></MenuItem>
-          </Menu>
+          <Container alignItems='center' justify='end' grow='1'>
+            <Toggle type='checkbox' id='menu-toggle'/>
+            <ToggleLabel htmlFor='menu-toggle' className='label-toggle' />
+            <Menu>
+              <MenuItem><Link to='/values'>Values</Link></MenuItem>
+              <MenuItem><Link to='/strategy'>Strategy</Link></MenuItem>
+              <MenuItem><Link to='/standards'>Standards</Link></MenuItem>
+              <MenuItem><Link to='/insights'>Insights</Link></MenuItem>
+              <MenuItem><Link to='/org'>Organizations</Link></MenuItem>
+            </Menu>
+          </Container>
         </Container>
-      </Nav>
+      </Container>
     );
   }
-}
-
-Navigation.defaultProps = {
-
 }
 
 export default Navigation;

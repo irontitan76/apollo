@@ -1,30 +1,30 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import { parseProperty } from './utils.js';
 
 class Container extends Component {
   render() {
-    const {
-      alignContent, alignItems, animation, basis, bgColor, border, children,
-      color, direction, height, justify, margin, pad, onClick, reverse, size,
-      textAlign, width, wrap, ...props
+    let {
+      alignContent, alignItems, alignSelf, animation, as, basis, bgColor,
+      border, children, color, direction, fontFamily, fontSize, full, grow, form,
+      height, hoverColor, justify, margin, minHeight, minWidth, pad, onClick,
+      order, reverse, shrink, size, textAlign, weight, width, wrap, ...props
     } = this.props;
 
-    let itemAlign, contentAlign, just;
+    let contentAlign, itemAlign, just, selfAlign;
 
     if ( alignItems === 'start' )           itemAlign = 'flex-start';
     else if ( alignItems === 'end' )        itemAlign = 'flex-end';
-    else if ( alignItems === 'baseline' )   itemAlign = 'baseline';
-    else if ( alignItems === 'stretch' )    itemAlign = 'stretch';
     else itemAlign = alignItems;
+
+    if ( alignSelf === 'start' )           selfAlign = 'flex-start';
+    else if ( alignSelf === 'end' )        selfAlign = 'flex-end';
+    else selfAlign = alignSelf;
 
     if ( alignContent === 'start' )         contentAlign = 'flex-start';
     else if ( alignContent === 'end' )      contentAlign = 'flex-end';
-    else if ( alignContent === 'baseline' ) contentAlign = 'space-between';
     else if ( alignContent === 'around' )   contentAlign = 'space-around';
-    else if ( alignContent === 'stretch' )  contentAlign = 'stretch';
     else contentAlign = alignContent;
 
     if ( justify === 'start' )              just = 'flex-start';
@@ -37,25 +37,42 @@ class Container extends Component {
     let w = width || size;
     let h = height || size;
 
-    const Container = styled.div`
+    const Container = styled[as]`
       animation:        ${animation};
       align-content:    ${contentAlign};
       align-items:      ${itemAlign};
+      align-self:       ${selfAlign};
       background:       ${parseProperty(bgColor, 'var(--!)')};
-      border:           2px solid ${parseProperty(border, 'var(--!)')};
+      border:           ${parseProperty(border, 'var(--base-border)')};
       box-sizing:       border-box;
-      color:            ${color};
-      cursor:           ${!!onClick ? 'pointer': 'auto'}
+      color:            ${parseProperty(color, 'var(--!)')};
+      cursor:           ${!!onClick ? 'pointer': 'auto'};
       display:          flex;
-      flex-basis:       ${basis};
+      flex:             ${grow} ${shrink} ${basis};
       flex-direction:   ${direction};
       flex-wrap:        ${wrap};
-      height:           ${parseProperty(h, 'var(--container-height-!)')};
+      font-family:      ${parseProperty(fontFamily, 'var(--font-!)')};
+      font-size:        ${parseProperty(fontSize, 'var(--font-size-!)')};
+      font-weight:      ${parseProperty(weight, 'var(--base-weight-!)')};
+      height:           ${parseProperty(h, 'var(--base-height-!)')};
       justify-content:  ${just};
-      margin:           ${parseProperty(margin, 'var(--container-margin-!)')};
-      padding:          ${parseProperty(pad, 'var(--container-pad-!)')};
+      left:             ${full ? '50%' : 'auto'}
+      margin-left:      ${full ? '-50vw' : 'initial'};
+      margin-right:     ${full ? '-50vw' : 'initial'};
+      margin:           ${parseProperty(margin, 'var(--base-margin-!)')};
+      min-height:       ${minHeight};
+      min-width:        ${minWidth};
+      order:            ${order};
+      padding:          ${parseProperty(pad, 'var(--base-pad-!)')};
+      position:         ${full ? 'relative' : 'static'};
+      right:            ${full? '50%' : 'auto'};
       text-align:       ${textAlign};
-      width:            ${parseProperty(w, 'var(--container--width-!)')};
+      text-transform:   ${form};
+      width:            ${full ? '100vw' : parseProperty(w, 'var(--base-width-!)')};
+
+      &:hover {
+        color:          ${!!onClick ? `${parseProperty(hoverColor, 'var(--!)')}` : 'auto'};
+      }
     `;
 
     let result = [];
@@ -72,26 +89,40 @@ class Container extends Component {
     }
 
     return (
-      <Container { ...props }>{ result }</Container>
+      <Container
+        onClick={ onClick }
+        { ...props }>
+        { result }
+      </Container>
     );
   }
 }
 
 Container.defaultProps = {
-  animation: 'none',
+  animation:    'none',
   alignContent: 'stretch',
-  alignItems: 'stretch',
-  bgColor: 'light',
-  border: 'none',
-  direction: 'row',
-  justify: 'start',
-  height: 'md',
-  margin: 'md',
-  pad: 'md',
-  size: 'md',
-  textAlign: 'left',
-  width: 'md',
-  wrap: 'nowrap'
+  alignItems:   'stretch',
+  alignSelf:    'auto',
+  as:           'div',
+  basis:        'auto',
+  bgColor:      'clear',
+  border:       'none',
+  color:        'black',
+  direction:    'row',
+  fontFamily:   'regular',
+  fontSize:     '1rem',
+  grow:         0,
+  height:       'auto',
+  justify:      'start',
+  margin:       '!none',
+  order:        0,
+  pad:          'auto',
+  shrink:       1,
+  size:         'auto',
+  textAlign:    'left',
+  weight:       'auto',
+  width:        'auto',
+  wrap:         'nowrap'
 };
 
 export default Container;

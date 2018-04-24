@@ -1,17 +1,10 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import { Heading, Image, Paragraph, Subtitle } from './../components';
+import { Container, Heading, Image, Paragraph, Subtitle } from './../components';
 
 class Values extends Component {
   render() {
-    const Values = styled.article`
-      animation: fadeIn 1s;
-      margin: 0 auto;
-      max-width: 1200px;
-      padding: 0 1rem;
-    `;
-
     const List = styled.ul`
       display: flex;
       list-style-type: none;
@@ -68,50 +61,55 @@ class Values extends Component {
     `;
 
     return (
-      <Values>
-        <Heading content='Our mission' align='center' size='xl' />
-        <Subtitle content='We strive to reshape industries for the good of humanity' align='center'/>
-        <Image src={ require('./../assets/bg4.jpg' )} alt='future of tech' margin='md' />
-        <Heading content='Our values' align='left' size='lg' margin='xs' />
-        <Paragraph>
-          The foundation of our company is key to pushing humanity forward. Our
-          values are ingrained into our DNA. Taken together, they identify
-          Apollo Industries as a company and its mission.
-        </Paragraph>
-        <List>
-          <ListItem>
-            <ValueText style={{ color: 'var(--green)'}}>Innovators at heart</ValueText>
-            Approach innovation with a structured thought process.
-          </ListItem>
-          <ListItem>
-            <ValueText style={{ color: 'var(--orange)'}}>Bias for action</ValueText>
-            Anticipate and respond to opportunities to improve and resolve righteously.
-          </ListItem>
-          <ListItem>
-            <ValueText style={{ color: 'var(--purple)'}}>Challenge respectfully</ValueText>
-            Think logically and generate ideas that challenge the status quo in a respectful way.
-          </ListItem>
-          <ListItem>
-            <ValueText style={{ color: 'var(--blue)'}}>Collaborate effectively</ValueText>
-            Form meaningful, effectual relationships and produce results together.
-          </ListItem>
-          <ListItem>
-            <ValueText style={{ color: 'var(--red)'}}>Do good</ValueText>
-            Every moment is an opportunity to improve lives.
-          </ListItem>
-        </List>
+      <Container as='section' justify='center'>
+        <Container animation='fadeIn 1s' direction='column' width='!1200px'>
+          <Heading as='h1' justify='center' margin='md' textAlign='center' style={{ marginTop: '10%' }}>Our mission</Heading>
+          <Subtitle justify='center' margin='!0 0 5% 0' textAlign='center'>
+            We strive to reshape industries for the good of humanity
+          </Subtitle>
+          <Image src={ require('./../assets/bg4.jpg' )} alt='future of tech' margin='md' />
+          <Heading as='h3' margin='sm'>Our Values</Heading>
+          <Paragraph>
+            The foundation of our company is key to pushing humanity forward. Our
+            values are ingrained into our DNA. Taken together, they identify
+            Apollo Industries as a company and its mission.
+          </Paragraph>
 
-        <Heading content='Our story' align='left' size='lg' />
-        <div style={{
-            backgroundImage: `url(${require('./../assets/path1-min.jpg')}`,
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            height: '400px'
-        }}></div>
-      <Paragraph align='left' margin='sm'>
-          Our company's path started in 2018 with a vision to change each significant industry in the world. Our vision was grand, but we knew that we needed to start small. With that in mind, we created Apollo Industries as a professional services company with offerings in the web application development space.
-        </Paragraph>
-      </Values>
+          <List>
+            <ListItem>
+              <ValueText style={{ color: 'var(--green)'}}>Innovators at heart</ValueText>
+              Approach innovation with a structured thought process.
+            </ListItem>
+            <ListItem>
+              <ValueText style={{ color: 'var(--orange)'}}>Bias for action</ValueText>
+              Anticipate and respond to opportunities to improve and resolve righteously.
+            </ListItem>
+            <ListItem>
+              <ValueText style={{ color: 'var(--purple)'}}>Challenge respectfully</ValueText>
+              Think logically and generate ideas that challenge the status quo in a respectful way.
+            </ListItem>
+            <ListItem>
+              <ValueText style={{ color: 'var(--blue)'}}>Collaborate effectively</ValueText>
+              Form meaningful, effectual relationships and produce results together.
+            </ListItem>
+            <ListItem>
+              <ValueText style={{ color: 'var(--red)'}}>Do good</ValueText>
+              Every moment is an opportunity to improve lives.
+            </ListItem>
+          </List>
+
+          <Heading as='h3' margin='sm'>Our story</Heading>
+          <div style={{
+              backgroundImage: `url(${require('./../assets/path1-min.jpg')}`,
+              backgroundPosition: 'center',
+              backgroundSize: 'cover',
+              height: '400px'
+          }}></div>
+          <Paragraph align='left' style={{ marginBottom: '6%'}}>
+            Our company's path started in 2018 with a vision to change each significant industry in the world. Our vision was grand, but we knew that we needed to start small. With that in mind, we created Apollo Industries as a professional services company with offerings in the web application development space.
+          </Paragraph>
+        </Container>
+      </Container>
     )
   }
 }

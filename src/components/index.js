@@ -1,12 +1,12 @@
 export { default as App } from './App';
+export { default as Article } from './Article';
 export { default as Brand } from './Brand';
-export { default as Button } from './Button';
+export { default as Button } from './Button2';
 export { default as Card } from './Card';
 export { default as Container } from './Container';
 export { default as Drop } from './Drop';
 export { default as Footer } from './Footer';
 export { default as Heading } from './Heading';
-export { default as Hero } from './Hero';
 export { default as Icon } from './Icon';
 export { default as Image } from './Image';
 export { default as Menu } from './Menu';

@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import { Icon } from './';
-
 import { parseProperty } from './utils.js';
 
 class Button extends Component {
@@ -41,7 +40,7 @@ class Button extends Component {
       }
 
       svg {
-        padding-left:   ${reverse ? '10px' : 0};
+        padding-left:   ${!reverse ? '10px' : 0};
         padding-right:  ${!reverse ? '10px' : 0};
       }
 
