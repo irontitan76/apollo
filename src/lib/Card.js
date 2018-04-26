@@ -38,7 +38,7 @@ export default class Card extends Component {
 
     let contents = [
       start,
-      <Box alt='image' as='img' key={1} pad={imagePad} src={ image } style={{ maxWidth: '100%' }}/>,
+      image ? <Box alt='image' as='img' key={1} pad={imagePad} src={ image } style={{ maxWidth: '100%' }}/> : null,
       children,
       <Box direction='column' key={2} pad={ contentPad }>
         <Title>{category}</Title>

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Box } from './';
 
 export default class Search extends Component {
+  // create Search Suggestion dropdown/up logic
   render() {
     const { outline, placeholderOptions, style, ...props } = this.props;
 
@@ -21,13 +22,9 @@ export default class Search extends Component {
 }
 
 Search.defaultProps = {
-  border: {
-    vertical: '1px solid #004575',
-    horizontal: 'none'
-  },
   outline: 'none',
   placeholder: 'Search...',
-  placeholderOptions: 'color: var(--light); font-family: var(--font-light); opacity: 0.6;',
+  placeholderOptions: '',
   type: 'text',
   width: '100%'
 }

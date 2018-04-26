@@ -12,7 +12,7 @@ export default class Accordion extends Component {
 
     this.state = {
       open,
-      first: Array(props.children.length).fill(true)
+      first: props.children ? Array(props.children.length).fill(true) : null
     };
   }
 
@@ -35,6 +35,8 @@ export default class Accordion extends Component {
 
   render() {
     const { children, iconAll, ...props } = this.props;
+
+    if ( !children ) return null;
 
     const panels = React.Children.map(children, (child, index) => {
       return React.cloneElement(child, {

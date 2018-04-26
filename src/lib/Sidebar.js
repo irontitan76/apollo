@@ -7,31 +7,34 @@ export default class Sidebar extends Component {
   render() {
     const {
       children, height, fixed, scrollColor, scrollThumbColor,
-      scrollThumbHoverColor, side, width, ...props
+      scrollThumbHoverColor, scroll, side, width, ...props
     } = this.props;
 
     const Sidebar = styled(Box)`
       overflow-x:           hidden;
-      overflow-y:           scroll;
+      overflow-y:           ${!!scroll ? 'scroll' : 'hidden'};
       position:             ${fixed ? 'fixed' : 'static'};
       top:                  ${fixed ? '0' : 'auto'};
       ${side}:              0;
       z-index:              1;
 
+
       ::-webkit-scrollbar {
-        width:              7px;
+        width:              ${scroll.width};
       }
 
       ::-webkit-scrollbar-track {
-        background:         ${retrieve(css['scrollColor'], scrollColor)};
+        background:         ${retrieve(css['scrollColor'], scroll.color)};
       }
 
       ::-webkit-scrollbar-thumb {
-        background:         ${retrieve(css['scrollThumbColor'], scrollThumbColor)};
+        background:         ${retrieve(css['scrollThumbColor'],
+                              scroll.thumbColor)};
       }
 
       ::-webkit-scrollbar-thumb:hover {
-        background:         ${retrieve(css['scrollThumbHoverColor'], scrollThumbColor)};
+        background:         ${retrieve(css['scrollThumbHoverColor'],
+                              scroll.thumbHoverColor)};
       }
 
       @media ( max-width: 768px ) {
@@ -65,7 +68,7 @@ const css = {
     "default": "#ddd",
     "options": colors
   },
-  "scrollThumbColor": {
+  "scrollThumbHoverColor": {
     "name": "::-webkit-scrollbar-thumb:hover",
     "default": "dark",
     "options": colors
@@ -74,7 +77,9 @@ const css = {
 
 Sidebar.defaultProps = {
   height: '100%',
+  fill: 'white',
   fixed: true,
+  scroll: false,
   width: 'md',
   ...getDefaults(css)
 }

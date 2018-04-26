@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import styled from 'styled-components';
 
 import {
-  Accordion, AccordionPanel, Anchor, Animate, Box, Button, Card, Heading,
+  Accordion, AccordionPanel, Anchor, Animate, App, Box, Button, Card, Heading, Menu,
   Paragraph, Search, Sidebar, Title
 } from '../lib';
+
+import menuItems from './../data/menu.json';
 
 const items = ['accordion', 'animate', 'box', 'button', 'card', 'heading',
   'paragraph', 'search', 'sidebar', 'title'];
@@ -34,65 +37,87 @@ export default class Test extends Component {
   }
 
   render() {
+
+    const Menu = styled(Box)``;
+    const MenuItem = styled(Anchor)``;
+
+    const Dropdown = styled(Box)`
+      position: absolute;
+      z-index: 1;
+
+      &:hover div {
+        display: flex;
+      }
+    `;
+    const DropdownContent = styled(Box)``;
+
     return (
       <Box responsive>
-        { /* need to create a split component */}
+        { /* need to create a split component */ }
+        <App />
+        <Sidebar fill='blue' scroll={{
+            color: 'light',
+            thumbColor: '#ddd',
+            thumbHoverColor: 'dark',
+            width: '7px'
+          }} width='270px'>
 
-        <Box margin={{ right: '270px' }} responsiveOptions={`margin: 0;`}>
+          <Anchor path='/' justify='center' color='white'
+            pad={{ horizontal: 'md', vertical: 'vl' }}  shrink='0'>
+            <img src={ require('./../assets/apollo-logo.png')} />
+          </Anchor>
 
-          <Sidebar fill='blue' width='270px'>
-            <Anchor
-              alignItems='center'
-              path='/'
+          <Search ref='search' border={{ horizontal: 'none',
+              vertical: '1px solid #004575' }} color='white' justify='center' pad='lg'
+            placeholder='Search components...'
+            placeholderOptions={`
+              color: var(--light);
+              font-family: var(--font-light);
+              opacity: 0.6;
+            `} onKeyUp={e => this._onChange(e)} textAlign='center' textSize='sm' />
+
+          <Box direction='column' ref='menu' shrink='0'>
+            <Box
+              ref='noresults'
+              color='gray'
+              display='none'
               justify='center'
-              color='white'
-              fill='clear'
-              hoverFill='clear'
-              hoverColor='white'
-              family='bold'
-              pad={{ horizontal: 'md', vertical: 'vl'}}
-              textSize='0.9rem'
-              width='full'>
-              <img src={ require('./../assets/apollo-logo.png')} />
-            </Anchor>
-            <Search
-              ref='search'
-              color='white'
-              justify='center'
-              pad='lg'
-              placeholder='Search components...'
-              onKeyUp={e => this._onChange(e)}
-              textAlign='center'
-              textSize='sm' />
-            <Box direction='column' ref='menu'>
-              <Box
-                ref='noresults'
-                color='gray'
-                display='none'
-                justify='center'
-                margin='sm'
-                textSize='0.8rem'>
-                No search results
-              </Box>
-              {
-                items.map((item, i) => <Anchor
-                  color='white'
-                  hoverColor='white'
-                  hoverFill='#004575'
-                  justify='center'
-                  key={ `key__${i}` }
-                  path={ `#${item}` }
-                  pad={{ vertical: 'sm' }}
-                  textSize='sm'>
-                  { item.charAt().toUpperCase() + item.slice(1) }
-                </Anchor>)
-              }
+              margin='sm'
+              textSize='0.8rem'>
+              No search results
             </Box>
-          </Sidebar>
-        </Box>
+            {
+              items.map((item, i) => <Anchor
+                color='white'
+                hoverColor='white'
+                hoverFill='#004575'
+                justify='center'
+                key={ `key__${i}` }
+                path={ `#${item}` }
+                pad={{ vertical: 'sm' }}
+                textSize='sm'>
+                { item.charAt().toUpperCase() + item.slice(1) }
+              </Anchor>)
+            }
+          </Box>
+        </Sidebar>
 
-        <Box direction='column' pad={{ horizontal: 'xl' }} >
-          <Button>Hi</Button>
+        <Box
+          direction='column'
+          margin={{ left: '270px' }}
+          pad={{ horizontal: 'xl' }}
+          responsiveOptions={`margin: 0;`}>
+
+          <Menu direction='column'  width='25%'>
+
+            <Dropdown direction='column' pad='md'>
+              <MenuItem>Hi</MenuItem>
+              <DropdownContent display='none' pad={{ left: 0, top: 'md', right: 'md' }}>
+                <MenuItem>World</MenuItem>
+              </DropdownContent>
+            </Dropdown>
+          </Menu>
+
           <Heading id='accordion'>Accordion</Heading>
           <Heading size='sm' margin={{ vertical: 'sm' }}>Use Accordion to toggle between hiding and showing large amounts of content</Heading>
             <code style={{ fontSize: '1.1rem', paddingLeft: '1rem', marginBottom: '1rem'}}>
@@ -147,7 +172,7 @@ export default class Test extends Component {
             </Animate>
           </Box>
 
-          <Heading id='box'>Box</Heading>
+          <Heading pad={{ between: 'hi' }} id='box'>Box</Heading>
           <Heading size='sm' margin={{ vertical: 'sm' }}>The Box component is the core component of most others and is the most robust overall</Heading>
           <code style={{ fontSize: '1.1rem', paddingLeft: '1rem', marginBottom: '1rem'}}>
             { `import { Box } from 'fusion';` }
@@ -178,7 +203,7 @@ export default class Test extends Component {
               <br />
             { `</Button>` }
           </code>
-          <Box justify='even' pad='sm' wrap>
+          <Box justify='even' pad={{ between: '300px' }} wrap>
             <Button fill='dark' primary onClick={
                 (e) => e.target.innerText = e.target.innerText === 'Hello World'
                   ? 'Default'
@@ -288,11 +313,7 @@ export default class Test extends Component {
             { `import { Search } from 'fusion';` }
               <br />
               <br />
-            { `<Search placeholderOptions=\`color: 'blue'\`>` }
-              <br />
-            &nbsp;&nbsp;{ `{children}`}
-              <br />
-            { `</Search>` }
+            { `<Search onKeyUp={func} onEnter={func} />` }
           </code>
           <Box direction='column'>
             <Search border='blue' color='black' pad='lg' placeholderOptions='color: var(--blue); font-family: var(--font-light);' margin={{ bottom: 'sm' }}/>

@@ -50,7 +50,7 @@ export default class Heading extends Component {
 const css = {
   "as": {
     "name": "as",
-    "default": "h1",
+    "default": "h2",
     "options": {
       "h1": "h1",
       "h2": "h2",

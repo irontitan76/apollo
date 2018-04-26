@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react';
-import { Link } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 import styled from 'styled-components';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { Box } from './';
 
 class Menu extends Component {
   _onDrop(e) {
@@ -10,7 +11,7 @@ class Menu extends Component {
       || e.target.parentElement.nextElementSibling
       || e.target.parentElement.parentElement.nextElementSibling;
 
-    target.style.display = target.style.display !== 'block' ? 'block' : 'none';
+    target.style.display = target.style.display !== 'flex' ? 'flex' : 'none';
   }
 
   renderItems(items, drop) {
@@ -19,7 +20,9 @@ class Menu extends Component {
       border:           none;
       color:            var(--light);
       cursor:           pointer;
-      display:          block;
+      display:          flex;
+      font-size:        0.8rem;
+      justify-content:  space-between;
       outline:          none;
       padding:          4% 3.5% 3% 8%;
       text-align:       left;
@@ -37,12 +40,11 @@ class Menu extends Component {
 
     const Drop = MenuItem.extend`
       background-color: #004575;
-      padding-left: 10%;
+      padding-left:     10%;
     `;
 
     const Icon = styled(FontAwesomeIcon)`
-      float: right;
-      transform: 'none';
+      transform: none;
     `;
 
     let isDrop = 0, attr, icon;
@@ -65,9 +67,9 @@ class Menu extends Component {
           : <MenuItem { ...attr }>{ item.name }{ icon }</MenuItem>
         }
         { isDrop
-          ? <div style={{ display: 'block' }}>
+          ? <Box direction='column' display='none' style={{ boxShadow: 'inset 10px 10px 20px #000000' }}>
               { this.renderItems(item.children, 'drop') }
-            </div>
+            </Box>
           : null
         }
       </Fragment>
@@ -75,9 +77,13 @@ class Menu extends Component {
   }
 
   render() {
-    const { items } = this.props;
+    const { items, ...props } = this.props;
+
     if ( !Array.isArray(items) ) return null;
-    return <div>{ this.renderItems(items) }</div>;
+
+    return <Box direction='column' shrink='0' {...props}>
+      { this.renderItems(items) }
+    </Box>;
   }
 }
 

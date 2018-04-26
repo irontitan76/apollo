@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import {
-  borders, colors, colorize, getDefaults, interpret, override, retrieve
+  borders, colors, complement, getDefaults, interpret, override, retrieve
 } from './utils';
 
 // FUTURE DISCUSSION: BREAK BOX UP INTO TWO CORE COMPONENTS - "BOX" AND "TEXT"
@@ -24,12 +24,13 @@ export default class Box extends Component {
       textSize, weight, texture, width, wrap, ...props
     } = this.props;
 
+    // Expand child functionality, e.g., pad.between & margin.between
     const styles = `
       align-content:      ${retrieve(css['alignContent'], alignContent)};
       align-items:        ${retrieve(css['alignItems'], alignItems)};
       align-self:         ${retrieve(css['alignSelf'], alignSelf)};
       background:         ${(!fill && color.charAt() === '#')
-                            ? colorize(color)
+                            ? complement(color)
                             : retrieve(css['fill'], fill)};
       background-image:   ${!!texture ? `url(${texture})`: 'none'};
       background-position:${!!texture ? 'center center' : '0% 0%'};
@@ -37,7 +38,7 @@ export default class Box extends Component {
       background-size:    cover;
       box-sizing:         border-box;
       color:              ${(!color && fill.charAt() === '#')
-                            ? colorize(fill)
+                            ? complement(fill)
                             : retrieve(css['color'], color)};
       cursor:             ${!!(onClick || hoverBorder || hoverColor || hoverFill)
                             ? 'pointer' : 'auto'};
@@ -76,12 +77,18 @@ export default class Box extends Component {
         vertical: ['top', 'bottom']
       })};
 
+      * {
+
+        padding-left: ${pad.between};
+        margin-right: ${margin.between};
+      }
+
       &:hover {
         background:         ${retrieve(css['fill'], hoverFill)};
         color:              ${(!hoverColor
                                 && !!hoverFill
                                 && hoverFill.charAt() === '#')
-                              ? colorize(hoverFill)
+                              ? complement(hoverFill)
                               : retrieve(css['color'], hoverColor)};
 
         ${interpret(css['border'], hoverBorder, 'border', {
@@ -95,6 +102,11 @@ export default class Box extends Component {
         flex-direction: ${!!responsive
           ? direction === 'row' ? 'column' : 'row'
           : retrieve(css['direction'], direction) };
+
+          * {
+            padding-${!!responsive ? 'top' : 'left'}: ${pad.between};
+            margin-${!!responsive ? 'top' : 'right'}: ${margin.between};
+          }
 
         ${responsiveOptions}
       }

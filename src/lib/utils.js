@@ -37,28 +37,7 @@ export const colors = {
   white: "var(--white)"
 };
 
-export const contrast = (hex) => {
-  if ( hex.charAt() !== '#' ) {
-    hex = getComputedStyle(document.body).getPropertyValue('--green').substring(1);
-  }
-
-  hex = hex.substring(1);
-
-  let rgb = hex
-    .match(new RegExp('(.{' + hex.length / 3 + '})', 'g'))
-    .map(i => parseInt(hex.length % 2 ? i + i : i, 16));
-
-  let adjustedRgb = rgb.map(c => {
-    c = c / 255.0;
-    return c <= 0.03928 ? c / 12.92 : Math.pow(((c + 0.055) / 1.055), 2.4);
-  });
-
-  let L = 0.2126 * adjustedRgb[0] + 0.7152 * adjustedRgb[1] + 0.0722 * adjustedRgb[2];
-
-  return L > Math.sqrt(1.05 * 0.05) - 0.05 ? '#000' : '#fff';
-};
-
-export const colorize = (hex) => {
+export const complement = (hex) => {
   if ( hex.charAt() !== '#' ) return hex;
 
   hex = hex.substring(1);
@@ -139,6 +118,27 @@ export const colorize = (hex) => {
   rgb = b | (g << 8) | (r << 16);
   let result = '#' + (0x1000000 | rgb).toString(16).substring(1);
   return result.slice(1) === hex ? '#000' : result;
+};
+
+export const contrast = (hex) => {
+  if ( hex.charAt() !== '#' ) {
+    hex = getComputedStyle(document.body).getPropertyValue('--green').substring(1);
+  }
+
+  hex = hex.substring(1);
+
+  let rgb = hex
+    .match(new RegExp('(.{' + hex.length / 3 + '})', 'g'))
+    .map(i => parseInt(hex.length % 2 ? i + i : i, 16));
+
+  let adjustedRgb = rgb.map(c => {
+    c = c / 255.0;
+    return c <= 0.03928 ? c / 12.92 : Math.pow(((c + 0.055) / 1.055), 2.4);
+  });
+
+  let luminance = 0.2126 * adjustedRgb[0] + 0.7152 * adjustedRgb[1] + 0.0722 * adjustedRgb[2];
+
+  return luminance > Math.sqrt(1.05 * 0.05) - 0.05 ? '#000' : '#fff';
 };
 
 export const getDefaults = (config) => {

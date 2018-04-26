@@ -1,13 +1,5 @@
 @import url('./assets/fonts/fonts.css');
 
-.active {
-  max-height: 56px;
-}
-
-.non-active {
-  max-height: 0;
-}
-
 :root {
   --white:  #fff;
   --black:  #000;

@@ -40,14 +40,10 @@ export default class Button extends Component {
     } else {
       border = border || '3px solid transparent';
       color = color || 'dark';
-      hoverBorder = hoverBorder || 'dark';
-      hoverColor = hoverColor || 'light';
-      hoverFill = hoverFill || 'light';
       fill = fill || 'light';
-    }
-
-    if ( children === 'Default' ) {
-      console.log(color, hoverBorder, hoverColor);
+      hoverBorder = hoverBorder || 'dark';
+      hoverColor = hoverColor || 'dark';
+      hoverFill = hoverFill || 'light';
     }
 
     return <Button as={!!path ? Link : 'button' }

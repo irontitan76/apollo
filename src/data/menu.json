@@ -6,49 +6,49 @@
       {
         "id": "app",
         "name": "App",
-        "path": "/design/structure/app",
+        "path": "#app",
         "render": "AppConfig"
       },
       {
         "id": "card",
         "name": "Card",
-        "path": "/design/structure/card",
+        "path": "#card",
         "render": "CardConfig"
       },
       {
-        "id": "container",
-        "name": "Container",
-        "path": "/design/structure/container",
+        "id": "box",
+        "name": "Box",
+        "path": "#box",
         "render": "ContainerConfig"
       },
       {
         "id": "columns",
         "name": "Columns",
-        "path": "/design/structure/columns",
+        "path": "#columns",
         "render": "ColumnsConfig"
       },
       {
         "id": "grid",
         "name": "Grid",
-        "path": "/design/structure/grid",
+        "path": "#grid",
         "render": "GridConfig"
       },
       {
         "id": "layer",
         "name": "Layer",
-        "path": "/design/structure/layer",
+        "path": "#layer",
         "render": "LayerConfig"
       },
       {
         "id": "sidebar",
         "name": "Sidebar",
-        "path": "/design/structure/sidebar",
+        "path": "#sidebar",
         "render": "SidebarConfig"
       },
       {
         "id": "split",
         "name": "Split",
-        "path": "/design/structure/split",
+        "path": "#split",
         "render": "SplitConfig"
       }
     ]
@@ -60,22 +60,22 @@
       {
         "id": "heading",
         "name": "Heading",
-        "path": "/design/text/heading"
+        "path": "#heading"
       },
       {
         "id": "paragraph",
         "name": "Paragraph",
-        "path": "/design/text/paragraph"
+        "path": "#paragraph"
       },
       {
         "id": "quote",
         "name": "Quote",
-        "path": "/design/text/quote"
+        "path": "#quote"
       },
       {
         "id": "title",
         "name": "Title",
-        "path": "/design/text/title"
+        "path": "#title"
       }
     ]
   },
@@ -86,38 +86,38 @@
       {
         "id": "anchor",
         "name": "Anchor",
-        "path": "/design/navigation/anchor"
+        "path": "#anchor"
       },
       {
         "id": "button",
         "name": "Button",
-        "path": "/design/navigation/button",
+        "path": "#button",
         "render": "ButtonConfig"
       },
       {
         "id": "footer",
         "name": "Footer",
-        "path": "/design/navigation/footer"
+        "path": "#footer"
       },
       {
         "id": "menu",
         "name": "Menu",
-        "path": "/design/navigation/menu"
+        "path": "#menu"
       },
       {
         "id": "navbar",
         "name": "Navbar",
-        "path": "/design/navigation/navbar"
+        "path": "#navbar"
       },
       {
         "id": "search",
         "name": "Search",
-        "path": "/design/navigation/search"
+        "path": "#search"
       },
       {
         "id": "tabs",
         "name": "Tabs",
-        "path": "/design/navigation/tabs"
+        "path": "#tabs"
       }
     ]
   },
@@ -128,12 +128,12 @@
       {
         "id": "list",
         "name": "List",
-        "path": "/design/models/list"
+        "path": "#list"
       },
       {
         "id": "table",
         "name": "Table",
-        "path": "/design/models/table"
+        "path": "#table"
       }
     ]
   },
@@ -142,14 +142,9 @@
     "path": null,
     "children": [
       {
-        "id": "fadeIn",
-        "name": "Fade In",
-        "path": "/design/animation/fadeIn"
-      },
-      {
-        "id": "fadeOut",
-        "name": "Fade Out",
-        "path": "/design/animation/fadeOut"
+        "id": "animate",
+        "name": "Animate",
+        "path": "#animate"
       }
     ]
   }

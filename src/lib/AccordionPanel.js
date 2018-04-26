@@ -14,7 +14,7 @@ export default class AccordionPanel extends Component {
 
   _onClick(node) {
     const { onChange } = this.props;
-    onChange();
+    onChange ? onChange() : null;
   }
 
   componentDidMount() {

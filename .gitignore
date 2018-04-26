@@ -10,6 +10,7 @@
 /build
 
 # dev
+/__archive__
 /src/assets/demo-photos
 
 # misc
