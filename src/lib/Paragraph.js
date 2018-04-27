@@ -25,7 +25,7 @@ export default class Paragraph extends Component {
     `;
 
     return <Paragraph {...props}
-      textAlign={retrieve(css['align'], align)}
+      textAlign={ align }
       textSize={retrieve(css['size'], size)}>
       {children}
     </Paragraph>;
@@ -33,19 +33,6 @@ export default class Paragraph extends Component {
 }
 
 const css = {
-  "align": {
-    "name": "text-align",
-    "default": 'start',
-    "options": {
-      "start": "left",
-      "center": "center",
-      "end": "right"
-    }
-  },
-  "right": {
-    "name": "text-align",
-    "default": false
-  },
   "size": {
     "name": "font-size",
     "default": "md",
@@ -62,6 +49,7 @@ const css = {
 }
 
 Paragraph.defaultProps = {
+  align: 'start',
   as: 'p',
   margin: { vertical: 'md' },
   color: 'dark',

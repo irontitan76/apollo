@@ -34,7 +34,7 @@ export default class Menu extends Component {
         {title}
       </Anchor>
 
-      <DropdownContent direction='column' fill={ menu.fill } justify='center'>
+      <DropdownContent direction='column' fill={ menu.fill } justify='center' maxHeight={0}>
         {children}
       </DropdownContent>
 

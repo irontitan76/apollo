@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 import { Box, Heading, Paragraph, Title } from './';
-import { getDefaults } from './utils';
 
 export default class Card extends Component {
   constructor (props) {
@@ -19,7 +17,7 @@ export default class Card extends Component {
       ? <Heading
           key={0}
           size='xs'
-          margin={{ bottom: 'auto', top: 0 }}
+          margin={{ bottom: reverse ? 0 : 'auto', top: reverse ? 'auto' : 0 }}
           pad={ contentPad }>
           { meta }
         </Heading>
@@ -30,7 +28,7 @@ export default class Card extends Component {
           key={3}
           border={ metaBorder }
           size='xs'
-          margin={{ bottom: 0, top: 'auto' }}
+          margin={{ bottom: reverse ? 'auto' : 0, top: reverse ? 0 : 'auto' }}
           pad={ contentPad }>
           { meta }
         </Heading>
@@ -56,20 +54,9 @@ export default class Card extends Component {
   }
 }
 
-const css = {
-  "metaPosition": {
-    "name": "metaPosition",
-    "default": "end",
-    "options": {
-      "start": "start",
-      "end": "end"
-    }
-  }
-};
-
 Card.defaultProps = {
   contentPad: 'md',
   direction: 'column',
   imagePad: 0,
-  ...getDefaults(css)
+  metaPosition: 'end'
 }

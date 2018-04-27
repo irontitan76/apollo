@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { HashLink as Link } from 'react-router-hash-link';
-import { contrast, getDefaults, retrieve } from './utils';
+import { getDefaults, retrieve } from './utils';
+import { contrast } from './utils';
 
 import { Box } from './';
 
@@ -13,7 +14,8 @@ export default class Button extends Component {
 
   render() {
     let {
-      children, border, color, fill, height, hoverBorder, hoverColor, hoverFill, method, outline, path, primary, secondary, size, width, ...props
+      children, border, color, fill, height, hoverBorder, hoverColor, hoverFill,
+      method, outline, path, primary, secondary, size, width, ...props
     } = this.props;
 
     if ( !!size ) {
@@ -99,6 +101,8 @@ Button.defaultProps = {
   method: 'push',
   pad: 'md',
   family: 'semi',
+  textAlign: 'center',
+  textSize: 'md',
   weight: 'semi',
   width: 'md',
   ...getDefaults(css)

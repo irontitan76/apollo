@@ -11,4 +11,5 @@ export { default as Menu } from './Menu';
 export { default as Paragraph } from './Paragraph';
 export { default as Search } from './Search';
 export { default as Sidebar } from './Sidebar';
+export { default as Table } from './Table';
 export { default as Title } from './Title';

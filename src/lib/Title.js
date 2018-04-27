@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Box } from './';
-import { getDefaults, truncateString } from './utils';
+import { truncateString } from './utils';
 
 export default class Title extends Component {
   constructor (props) {
@@ -26,15 +26,10 @@ export default class Title extends Component {
   }
 }
 
-const css = {
-
-};
-
 Title.defaultProps = {
   as: 'div',
   spacing: '2px',
   family: 'extra',
   textSize: 'lg',
-  weight: 'extra',
-  ...getDefaults(css)
+  weight: 'extra'
 };

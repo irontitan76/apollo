@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 import { Box } from './';
-import { colors, getDefaults, retrieve } from './utils';
+import { find } from './utils';
 
-export default class Sidebar extends Component {
+export class Sidebar extends Component {
   render() {
     const {
       children, height, fixed, scrollColor, scrollThumbColor,
-      scrollThumbHoverColor, scroll, side, width, ...props
+      scrollThumbHoverColor, scroll, side, theme: { brand }, width, ...props
     } = this.props;
 
     const Sidebar = styled(Box)`
@@ -24,17 +24,15 @@ export default class Sidebar extends Component {
       }
 
       ::-webkit-scrollbar-track {
-        background:         ${retrieve(css['scrollColor'], scroll.color)};
+        background:         ${find(brand, 'colorIndex', scroll.color)};
       }
 
       ::-webkit-scrollbar-thumb {
-        background:         ${retrieve(css['scrollThumbColor'],
-                              scroll.thumbColor)};
+        background:         ${find(brand, 'colorIndex', scroll.thumbColor)};
       }
 
       ::-webkit-scrollbar-thumb:hover {
-        background:         ${retrieve(css['scrollThumbHoverColor'],
-                              scroll.thumbHoverColor)};
+        background:         ${find(brand, 'colorIndex', scroll.thumbHoverColor)};
       }
 
       @media ( max-width: 768px ) {
@@ -46,7 +44,6 @@ export default class Sidebar extends Component {
       }
     `;
 
-
     return <Sidebar as='nav'
       direction='column'
       height={height}
@@ -57,29 +54,16 @@ export default class Sidebar extends Component {
   }
 }
 
-const css = {
-  "scrollColor": {
-    "name": "::-webkit-scrollbar-track",
-    "default": "light",
-    "options": colors
-  },
-  "scrollThumbColor": {
-    "name": "::-webkit-scrollbar-thumb",
-    "default": "#ddd",
-    "options": colors
-  },
-  "scrollThumbHoverColor": {
-    "name": "::-webkit-scrollbar-thumb:hover",
-    "default": "dark",
-    "options": colors
-  }
-};
-
 Sidebar.defaultProps = {
   height: '100%',
   fill: 'white',
   fixed: true,
-  scroll: false,
-  width: 'md',
-  ...getDefaults(css)
+  scroll: {
+    color: 'light',
+    thumbColor: '#ddd',
+    thumbHoverColor: 'dark'
+  },
+  width: 'md'
 }
+
+export default withTheme(Sidebar);

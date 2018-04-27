@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Box } from './';
-import { retrieve } from './utils';
 
 export default class Animate extends Component {
   render() {
@@ -65,7 +64,7 @@ const css = {
     40%, 60% { width: 60%; }
     45%, 55% { width: 55%; }
     50% { width: 50%; }`,
-  oscillateX: `5%, 95% { height: 95%; }
+  oscillateY: `5%, 95% { height: 95%; }
     10%, 90% { height: 90%; }
     15%, 85% { height: 85%; }
     20%, 80% { height: 80%; }

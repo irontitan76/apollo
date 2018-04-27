@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import styled, { keyframes } from 'styled-components';
 import { Transition } from 'react-transition-group';
 import { Box, Button } from '../lib';
 
@@ -14,11 +13,11 @@ export default class AccordionPanel extends Component {
 
   _onClick(node) {
     const { onChange } = this.props;
-    onChange ? onChange() : null;
+    return onChange ? onChange() : null;
   }
 
   componentDidMount() {
-    const { open, first } = this.props;
+    const { first } = this.props;
 
     const node = ReactDOM.findDOMNode(this);
     this.setState({

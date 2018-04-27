@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Box } from './';
 import { getDefaults, retrieve, truncateString } from './utils';
@@ -48,18 +49,6 @@ export default class Heading extends Component {
 }
 
 const css = {
-  "as": {
-    "name": "as",
-    "default": "h2",
-    "options": {
-      "h1": "h1",
-      "h2": "h2",
-      "h3": "h3",
-      "h4": "h4",
-      "h5": "h5",
-      "h6": "h6"
-    }
-  },
   "size": {
     "name": "font-size",
     "default": "lg",
@@ -76,9 +65,14 @@ const css = {
 };
 
 Heading.defaultProps = {
+  as: 'h2',
   family: 'light',
   margin: { top: 'vl', bottom: 'sm' },
-  size: 'vl',
+  size: 'lg',
   weight: 'light',
   ...getDefaults(css)
 };
+
+Heading.propTypes = {
+  as: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6'])
+}

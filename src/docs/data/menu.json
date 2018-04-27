@@ -1,0 +1,151 @@
+[
+  {
+    "name": "Structure",
+    "path": null,
+    "children": [
+      {
+        "id": "app",
+        "name": "App",
+        "path": "#app",
+        "render": "AppConfig"
+      },
+      {
+        "id": "card",
+        "name": "Card",
+        "path": "#card",
+        "render": "CardConfig"
+      },
+      {
+        "id": "box",
+        "name": "Box",
+        "path": "#box",
+        "render": "ContainerConfig"
+      },
+      {
+        "id": "columns",
+        "name": "Columns",
+        "path": "#columns",
+        "render": "ColumnsConfig"
+      },
+      {
+        "id": "grid",
+        "name": "Grid",
+        "path": "#grid",
+        "render": "GridConfig"
+      },
+      {
+        "id": "layer",
+        "name": "Layer",
+        "path": "#layer",
+        "render": "LayerConfig"
+      },
+      {
+        "id": "sidebar",
+        "name": "Sidebar",
+        "path": "#sidebar",
+        "render": "SidebarConfig"
+      },
+      {
+        "id": "split",
+        "name": "Split",
+        "path": "#split",
+        "render": "SplitConfig"
+      }
+    ]
+  },
+  {
+    "name": "Text",
+    "path": null,
+    "children": [
+      {
+        "id": "heading",
+        "name": "Heading",
+        "path": "#heading"
+      },
+      {
+        "id": "paragraph",
+        "name": "Paragraph",
+        "path": "#paragraph"
+      },
+      {
+        "id": "quote",
+        "name": "Quote",
+        "path": "#quote"
+      },
+      {
+        "id": "title",
+        "name": "Title",
+        "path": "#title"
+      }
+    ]
+  },
+  {
+    "name": "Navigation",
+    "path": null,
+    "children": [
+      {
+        "id": "anchor",
+        "name": "Anchor",
+        "path": "#anchor"
+      },
+      {
+        "id": "button",
+        "name": "Button",
+        "path": "#button",
+        "render": "ButtonConfig"
+      },
+      {
+        "id": "footer",
+        "name": "Footer",
+        "path": "#footer"
+      },
+      {
+        "id": "menu",
+        "name": "Menu",
+        "path": "#menu"
+      },
+      {
+        "id": "navbar",
+        "name": "Navbar",
+        "path": "#navbar"
+      },
+      {
+        "id": "search",
+        "name": "Search",
+        "path": "#search"
+      },
+      {
+        "id": "tabs",
+        "name": "Tabs",
+        "path": "#tabs"
+      }
+    ]
+  },
+  {
+    "name": "Models",
+    "path": null,
+    "children": [
+      {
+        "id": "list",
+        "name": "List",
+        "path": "#list"
+      },
+      {
+        "id": "table",
+        "name": "Table",
+        "path": "#table"
+      }
+    ]
+  },
+  {
+    "name": "Animation",
+    "path": null,
+    "children": [
+      {
+        "id": "animate",
+        "name": "Animate",
+        "path": "#animate"
+      }
+    ]
+  }
+]

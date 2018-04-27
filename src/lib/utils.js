@@ -1,124 +1,54 @@
-export const parseProperty = (prop, template) => {
-  return prop.charAt() === '!' ? prop.slice(1) : template.replace('!', prop);
+export const find = (theme, prop, val) => {
+  return theme[prop][val] || val;
 };
+
+export const parse = (theme, prop, val, name) => {
+  if ( typeof val === 'undefined' || val === 'none' ) return null;
+
+  name = name || prop;
+  if ( typeof val === 'string' ) return `${name}:${theme[prop][val] || val};`;
+
+  let result = '';
+
+  Object.keys(val).forEach(key => {
+    if ( key === 'vertical' || key === 'all' ) {
+      val['top'] = val['top'] || ( theme[prop][val[key]] || val[key] );
+      val['bottom'] = val['bottom'] || ( theme[prop][val[key]] || val[key] );
+      if ( key !== 'all' ) delete val[key];
+    } else if ( key === 'horizontal' || key === 'all' ) {
+      val['left'] = val['left'] || ( theme[prop][val[key]] || val[key] );
+      val['right'] = val['right'] || ( theme[prop][val[key]] || val[key] );
+      if ( key !== 'all' ) delete val[key];
+    }
+  });
+
+  delete val['all'];
+
+  Object.keys(val).forEach(key => {
+    result += `${name}-${key}:${( theme[prop][val[key]] || val[key] )};`;
+  });
+
+  return `${result}`;
+}
 
 export const truncateString = (string, n) => {
   return (
       typeof n !== 'boolean'
-      && typeof parseInt(n) === 'number'
+      && typeof parseInt(n, 10) === 'number'
       && typeof string === 'string'
     )
-    ? string.substring(0, parseInt(n)).concat('...')
+    ? string.substring(0, parseInt(n, 10)).concat('...')
     : string;
 };
 
-export const borders = () => {
-  let newBorders = {};
-  Object.keys(colors).forEach(color => {
-    newBorders[color] = `3px solid ${colors[color]}`;
-  });
+export const getDefaults = (config) => {
+  let defaults = {};
+  for ( let property in config ) {
+   defaults[property] = config[property].default;
+  }
 
-  return newBorders;
+  return defaults;
 }
-
-export const colors = {
-  black: "var(--black)",
-  blue: "var(--blue)",
-  brown: "var(--brown)",
-  clear: "var(--clear)",
-  dark: "var(--dark)",
-  gray: "var(--gray)",
-  green: "var(--green)",
-  light: "var(--light)",
-  orange: "var(--orange)",
-  purple: "var(--purple)",
-  red: "var(--red)",
-  yellow: "var(--yellow)",
-  white: "var(--white)"
-};
-
-export const complement = (hex) => {
-  if ( hex.charAt() !== '#' ) return hex;
-
-  hex = hex.substring(1);
-  let rgb = hex
-    .match(new RegExp('(.{' + hex.length / 3 + '})', 'g'))
-    .map(i => parseInt(hex.length % 2 ? i + i : i, 16));
-
-  let r = rgb[0] /= 255,
-      g = rgb[1] /= 255,
-      b = rgb[2] /= 255;
-
-  let max = Math.max(r, g, b);
-  let min = Math.min(r, g, b);
-  let h, s, l = (max + min) / 2;
-
-  if (max === min) {
-    h = s = 0;  //achromatic
-  } else {
-    let d = max - min;
-    s = (l > 0.5 ? d / (2.0 - max - min) : d / (max + min));
-
-    if (max === r && g >= b) {
-        h = 1.0472 * (g - b) / d ;
-    } else if (max === r && g < b) {
-        h = 1.0472 * (g - b) / d + 6.2832;
-    } else if (max === g) {
-        h = 1.0472 * (b - r) / d + 2.0944;
-    } else if (max === b) {
-        h = 1.0472 * (r - g) / d + 4.1888;
-    }
-  }
-
-  h = h / 6.2832 * 360.0 + 0;
-
-  // Shift hue to opposite side of wheel and convert to [0-1] value
-  h+= 180;
-  if (h > 360) { h -= 360; }
-  h /= 360;
-
-  // Convert h s and l values into r g and b values
-  if(s === 0){
-    r = g = b = l; // achromatic
-  } else {
-    var hue2rgb = function hue2rgb(p, q, t){
-      if(t < 0) t += 1;
-      if(t > 1) t -= 1;
-      if(t < 1/6) return p + (q - p) * 6 * t;
-      if(t < 1/2) return q;
-      if(t < 2/3) return p + (q - p) * (2/3 - t) * 6;
-      return p;
-    };
-
-    var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
-    var p = 2 * l - q;
-
-    r = hue2rgb(p, q, h + 1/3);
-    g = hue2rgb(p, q, h);
-    b = hue2rgb(p, q, h - 1/3);
-  }
-
-  r = Math.round(r * 255);
-  g = Math.round(g * 255);
-  b = Math.round(b * 255);
-
-  if ( r === g && g === b ) {
-    if ( r < 128 ) {
-      r = 255;
-      g = 255;
-      b = 255;
-    } else {
-      r = 0;
-      g = 0;
-      b = 0;
-    }
-  }
-
-  // Convert r b and g values to hex
-  rgb = b | (g << 8) | (r << 16);
-  let result = '#' + (0x1000000 | rgb).toString(16).substring(1);
-  return result.slice(1) === hex ? '#000' : result;
-};
 
 export const contrast = (hex) => {
   if ( hex.charAt() !== '#' ) {
@@ -140,15 +70,6 @@ export const contrast = (hex) => {
 
   return luminance > Math.sqrt(1.05 * 0.05) - 0.05 ? '#000' : '#fff';
 };
-
-export const getDefaults = (config) => {
-  let defaults = {};
-  for ( let property in config ) {
-   defaults[property] = config[property].default;
-  }
-
-  return defaults;
-}
 
 export const retrieve = (obj, prop) => (!!obj
   && !!obj.options
