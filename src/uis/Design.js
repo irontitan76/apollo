@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { withTheme } from 'styled-components';
 
 import {
-  Accordion, AccordionPanel, Anchor, Animate, Box, Button, Card, Heading,
+  Accordion, AccordionPanel, Anchor, Animate, Box, Button, Card, Heading, List,
   Menu, Paragraph, Search, Sidebar, Table, Title
 } from '../lib';
 
@@ -280,6 +280,22 @@ export class Design extends Component {
               <Heading size='sm'>Heading 5</Heading>
               <Heading size='xs'>Heading 6</Heading>
             </Box>
+          </Box>
+
+          <Box direction='column'>
+            <Heading id='list'>List</Heading>
+            <Heading size='sm' margin={{ vertical: 0}}>Lists format data in a vertical fashion</Heading>
+            <code style={{ fontSize: '1.1rem', paddingLeft: '1rem', marginBottom: '1rem' }}>
+              { `import { List } from 'fusion';` }
+              <br />
+              <br />
+              { `<List>` }
+              <br />
+              &nbsp;&nbsp;{ `{children}` }
+              <br />
+              { `</List>` }
+            </code>
+            <List></List>
           </Box>
 
           <Box direction='column'>
