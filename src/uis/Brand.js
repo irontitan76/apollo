@@ -13,7 +13,7 @@ class Brand extends Component {
         alignItems='center' { ...props }>
         { noLogo
           ? null
-          : <img src={ require('./assets/apollo-logo.png')} alt='logo' />
+          : <img src={ require('./../assets/apollo-logo.png')} alt='logo' />
         }
         &nbsp;
         <span
