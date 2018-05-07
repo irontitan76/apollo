@@ -11,7 +11,32 @@ import Design from './design';
 import Primary from './primary';
 
 export default class Main extends Component {
+  constructor() {
+      super();
+
+      this.state = {
+        navActive: true,
+        footerActive: true
+      };
+  }
+
+  componentWillMount() {
+    // Will have to push this to each separate page
+    if ( window.location.pathname.indexOf('design') > -1 ) {
+      this.setState({
+        navActive: false,
+        footerActive: false
+      });
+    } else {
+      this.setState({
+        navActive: true,
+        footerActive: true
+      });
+    }
+  }
+
   render() {
+    const { navActive, footerActive } = this.state;
     let nav, footer;
 
     if ( theme.fusion.fontFace ) {
@@ -21,17 +46,10 @@ export default class Main extends Component {
       document.head.appendChild(style);
     }
 
-    if ( window.location.pathname.indexOf('design') > -1 ) {
-      nav = null;
-      footer = null;
-    } else {
-      nav = <Nav />;
-      footer = (
-        <Footer fill='dark' color='light'>
-          <Brand />
-        </Footer>
-      );
-    }
+    nav = navActive ? <Nav fill='blue' /> : null;
+    footer = footerActive ? <Footer fill='#222' color='light'>
+      <Brand />
+    </Footer> : null;
 
     return (
       <Router>

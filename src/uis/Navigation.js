@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { Box } from './../lib';
+import Brand from './Brand';
 
 export default class Nav extends Component {
   constructor(props) {
@@ -19,22 +20,23 @@ export default class Nav extends Component {
   }
 
   render() {
-    const Brand = styled(NavLink)`
-      padding-right:        3rem;
-
-      &:hover {
-        filter:             brightness(75%);
-      }
-
-      @media (max-width: 768px) {
-        padding-left:       0;
-        padding-right:      0;
-
-        img {
-          margin-top:       1em;
-        }
-      }
-    `;
+    // const Brand = styled(NavLink)`
+    //   color: white;
+    //   padding-right:        3rem;
+    //
+    //   &:hover {
+    //     color: #3e7859;
+    //   }
+    //
+    //   @media (max-width: 768px) {
+    //     padding-left:       0;
+    //     padding-right:      0;
+    //
+    //     img {
+    //       margin-top:       1em;
+    //     }
+    //   }
+    // `;
 
     const Menu = styled.ul`
       display:            flex;
@@ -68,21 +70,22 @@ export default class Nav extends Component {
 
     const Link = styled(NavLink)`
       color: var(--light);
-      font-family: var(--font-semibold);
-      font-size: 15px;
+      font-family: Lato, sans-serif;
+      font-size: 14px;
+      font-weight: 300;
       text-decoration: none;
       transition: all .1s ease;
 
       &.active {
-        color: var(--gray);
+        color: #3e7859;
       }
 
       &:hover, &:focus {
-        color: var(--gray);
+        color: #3e7859;
       }
 
       @media (max-width: 768px) {
-        color: var(--light);
+        color: #f2f2f2;
       }
     `;
 
@@ -123,12 +126,10 @@ export default class Nav extends Component {
     `;
 
     return (
-      <Box as='nav' bgColor='dark' justify='center' pad='!0 2%'>
-        <Box alignItems='center' height='xs' width='!1200px'>
-          <Brand to='/' justify='start'>
-              <img src={require('./assets/logo-28px.png')} alt='logo' />
-          </Brand>
-          <Box alignItems='center' justify='end' grow='1'>
+      <Box as='nav' fill='blue' justify='center' pad='!0 2%'>
+        <Box alignItems='center' height='vs' justify='between' width='1200px'>
+          <Brand path='/' />
+          <Box alignItems='center' color='white' justify='end' grow='1'>
             <Toggle type='checkbox' id='menu-toggle'/>
             <ToggleLabel htmlFor='menu-toggle' className='label-toggle' />
             <Menu>

@@ -6,6 +6,13 @@ import fontawesome from '@fortawesome/fontawesome';
   **/
 import faAngleDown from '@fortawesome/fontawesome-pro-light/faAngleDown';
 import faCodeMerge from '@fortawesome/fontawesome-pro-light/faCodeMerge';
+import faBrowser from '@fortawesome/fontawesome-pro-light/faBrowser';
+import faDatabase from '@fortawesome/fontawesome-pro-light/faDatabase';
+import faCloud from '@fortawesome/fontawesome-pro-light/faCloud';
+import faDna from '@fortawesome/fontawesome-pro-light/faDna';
+import faUsers from '@fortawesome/fontawesome-pro-light/faUsers';
+import faBinoculars from '@fortawesome/fontawesome-pro-light/faBinoculars';
+import faBriefcase from '@fortawesome/fontawesome-pro-light/faBriefcase';
 
 /**
   * Add the imported icon to the FA library like so:
@@ -13,3 +20,10 @@ import faCodeMerge from '@fortawesome/fontawesome-pro-light/faCodeMerge';
   **/
 fontawesome.library.add(faAngleDown);
 fontawesome.library.add(faCodeMerge);
+fontawesome.library.add(faBrowser);
+fontawesome.library.add(faDatabase);
+fontawesome.library.add(faCloud);
+fontawesome.library.add(faDna);
+fontawesome.library.add(faUsers);
+fontawesome.library.add(faBinoculars);
+fontawesome.library.add(faBriefcase);

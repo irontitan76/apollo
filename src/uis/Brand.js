@@ -1,38 +1,33 @@
 import React, { Component } from 'react';
 import { withTheme } from 'styled-components';
-import { Box } from './../lib';
+import { Anchor } from './../lib';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
 class Brand extends Component {
   render() {
     const { color, company, noLogo, org, theme, ...props } = this.props;
 
     return (
-      <Box
-        key={ `key__${org}` }
+      <Anchor
+        alignItems='center'
+        color='white'
         fill='transparent'
-        alignItems='center' { ...props }>
+        hoverColor='green'
+        { ...props }>
         { noLogo
           ? null
-          : <img src={ require('./../assets/apollo-logo.png')} alt='logo' />
+          : <FontAwesomeIcon icon={[ 'fal', 'code-merge' ]} size='2x' />
         }
-        &nbsp;
-        <span
-          style={{ color: theme.brand.colorIndex[color], fontFamily: 'open_sansbold' }}>
-          {company}&nbsp;
-        </span>
-        <span
-          style={{ color: theme.brand.colorIndex[color], fontFamily: 'open_sanslight' }}>
-          {org}
-        </span>
-      </Box>
+        <span style={{ fontWeight: 200 }}>&nbsp;&nbsp;&nbsp;{company}</span>
+      </Anchor>
     );
   }
 }
 
 Brand.defaultProps = {
   color: 'light',
-  company: 'APOLLO',
-  org: 'INDUSTRIES'
+  company: 'fusion.io',
+  noLogo: false
 }
 
 export default withTheme(Brand);

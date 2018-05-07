@@ -34,12 +34,12 @@ export const fusion = {
   },
   // using weights and style to determine font styling
   font: {
-    thin: 'Open Sans',
-    light: 'Open Sans',
-    regular: 'Open Sans',
-    semi: 'Open Sans',
-    bold: 'Open Sans',
-    extra: 'Open Sans'
+    thin: 'Lato',
+    light: 'Lato',
+    regular: 'Lato',
+    semi: 'Lato',
+    bold: 'Lato',
+    extra: 'Lato  '
   },
   fontFace: `
     @font-face {

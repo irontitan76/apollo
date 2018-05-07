@@ -4,23 +4,24 @@ import { Box } from './../lib';
 class Footer extends Component {
   render() {
     const {
-      children, color, ...props
+      children, ...props
     } = this.props;
 
     return (
       <Box
         as='footer'
+        height='xs'
         justify='center'
-        fontFamily='light'
-        height='sm'
         pad='0 2%'
+        weight='light'
         { ...props }>
           <Box
             alignItems='center'
             color='gray'
+            height='xs'
             justify='between'
             width='1200px'>
-            &copy; 2018 Apollo Industries, Inc.
+            &copy; 2018 Fusion Industries, Inc.
             { children }
           </Box>
       </Box>
@@ -30,7 +31,6 @@ class Footer extends Component {
 
 Footer.defaultProps = {
   fill: 'transparent',
-  color: 'dark',
   size: 'md'
 };
 
