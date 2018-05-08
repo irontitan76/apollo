@@ -13,6 +13,7 @@ import faDna from '@fortawesome/fontawesome-pro-light/faDna';
 import faUsers from '@fortawesome/fontawesome-pro-light/faUsers';
 import faBinoculars from '@fortawesome/fontawesome-pro-light/faBinoculars';
 import faBriefcase from '@fortawesome/fontawesome-pro-light/faBriefcase';
+import faChevronRight from '@fortawesome/fontawesome-pro-light/faChevronRight';
 
 /**
   * Add the imported icon to the FA library like so:
@@ -27,3 +28,4 @@ fontawesome.library.add(faDna);
 fontawesome.library.add(faUsers);
 fontawesome.library.add(faBinoculars);
 fontawesome.library.add(faBriefcase);
+fontawesome.library.add(faChevronRight);

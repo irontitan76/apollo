@@ -9,6 +9,7 @@ import Footer from './Footer';
 import Nav from './Navigation.js';
 import Design from './design';
 import Primary from './primary';
+import Values from './values';
 
 export default class Main extends Component {
   constructor() {
@@ -58,6 +59,7 @@ export default class Main extends Component {
             { nav }
             <Route exact path ='/' component={ Primary } />
             <Route exact path='/design' component={ Design } />
+            <Route exact path='/values' component={ Values } />
             { footer }
           </Fragment>
         </ThemeProvider>
