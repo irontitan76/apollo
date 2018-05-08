@@ -61,6 +61,12 @@ export class Values extends Component {
 
             { Title('Our Story') }
             <Paragraph alignSelf='end' weight='light' width='50%'>
+              Our company's path started in 2018 with a vision to change each
+              significant industry in the world. Our vision was grand, but we
+              knew that we needed to start small. With that in mind, we created
+              Fusion Industries as a professional services company with 
+              offerings in the web application development space...
+
               Fusion Industries was founded by Ross Sheppard in 2018. The company's
               vision started when he was 16 years old after his first course in
               computer programming (Java). He realized there was infinite
