@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withTheme } from 'styled-components';
-import { Anchor, Box, Button } from './../../lib';
+import { Anchor, Animate, Box, Button } from './../../lib';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
 export class Primary extends Component {
@@ -46,7 +46,7 @@ export class Primary extends Component {
   render() {
     const { heroText, solutions } = this.state;
 
-    return (
+    return <Animate action='fadeIn'>
       <Box as='article' direction='column' alignItems='center' justify='center'>
         <Box justify='center' style={{
             backgroundImage: `url(${require('./../../assets/skyline.jpg')}`,
@@ -94,7 +94,7 @@ export class Primary extends Component {
           })
         }
       </Box>
-    );
+    </Animate>;
   }
 }
 

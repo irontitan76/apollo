@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withTheme } from 'styled-components';
-import { Box, Heading, Image, Paragraph } from './../../lib';
+import { Animate, Box, Heading, Image, Paragraph } from './../../lib';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
 export class Values extends Component {
@@ -47,31 +47,30 @@ export class Values extends Component {
 
     const Title = (children) => React.createElement(
       Heading,
-      { alignSelf: 'center', margin: { top: 'vl', bottom: 'xl' }, weight: 'regular'},
+      { alignSelf: 'center', margin: { top: 'vl', bottom: 'xl' }, size: 'xl', weight: 'regular'},
       children
     );
 
-    return <Box alignSelf='center' direction='column' justify='center' width='100%'>
-      <Box height='45px' width='100%' fill='light'>
-        {/* Company Navigation goes here */}
-      </Box>
-      <Box alignSelf='center' width='1200px'>
-        <Box alignSelf='center' direction='column' justify='center'>
-          { Title('Our Values') }
-          <Image src='http://via.placeholder.com/1200x400' alt='explore'  />
-          <Box width='1200px'>{ valueDisplay }</Box>
+    return <Animate action='fadeIn'>
+      <Box alignSelf='center' direction='column' justify='center' width='100%'>
+        <Box alignSelf='center' width='1200px'>
+          <Box alignSelf='center' direction='column' justify='center'>
+            { Title('Our Values') }
+            <Box style={{ backgroundImage: `url(${require('./../../assets/passion.jpg') }`, backgroundPosition: 'center center', backgroundSize: 'cover' }} height='550px' width='100%' />
+            <Box width='1200px'>{ valueDisplay }</Box>
 
-          { Title('Our Story') }
-          <Paragraph alignSelf='end' weight='light' width='50%'>
-            Fusion Industries was founded by Ross Sheppard in 2018. The company's
-            vision started when he was 16 years old after his first course in
-            computer programming (Java). He realized that there was infinite
-            knowlege to gain, and he set out to discover as much as he could. His
-            strategy for Fusion Industries was a relatively simple one - learn.
-          </Paragraph>
+            { Title('Our Story') }
+            <Paragraph alignSelf='end' weight='light' width='50%'>
+              Fusion Industries was founded by Ross Sheppard in 2018. The company's
+              vision started when he was 16 years old after his first course in
+              computer programming (Java). He realized there was infinite
+              knowlege, so his initial strategy for Fusion Industries was a
+              relatively simple one - learn.
+            </Paragraph>
+          </Box>
         </Box>
       </Box>
-    </Box>;
+    </Animate>;
   }
 }
 
