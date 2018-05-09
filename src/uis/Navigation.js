@@ -20,24 +20,6 @@ export default class Nav extends Component {
   }
 
   render() {
-    // const Brand = styled(NavLink)`
-    //   color: white;
-    //   padding-right:        3rem;
-    //
-    //   &:hover {
-    //     color: #3e7859;
-    //   }
-    //
-    //   @media (max-width: 768px) {
-    //     padding-left:       0;
-    //     padding-right:      0;
-    //
-    //     img {
-    //       margin-top:       1em;
-    //     }
-    //   }
-    // `;
-
     const Menu = styled.ul`
       display:            flex;
       justify-content:    space-between;
