@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import styled, { withTheme } from 'styled-components';
-import { Animate, Box, Card, Heading, Image, Paragraph, Title } from './../lib';
+import { withTheme } from 'styled-components';
+import { Animate, Box, Heading, Image, Paragraph, Title } from './../lib';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
 export class Insights extends Component {
@@ -66,7 +66,7 @@ export class Insights extends Component {
               <span style={{ color: '#015085', fontSize: '2rem' }}>.</span>
               sight&nbsp;&nbsp;
             </Title>
-            <Heading alignSelf='center' margin='0' pad={{ left: 'lg' }}  margin={{ top: '1.25rem' }} size='sm'>
+            <Heading alignSelf='center' margin={{ all: '0', top: '.4rem' }} pad={{ left: 'lg' }} size='sm'>
               <FontAwesomeIcon icon={[ 'fal', 'bars' ]} size='lg' />
               <span style={{ fontWeight: '700' }}>&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;All Topics</span>
             </Heading>

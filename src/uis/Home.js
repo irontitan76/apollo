@@ -69,7 +69,7 @@ export class Primary extends Component {
         </Box>
         <Box alignSelf='center' alignItems='center' justify='between' margin='xl' width='1200px'>
           {
-            solutions.map((solution, key) => <Anchor weight='bold'>
+            solutions.map((solution, key) => <Anchor key={`key__${key}`} weight='bold'>
               <Box>
                 <FontAwesomeIcon icon={[ 'fal', solution.icon ]} size='lg' />
                 <Box margin={{ left: 'sm' }}>{solution.name}</Box>
@@ -80,15 +80,15 @@ export class Primary extends Component {
         </Box>
         {
           solutions.map((solution, key) => {
-            const first = <Box basis='1/2'></Box>;
-            const second = <Box basis='1/2' direction='column' pad={{ vertical: '12%' }} textAlign='center' textSize='lg' weight='light'>
+            const first = <Box basis='1/2' key='key__1'></Box>;
+            const second = <Box basis='1/2' key='key__2' direction='column' pad={{ vertical: '12%' }} textAlign='center' textSize='lg' weight='light'>
               {solution.blurb}
               <Button alignSelf='center' fill='#222' height='40px' margin={{ top: 'xl' }} pad='0' primary>
                 More about {solution.name.toLowerCase()}
               </Button>
             </Box>;
 
-            return <Box alignSelf='center' alignItems='center' justify='between' width='1200px'>
+            return <Box alignSelf='center' alignItems='center' justify='between' key={`key__${key}`} width='1200px'>
               { key % 2 === 0 ? [ first, second ] : [ second, first ] }
             </Box>
           })
