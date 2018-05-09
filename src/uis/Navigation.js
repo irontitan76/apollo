@@ -77,11 +77,13 @@ export default class Nav extends Component {
       transition: all .1s ease;
 
       &.active {
-        color: #3e7859;
+        color: #f2f2f2;
+        font-weight: bold;
       }
 
       &:hover, &:focus {
         color: #3e7859;
+        font-weight: bold;
       }
 
       @media (max-width: 768px) {

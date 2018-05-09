@@ -13,6 +13,8 @@ export default class Card extends Component {
       meta, metaBorder, metaPosition, reverse, ...props
     } = this.props;
 
+    // Need heading, category, description to have an object option to edit sizes, fonts, etc.
+
     let start = metaPosition === 'start'
       ? <Heading
           key={0}

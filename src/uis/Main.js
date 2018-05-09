@@ -7,9 +7,11 @@ import { theme } from './../themes';
 import Brand from './Brand';
 import Footer from './Footer';
 import Nav from './Navigation.js';
-import Design from './design';
-import Primary from './primary';
-import Values from './values';
+import Design from './Design';
+import Insights from './Insights';
+import Primary from './Home';
+import Values from './Values';
+import Strategy from './Strategy';
 
 export default class Main extends Component {
   constructor() {
@@ -60,6 +62,8 @@ export default class Main extends Component {
             <Route exact path ='/' component={ Primary } />
             <Route exact path='/design' component={ Design } />
             <Route exact path='/values' component={ Values } />
+            <Route exact path='/strategy' component={ Strategy } />
+            <Route exact path='/insights' component={ Insights } />
             { footer }
           </Fragment>
         </ThemeProvider>
