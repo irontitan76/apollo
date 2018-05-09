@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withTheme } from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 import { Animate, Box, Heading, Image, Paragraph, Title } from './../lib';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
@@ -57,6 +57,15 @@ export class Insights extends Component {
   render() {
     const { articles } = this.state;
 
+    const Card = styled(Box)`
+      transition: transform .3s ease-out;
+
+      &:hover {
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        transform: translate(0, -5px);
+      }
+    `;
+
     return <Animate action='fadeIn'>
       <Box direction='column' margin='0 auto'>
         <Box alignItems='center' color='dark' fill='white' height='125px' justify='center'>
@@ -78,22 +87,22 @@ export class Insights extends Component {
               articles.map((article, key) => {
                 if ( key % 2 === 1 ) {
                   return <Box key={`key__${key}`} basis={article.basis} pad={{ right: 'lg' }}>
-                      <Box justify='end' direction='column' style={{ backgroundImage: `url(${article.image}`}} width='100%'>
+                      <Card justify='end' direction='column' style={{ backgroundImage: `url(${article.image}`}} width='100%'>
                       <Box direction='column' pad='md' fill='white' width='55%'>
                         <Heading size='sm' margin='0' weight='semi'>{article.name}</Heading>
                         <Paragraph weight='light'>{article.content}</Paragraph>
                       </Box>
-                    </Box>
+                    </Card>
                   </Box>
                 } else {
                   return <Box key={ `key__${key}` } pad={{ right: 'lg' }} basis={article.basis}>
-                    <Box direction='column' fill='white'>
+                    <Card direction='column' fill='white'>
                       <Image src={ article.image } height='150px' />
                       <Box direction='column' pad='lg'>
                         <Heading size='sm' margin='0' weight='semi'>{article.name}</Heading>
                         <Paragraph weight='light'>{article.content}</Paragraph>
                       </Box>
-                    </Box>
+                    </Card>
                   </Box>
                 }
               })

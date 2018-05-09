@@ -56,7 +56,7 @@ export class Primary extends Component {
             <Box alignItems='center' direction='column' color='white' margin={{ top: '6rem' }} pad='vl' textSize='vl' weight='200'>
               { heroText }
               <Box>
-              <Button alignSelf='center' border='2px solid transparent' fill='green' height='2.5rem' margin={{ top: 'vl', right: 'md' }} pad='0' style={{ lineHeight: 1 }} width='lg' primary>
+              <Button alignSelf='center' border='2px solid transparent' hoverBorder='2px solid white' fill='green' height='2.5rem' margin={{ top: 'vl', right: 'md' }} pad='0' style={{ lineHeight: 1 }} width='lg' primary>
                 <FontAwesomeIcon icon={[ 'fal', 'binoculars' ]} />
                 &nbsp;&nbsp;Learn more
               </Button>
