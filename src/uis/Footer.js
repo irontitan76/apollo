@@ -4,7 +4,7 @@ import { Box } from './../lib';
 class Footer extends Component {
   render() {
     const {
-      children, ...props
+      children, copyright, ...props
     } = this.props;
 
     return (
@@ -20,8 +20,8 @@ class Footer extends Component {
             color='gray'
             height='xs'
             justify='between'
-            width='1200px'>
-            &copy; 2018 Fusion Industries, Inc.
+            width='1250px'>
+            &copy; {copyright}
             { children }
           </Box>
       </Box>
@@ -31,6 +31,7 @@ class Footer extends Component {
 
 Footer.defaultProps = {
   fill: 'transparent',
+  copyright: '2018 Fusion Industries, Inc.',
   size: 'md'
 };
 

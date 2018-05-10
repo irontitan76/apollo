@@ -13,6 +13,7 @@ export class Box extends Component {
   }
 
   // need to figure out a pad between option for children of Box
+  // fix texture
   render() {
     let {
       alignContent, alignItems, alignSelf, as, basis, border, children, color,

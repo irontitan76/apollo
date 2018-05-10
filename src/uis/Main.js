@@ -7,6 +7,7 @@ import { theme } from './../themes';
 import Brand from './Brand';
 import Footer from './Footer';
 import Nav from './Navigation.js';
+import Article from './Article.js';
 import Design from './Design';
 import Insights from './Insights';
 import Primary from './Home';
@@ -64,6 +65,7 @@ export default class Main extends Component {
             <Route exact path='/values' component={ Values } />
             <Route exact path='/strategy' component={ Strategy } />
             <Route exact path='/insights' component={ Insights } />
+            <Route exact path='/insights/:id' component={ Article } />
             { footer }
           </Fragment>
         </ThemeProvider>

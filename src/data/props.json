@@ -34,7 +34,7 @@
         },
         {
           "property": "maxWidth",
-          "default": "1200px",
+          "default": "1250px",
           "options": "n/a",
           "type": "{ string }",
           "description": "Maximum width of elements within App element"

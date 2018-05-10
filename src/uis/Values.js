@@ -72,8 +72,8 @@ export class Values extends Component {
               </Heading>
           </Box>
 
-          <Box alignSelf='center' direction='column' justify='center' width='1200px'>
-            <Box width='1200px'>{ valueDisplay }</Box>
+          <Box alignSelf='center' direction='column' justify='center' width='1250px'>
+            <Box width='1250px'>{ valueDisplay }</Box>
 
             { Title('Our Story') }
             <Paragraph alignSelf='end' weight='light' width='50%'>

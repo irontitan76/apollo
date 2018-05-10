@@ -111,7 +111,7 @@ export default class Nav extends Component {
 
     return (
       <Box as='nav' fill='blue' justify='center' pad='!0 2%'>
-        <Box alignItems='center' height='vs' justify='between' width='1200px'>
+        <Box alignItems='center' height='vs' justify='between' width='1250px'>
           <Brand path='/' />
           <Box alignItems='center' color='white' justify='end' grow='1'>
             <Toggle type='checkbox' id='menu-toggle'/>
