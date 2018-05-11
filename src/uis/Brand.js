@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { withTheme } from 'styled-components';
-import { Anchor } from './../lib';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+
+import { Anchor } from './../lib';
 
 class Brand extends Component {
   render() {

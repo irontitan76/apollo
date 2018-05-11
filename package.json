@@ -12,6 +12,7 @@
     "@fortawesome/fontawesome-pro-solid": "^5.0.9",
     "@fortawesome/react-fontawesome": "0.0.18",
     "classnames": "^2.2.5",
+    "gzip-all": "^1.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-ionicons": "^2.1.6",

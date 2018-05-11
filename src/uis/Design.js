@@ -96,6 +96,7 @@ export class Design extends Component {
         </Sidebar>
 
         <Box
+          as='main'
           direction='column'
           margin={{ left: '270px' }}
           pad={{ horizontal: 'xl' }}

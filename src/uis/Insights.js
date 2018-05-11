@@ -67,7 +67,7 @@ export class Insights extends Component {
     `;
 
     return <Animate action='fadeIn'>
-      <Box direction='column' margin='0 auto'>
+      <Box as='main' direction='column' margin='0 auto'>
         <InsightsNav />
         <Box fill='#ddd'>
           <Box alignContent='between' height='100%' margin='3% auto' width='1250px' wrap={true}>

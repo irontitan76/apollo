@@ -30,13 +30,22 @@
         min-height: 100vh;
         padding: 0;
       }
+
+      #loading {
+        height: 100vh;
+        margin: 20% 0;
+        text-align: center;
+        width: 100vw;
+      }
     </style>
   </head>
   <body>
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
-    <article id="root"></article>
+    <article id="root">
+      <div id='loading'>Loading...</div>
+    </article>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -47,6 +56,7 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
   </body>
   <script>
     let scrollIt = (destination, duration = 200, easing = 'linear', callback) => {

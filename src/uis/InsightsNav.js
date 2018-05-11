@@ -4,7 +4,7 @@ import { Box, Hamburger, Heading, Title } from './../lib';
 
 export class InsightsNav extends Component {
   render() {
-    return <Box alignItems='center' color='dark' fill='white' height='125px' justify='center'>
+    return <Box alignItems='center' as='main' color='dark' fill='white' height='125px' justify='center'>
       <Box alignSelf='center' textSize='lg' width='1250px'>
         <Title alignSelf='center' textSize='xl' weight='bold' style={{ lineHeight: '1.5rem' }}>
           <span style={{ fontWeight: 400 }}>fusion</span>

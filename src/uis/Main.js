@@ -10,9 +10,11 @@ import Nav from './Navigation.js';
 import Article from './Article.js';
 import Design from './Design';
 import Insights from './Insights';
+import Organizations from './Organizations';
 import Primary from './Home';
-import Values from './Values';
+import Standards from './Standards';
 import Strategy from './Strategy';
+import Values from './Values';
 
 export default class Main extends Component {
   constructor() {
@@ -62,10 +64,13 @@ export default class Main extends Component {
             { nav }
             <Route exact path ='/' component={ Primary } />
             <Route exact path='/design' component={ Design } />
-            <Route exact path='/values' component={ Values } />
-            <Route exact path='/strategy' component={ Strategy } />
             <Route exact path='/insights' component={ Insights } />
             <Route exact path='/insights/:id' component={ Article } />
+            <Route exact path='/org' component={ Organizations } />
+            <Route exact path='/standards' component={ Standards } />
+            <Route exact path='/strategy' component={ Strategy } />
+            <Route exact path='/values' component={ Values } />
+
             { footer }
           </Fragment>
         </ThemeProvider>

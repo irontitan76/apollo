@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { withTheme } from 'styled-components';
-import { Animate, Box, Heading, Paragraph } from './../lib';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+
+import { Animate, Box, Heading, Paragraph } from './../lib';
 
 export class Values extends Component {
   constructor() {
@@ -52,7 +53,7 @@ export class Values extends Component {
     );
 
     return <Animate action='fadeIn'>
-      <Box alignSelf='center' direction='column' justify='center'>
+      <Box alignSelf='center' as='main' direction='column' justify='center'>
         <Box fill='#121212' height='50px'>
 
         </Box>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withTheme } from 'styled-components';
+
 import { Animate, Box, Heading, Paragraph } from './../lib';
 import InsightsNav from './InsightsNav';
 
