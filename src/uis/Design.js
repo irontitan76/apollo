@@ -243,7 +243,7 @@ export class Design extends Component {
                 category='CATEGORY 1'
                 description='Card 1 Description'
                 fill='light'
-                image={ require('./../assets/bg4.jpg') }
+                image={ require('./../assets/bio-1x.webp') }
                 margin={{ top: 'sm' }}
                 meta='Put an Anchor component here!' />
               <Card
@@ -251,7 +251,7 @@ export class Design extends Component {
                 category='CATEGORY 2'
                 description='Card 2 Description'
                 fill='orange'
-                image={ require('./../assets/bio.jpg') }
+                image={ require('./../assets/bio-1x.webp') }
                 margin={{ top: 'sm' }}
                 meta='Put an Anchor component here!'
                 metaBorder={{ bottom: '1px solid #ddd' }}

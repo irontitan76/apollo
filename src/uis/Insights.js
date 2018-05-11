@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled, { withTheme } from 'styled-components';
-import { Animate, Box, Hamburger, Heading, Image, Paragraph, Title } from './../lib';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { Animate, Box, Heading, Image, Paragraph } from './../lib';
 import InsightsNav from './InsightsNav';
 
 export class Insights extends Component {
@@ -11,45 +10,45 @@ export class Insights extends Component {
     this.state = {
       articles: [
         {
-          basis: '1/4',
+          basis: '25%',
           name: 'Differences Matter',
-          image: require('./../assets/balloon.jpg'),
+          image: require('./../assets/balloon-1x.webp'),
           content: 'In business, you must be cognizant of differences that incentivize creative development'
         },
         {
-          basis: '1/2',
+          basis: '50%',
           name: 'A Business Transformation',
-          image: require('./../assets/whale.jpg'),
+          image: require('./../assets/whale-1x.webp'),
           content: 'Transform rapidly and enable scalability'
         },
         {
-          basis: '1/4',
+          basis: '25%',
           name: 'The Primal Leader',
-          image: require('./../assets/dandelion.jpg'),
+          image: require('./../assets/dandelion-1x.webp'),
           content: 'What it means to be an effective leader'
         },
         {
-          basis: '1/4',
+          basis: '25%',
           name: 'Strategy and vision',
-          image: require('./../assets/camp1.jpg'),
+          image: require('./../assets/camp1-1x.webp'),
           content: 'What it means to be an effective leader'
         },
         {
-          basis: '1/4',
+          basis: '25%',
           name: 'The Primal Leader',
-          image: require('./../assets/passion.jpg'),
+          image: require('./../assets/passion-1x.webp'),
           content: 'What it means to be an effective leader'
         },
         {
-          basis: '1/4',
+          basis: '25%',
           name: 'The Primal Leader',
-          image: require('./../assets/skyline.jpg'),
+          image: require('./../assets/skyline-1x.webp'),
           content: 'What it means to be an effective leader'
         },
         {
-          basis: '1/4',
+          basis: '25%',
           name: 'The Primal Leader',
-          image: require('./../assets/bg4.jpg'),
+          image: require('./../assets/bg4-1x.webp'),
           content: 'What it means to be an effective leader'
         }
       ]
@@ -71,12 +70,12 @@ export class Insights extends Component {
       <Box direction='column' margin='0 auto'>
         <InsightsNav />
         <Box fill='#ddd'>
-          <Box alignContent='between' height='650px' margin='3% auto' width='1250px' wrap='wrap'>
+          <Box alignContent='between' height='100%' margin='3% auto' width='1250px' wrap={true}>
             {
               articles.map((article, key) => {
                 if ( key % 2 === 1 ) {
-                  return <Box key={`key__${key}`} basis={article.basis} pad={{ right: 'lg' }}>
-                      <Card justify='end' direction='column' style={{ backgroundImage: `url(${article.image}`}} width='100%'>
+                  return <Box basis={article.basis} key={`key__${key}`} pad={{ right: 'lg' }}>
+                      <Card basis='100%' direction='column' justify='end' style={{ backgroundImage: `url(${article.image}`}}>
                       <Box direction='column' pad='md' fill='white' width='55%'>
                         <Heading size='sm' margin='0' weight='semi'>
                           {article.name}

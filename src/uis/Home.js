@@ -49,25 +49,25 @@ export class Primary extends Component {
     return <Animate action='fadeIn'>
       <Box as='article' direction='column' alignItems='center' justify='center'>
         <Box justify='center' style={{
-            backgroundImage: `url(${require('./../assets/skyline.jpg')}`,
+            backgroundImage: `url(${require('./../assets/skyline-1x.webp')}`,
             backgroundPosition: 'center center',
             backgroundSize: 'cover' }}
             height='675px'>
-            <Box alignItems='center' direction='column' color='white' margin={{ top: '6rem' }} pad='vl' textSize='vl' weight='200'>
+            <Box alignItems='center' direction='column' color='white' margin={{ top: '6rem' }} pad='vl' textAlign='center' textSize='vl' weight='200'>
               { heroText }
               <Box>
-              <Button alignSelf='center' border='2px solid transparent' hoverBorder='2px solid white' fill='green' height='2.5rem' margin={{ top: 'vl', right: 'md' }} pad='0' style={{ lineHeight: 1 }} width='lg' primary>
+              <Button alignSelf='center' border='2px solid transparent' hoverBorder='2px solid white' fill='green' height='2.5rem' margin={{ top: 'vl', right: 'md' }} pad='0' style={{ lineHeight: 1 }} basis='lg' primary>
                 <FontAwesomeIcon icon={[ 'fal', 'binoculars' ]} />
                 &nbsp;&nbsp;Learn more
               </Button>
-              <Button alignSelf='center' border='2px solid transparent' fill='#222' height='2.5rem' margin={{ top: 'vl' }} pad='0' style={{ lineHeight: 1 }} width='lg' primary>
+              <Button alignSelf='center' border='2px solid transparent' fill='#222' height='2.5rem' margin={{ top: 'vl' }} pad='0' style={{ lineHeight: 1 }} basis='lg' primary>
                 <FontAwesomeIcon icon={[ 'fal', 'briefcase' ]} />
                 &nbsp;&nbsp;Our solutions
               </Button>
               </Box>
             </Box>
         </Box>
-        <Box alignSelf='center' alignItems='center' justify='between' margin='xl' width='1250px'>
+        <Box alignItems='center' justify='between' margin='xl'>
           {
             solutions.map((solution, key) => <Anchor key={`key__${key}`} weight='bold'>
               <Box>
@@ -88,7 +88,7 @@ export class Primary extends Component {
               </Button>
             </Box>;
 
-            return <Box alignSelf='center' alignItems='center' justify='between' key={`key__${key}`} width='1250px'>
+            return <Box alignSelf='center' alignItems='center' justify='between' key={`key__${key}`} responsive >
               { key % 2 === 0 ? [ first, second ] : [ second, first ] }
             </Box>
           })
