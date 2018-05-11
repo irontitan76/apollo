@@ -4,9 +4,13 @@ import { Box } from './../lib';
 
 export class Organizations extends Component {
   render() {
-    return <Box as='main'>
+    const Orgs = styled(Box)`
+
+    `;
+
+    return <Orgs as='main'>
       Organizations
-    </Box>;
+    </Orgs>;
   }
 }
 

@@ -25,11 +25,13 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build-css": "node-sass-chokidar src/ -o src/",
+    "build-deploy-compress": "npm run build && npm run compress && npm run deploy && npm run normalize",
     "build-deploy": "react-scripts build && aws s3 cp build/ s3://apolloindustries --recursive",
+    "compress": "node compress.js",
     "deploy": "aws s3 cp build/ s3://apolloindustries --recursive",
+    "deploy-compress": "npm run compress && npm run deploy && npm run normalize",
     "eject": "react-scripts eject",
-    "test": "react-scripts test --env=jsdom",
-    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive"
+    "normalize": "aws s3 cp build/asset-manifest.json s3://apolloindustries --content-encoding gzip && aws s3 cp build/index.html s3://apolloindustries --content-encoding gzip && aws s3 cp build/manifest.json s3://apolloindustries --content-encoding gzip && aws s3 cp build/service-worker.js s3://apolloindustries --content-encoding gzip && aws s3 cp build/static/js s3://apolloindustries/static/js --content-encoding gzip --recursive",
+    "test": "react-scripts test --env=jsdom"
   }
 }

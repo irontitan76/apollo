@@ -4,9 +4,13 @@ import { Box } from './../lib';
 
 export class Standards extends Component {
   render() {
-    return <Box as='main'>
+    const Standards = styled(Box)`
+
+    `;
+
+    return <Standards as='main'>
       Standards
-    </Box>;
+    </Standards>;
   }
 }
 
