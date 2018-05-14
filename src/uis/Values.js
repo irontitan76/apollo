@@ -55,7 +55,7 @@ export class Values extends Component {
     return <Animate action='fadeIn'>
       <Box alignSelf='center' as='main' direction='column' justify='center'>
         <Box fill='#121212' height='50px'>
-
+          { /* submenu goes here */ }
         </Box>
         <Box alignSelf='center' direction='column'>
 
@@ -63,8 +63,8 @@ export class Values extends Component {
               backgroundImage: `url(${require('./../assets/camp3-1x.webp') }`,
               backgroundPosition: 'bottom center',
               backgroundSize: 'cover' }}>
-              <Box basis='lg' direction='column' fill='rgba(0,0,0,0.7)' margin='7%' pad='3rem' >
-                <Heading color='white'>
+              <Box basis='lg' direction='column' fill='rgba(0,0,0,0.7)' margin='7%' pad='1rem 4rem 4rem 4rem' >
+                <Heading color='white' size='vl'>
                   We believe in making our universe better
                 </Heading>
                 <Paragraph color='white'>Our mission is to empower every
@@ -76,7 +76,7 @@ export class Values extends Component {
           </Box>
 
           <Box alignSelf='center' direction='column' justify='center'>
-            <Box responsive>{ valueDisplay }</Box>
+            <Box alignSelf='center' responsive maxWidth='1250px'>{ valueDisplay }</Box>
 
             <Box direction='column'>
               { Title('Our Story') }

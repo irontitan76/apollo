@@ -74,7 +74,7 @@ export class Insights extends Component {
             {
               articles.map((article, key) => {
                 if ( key % 2 === 1 ) {
-                  return <Box basis={article.basis} key={`key__${key}`} pad={{ right: 'lg' }}>
+                  return <Box basis={article.basis} key={`key__${key}`} pad={{ bottom: 'lg', right: 'lg' }}>
                       <Card basis='100%' direction='column' justify='end' style={{ backgroundImage: `url(${article.image}`}}>
                       <Box direction='column' pad='md' fill='white' width='55%'>
                         <Heading size='sm' margin='0' weight='semi'>
@@ -85,7 +85,7 @@ export class Insights extends Component {
                     </Card>
                   </Box>
                 } else {
-                  return <Box key={ `key__${key}` } pad={{ right: 'lg' }} basis={article.basis}>
+                  return <Box key={ `key__${key}` } pad={{ bottom: 'lg', right: 'lg' }} basis={article.basis}>
                     <Card direction='column' fill='white'>
                       <Image src={ article.image } height='150px' />
                       <Box direction='column' pad='lg'>

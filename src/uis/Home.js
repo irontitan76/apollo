@@ -69,7 +69,7 @@ export class Primary extends Component {
                 </Box>
               </Box>
           </Box>
-          <Box alignItems='center' justify='between' margin='xl'>
+          <Box alignSelf='center' alignItems='center' justify='between' margin='xl' maxWidth='1250px' width='87%'>
             {
               solutions.map((solution, key) => <Anchor key={`key__${key}`} weight='bold'>
                 <Box>
@@ -90,7 +90,7 @@ export class Primary extends Component {
                 </Button>
               </Box>;
 
-              return <Box alignSelf='center' alignItems='center' justify='between' key={`key__${key}`} responsive >
+              return <Box alignSelf='center' alignItems='center' justify='between' key={`key__${key}`} maxWidth='1250px' responsive width='87%'>
                 { key % 2 === 0 ? [ first, second ] : [ second, first ] }
               </Box>
             })
