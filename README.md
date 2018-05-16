@@ -2,8 +2,6 @@
 <h1
   style='
   color: #015085;
-  display: flex;
-  flex-direction: column;
   font-weight: 400;
   margin: 3% auto;
   padding: 3%;
