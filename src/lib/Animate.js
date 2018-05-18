@@ -96,7 +96,7 @@ const css = {
 Animate.defaultProps = {
   delay: '0s',
   play: 'normal',
-  duration: '1s',
+  duration: '.5s',
   entry: 'ease',
   iterate: 1,
   mode: 'none'

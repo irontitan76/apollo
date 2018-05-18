@@ -12,6 +12,7 @@
 # dev
 /__archive__
 /src/assets/demo-photos
+/src/beta/
 
 # misc
 .DS_Store

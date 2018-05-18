@@ -21,7 +21,7 @@ class Footer extends Component {
             height='xs'
             justify='between'
             width='1250px'>
-            &copy; {copyright}
+            {copyright}
             { children }
           </Box>
       </Box>
@@ -31,7 +31,6 @@ class Footer extends Component {
 
 Footer.defaultProps = {
   fill: 'transparent',
-  copyright: '2018 Fusion Industries, Inc.',
   size: 'md'
 };
 

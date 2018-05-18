@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withTheme } from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
 import { Anchor } from './../lib';
@@ -8,8 +8,18 @@ class Brand extends Component {
   render() {
     const { color, company, noLogo, org, theme, ...props } = this.props;
 
+    const StyledAnchor = styled(Anchor)`
+      &:hover span {
+        
+      }
+    `;
+
+    const Text = styled['span']`
+
+    `;
+
     return (
-      <Anchor
+      <StyledAnchor
         alignItems='center'
         color='white'
         fill='transparent'
@@ -17,10 +27,10 @@ class Brand extends Component {
         { ...props }>
         { noLogo
           ? null
-          : <FontAwesomeIcon icon={[ 'fal', 'code-merge' ]} size='2x' />
+          : <FontAwesomeIcon icon={[ 'fal', 'code-merge' ]} size='lg' />
         }
-        <span style={{ fontWeight: 200 }}>&nbsp;&nbsp;&nbsp;{company}</span>
-      </Anchor>
+        <Text>&nbsp;&nbsp;&nbsp;{company}</Text>
+      </StyledAnchor>
     );
   }
 }

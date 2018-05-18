@@ -30,7 +30,8 @@ export class Values extends Component {
           heading: 'Collaborate efficiently',
           description: 'Form meaningful relationships and produce results together'
         }
-      ]
+      ],
+      story: "Our company's path started in 2018 with a vision to change each significant industry in the world. Our vision was grand, but we knew that we needed to start small. With that in mind, we created Fusion Technologies as a professional services company with offerings in the web application development space...\n By starting small, our decisions and ideas could be executed properly with the customer in mind. We needed to move fast, so a firm foundation with scalable modules built atop it was necessary. We also understood that knowledge is infinite, and that there are infinite pathways and strategies to bring about a vision - a vision for the betterment of humanity."
     };
   }
 
@@ -57,12 +58,11 @@ export class Values extends Component {
         <Box fill='#121212' height='50px'>
           { /* submenu goes here */ }
         </Box>
-        <Box alignSelf='center' direction='column'>
-
+        <Box alignSelf='center' width='100%'>
           <Box style={{
               backgroundImage: `url(${require('./../assets/camp3-1x.webp') }`,
               backgroundPosition: 'bottom center',
-              backgroundSize: 'cover' }}>
+              backgroundSize: 'cover' }} width='100%'>
               <Box basis='lg' direction='column' fill='rgba(0,0,0,0.7)' margin='7%' pad='1rem 4rem 4rem 4rem' >
                 <Heading color='white' size='vl'>
                   We believe in making our universe better
@@ -74,31 +74,24 @@ export class Values extends Component {
                 </Paragraph>
               </Box>
           </Box>
+        </Box>
 
-          <Box alignSelf='center' direction='column' justify='center'>
-            <Box alignSelf='center' responsive maxWidth='1250px'>{ valueDisplay }</Box>
-
-            <Box direction='column'>
-              { Title('Our Story') }
-              <Box responsive>
-                <Box basis='1/2'></Box>
-                <Paragraph basis='1/2' pad='lg' weight='light' >
-                  Our company's path started in 2018 with a vision to change each
-                  significant industry in the world. Our vision was grand, but we
-                  knew that we needed to start small. With that in mind, we created
-                  Fusion Industries as a professional services company with
-                  offerings in the web application development space...
-
-                  Fusion Industries was founded by Ross Sheppard in 2018. The company's
-                  vision started when he was 16 years old after his first course in
-                  computer programming (Java). He realized there was infinite
-                  knowlege, so his initial strategy for Fusion Industries was a
-                  relatively simple one - learn.
-                </Paragraph>
-              </Box>
+        <Box alignSelf='center' direction='column' maxWidth='1250px'>
+          <Box responsive>{ valueDisplay }</Box>
+          <Box direction='column'>
+            { Title('Our Story') }
+            <Box responsive>
+              <Box basis='1/2'></Box>
+              <Paragraph basis='1/2' direction='column' pad='lg' weight='light'>
+                {
+                  this.state.story.split('\n').map((item, key) => (
+                    <span key={key}>{item}<br/><br/></span>))
+                }
+              </Paragraph>
             </Box>
           </Box>
         </Box>
+
       </Box>
     </Animate>;
   }

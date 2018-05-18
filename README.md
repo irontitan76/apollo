@@ -3,7 +3,8 @@
 <p align='center'>A [React](http://facebook.github.io/react/) design system built with everyone in mind</p>
 
 <h2>Installation</h2>
-fusion.io is avaialbe as an <a href="https://www.npmjs.com/package/@fusion-io">npm package</a>.
+fusion.io is avaialbe as an <a href="https://www.npmjs.com/package/@fusion-io">npm package</a>. Enter the following into a terminal while in your application's directory to install:
+
 
 ```javascript
 npm install fusion

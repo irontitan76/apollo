@@ -53,7 +53,10 @@ export default class Main extends Component {
     }
 
     nav = navActive ? <Nav fill='blue' /> : null;
-    footer = footerActive ? <Footer fill='#222' color='light'>
+    footer = footerActive ? <Footer
+      color='light'
+      copyright='&copy; 2018 Fusion Industries, Inc.'
+      fill='#222'>
       <Brand />
     </Footer> : null;
 
