@@ -66,18 +66,40 @@ export class Insights extends Component {
       }
     `;
 
-    return <Animate action='fadeIn'>
-      <Box as='main' direction='column' margin='0 auto'>
+    return <Animate action='fadeIn' duration='0.6s'>
+      <Box
+        as='main'
+        direction='column'
+        margin='0 auto'>
         <InsightsNav />
         <Box fill='#ddd'>
-          <Box alignContent='between' height='100%' margin='3% auto' width='1250px' wrap={true}>
+          <Box
+            alignContent='between'
+            height='100%'
+            margin='3% auto'
+            width='1250px'
+            wrap={true}>
             {
               articles.map((article, key) => {
                 if ( key % 2 === 1 ) {
-                  return <Box basis={article.basis} key={`key__${key}`} pad={{ bottom: 'lg', right: 'lg' }}>
-                      <Card basis='100%' direction='column' justify='end' style={{ backgroundImage: `url(${article.image}`}}>
-                      <Box direction='column' pad='md' fill='white' width='55%'>
-                        <Heading size='sm' margin='0' weight='semi'>
+                  return <Box
+                    basis={article.basis}
+                    key={`key__${key}`}
+                    pad={{ bottom: 'lg', right: 'lg' }}>
+                      <Card
+                        basis='100%'
+                        direction='column'
+                        justify='end'
+                        style={{ backgroundImage: `url(${article.image}`}}>
+                      <Box
+                        direction='column'
+                        pad='md'
+                        fill='white'
+                        width='55%'>
+                        <Heading
+                          size='sm'
+                          margin='0'
+                          weight='semi'>
                           {article.name}
                         </Heading>
                         <Paragraph weight='light'>{article.content}</Paragraph>
@@ -85,11 +107,21 @@ export class Insights extends Component {
                     </Card>
                   </Box>
                 } else {
-                  return <Box key={ `key__${key}` } pad={{ bottom: 'lg', right: 'lg' }} basis={article.basis}>
-                    <Card direction='column' fill='white'>
+                  return <Box
+                    basis={article.basis}
+                    key={ `key__${key}` }
+                    pad={{ bottom: 'lg', right: 'lg' }}>
+                    <Card
+                      direction='column'
+                      fill='white'>
                       <Image src={ article.image } height='150px' />
-                      <Box direction='column' pad='lg'>
-                        <Heading size='sm' margin='0' weight='semi'>
+                      <Box
+                        direction='column'
+                        pad='lg'>
+                        <Heading
+                          margin='0'
+                          size='sm'
+                          weight='semi'>
                           {article.name}
                         </Heading>
                         <Paragraph weight='light'>{article.content}</Paragraph>

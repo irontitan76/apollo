@@ -11,20 +11,25 @@ export default class Paragraph extends Component {
 
   render() {
     const {
-      align, children, contain, spacing, size, ...props
+      align, children, contain, maxWidth, spacing, size, ...props
     } = this.props;
 
     let container = typeof contain !== 'boolean' ? contain : 768;
+    let maximumWidth = !!contain ? window.innerWidth < container
+      ? window.innerWidth + 'px'
+      : `${container}px`
+    : '';
 
     const Paragraph = styled(Box)`
       line-height:            calc(${spacing} * ${retrieve(css['size'], size)});
       word-break:             break-word;
       ${!!contain
-        ? `max-width: ${window.innerWidth < container ? window.innerWidth + 'px' : `${container}px`}`
+        ? `max-width: ${maximumWidth}`
         : ''};
     `;
 
     return <Paragraph {...props}
+      maxWidth={maximumWidth}
       textAlign={ align }
       textSize={retrieve(css['size'], size)}>
       {children}

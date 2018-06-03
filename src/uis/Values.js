@@ -53,9 +53,15 @@ export class Values extends Component {
       children
     );
 
-    return <Animate action='fadeIn'>
-      <Box alignSelf='center' as='main' direction='column' justify='center'>
-        <Box fill='#121212' height='50px'>
+    return <Animate action='fadeIn' duration='.6s'>
+      <Box
+        alignSelf='center'
+        as='main'
+        direction='column'
+        justify='center'>
+        <Box
+          fill='#121212'
+          height='50px'>
           { /* submenu goes here */ }
         </Box>
         <Box alignSelf='center' width='100%'>
@@ -63,8 +69,15 @@ export class Values extends Component {
               backgroundImage: `url(${require('./../assets/camp3-1x.webp') }`,
               backgroundPosition: 'bottom center',
               backgroundSize: 'cover' }} width='100%'>
-              <Box basis='lg' direction='column' fill='rgba(0,0,0,0.7)' margin='7%' pad='1rem 4rem 4rem 4rem' >
-                <Heading color='white' size='vl'>
+              <Box
+                basis='lg'
+                direction='column'
+                fill='rgba(0,0,0,0.7)'
+                margin='7%'
+                pad='1rem 4rem 4rem 4rem'>
+                <Heading
+                  color='white'
+                  size='vl'>
                   We believe in making our universe better
                 </Heading>
                 <Paragraph color='white'>Our mission is to empower every
@@ -76,13 +89,20 @@ export class Values extends Component {
           </Box>
         </Box>
 
-        <Box alignSelf='center' direction='column' maxWidth='1250px'>
+        <Box
+          alignSelf='center'
+          direction='column'
+          maxWidth='1250px'>
           <Box responsive>{ valueDisplay }</Box>
           <Box direction='column'>
             { Title('Our Story') }
             <Box responsive>
               <Box basis='1/2'></Box>
-              <Paragraph basis='1/2' direction='column' pad='lg' weight='light'>
+              <Paragraph
+                basis='1/2'
+                direction='column'
+                pad='lg'
+                weight='light'>
                 {
                   this.state.story.split('\n').map((item, key) => (
                     <span key={key}>{item}<br/><br/></span>))

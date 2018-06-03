@@ -47,50 +47,108 @@ export class Primary extends Component {
   render() {
     const { heroText, solutions } = this.state;
 
-    return <Animate action='fadeIn'>
+    return <Animate action='fadeIn' duration='.6s'>
       <main>
-        <Box as='article' direction='column' alignItems='center' justify='center'>
-          <Box justify='center' style={{
+        <Box
+          as='article'
+          direction='column'
+          alignItems='center'
+          justify='center'>
+          <Box height='675px'
+            justify='center'
+            style={{
               backgroundImage: `url(${require('./../assets/skyline-1x.webp')}`,
               backgroundPosition: 'center center',
-              backgroundSize: 'cover' }}
-              height='675px'>
-              <Box alignItems='center' direction='column' color='white' margin={{ top: '6rem' }} pad='vl' textAlign='center' textSize='vl' weight='200'>
+              backgroundSize: 'cover'
+            }}>
+              <Box
+                alignItems='center'
+                direction='column'
+                color='white'
+                margin={{ top: '6rem' }}
+                pad='vl'
+                textAlign='center'
+                textSize='vl'
+                weight='200'>
                 { heroText }
                 <Box>
-                <Button alignSelf='center' border='2px solid transparent' hoverBorder='2px solid white' fill='green' height='2.5rem' margin={{ top: 'vl', right: 'md' }} pad='0' style={{ lineHeight: 1 }} basis='lg' primary>
+                <Button
+                  alignSelf='center'
+                  basis='lg'
+                  border='2px solid transparent'
+                  hoverBorder='2px solid white'
+                  fill='green' height='2.5rem'
+                  margin={{ top: 'vl', right: 'md' }}
+                  pad='0' style={{ lineHeight: 1 }}
+                  primary>
                   <FontAwesomeIcon icon={[ 'fal', 'binoculars' ]} />
                   &nbsp;&nbsp;Learn more
                 </Button>
-                <Button alignSelf='center' border='2px solid transparent' fill='#222' height='2.5rem' margin={{ top: 'vl' }} pad='0' style={{ lineHeight: 1 }} basis='lg' primary>
+                <Button
+                  alignSelf='center'
+                  basis='lg'
+                  border='2px solid transparent'
+                  fill='#222'
+                  height='2.5rem'
+                  margin={{ top: 'vl' }}
+                  pad='0'
+                  primary
+                  style={{ lineHeight: 1 }}>
                   <FontAwesomeIcon icon={[ 'fal', 'briefcase' ]} />
                   &nbsp;&nbsp;Our solutions
                 </Button>
                 </Box>
               </Box>
           </Box>
-          <Box alignSelf='center' alignItems='center' justify='between' margin='xl' maxWidth='1250px' width='87%'>
+          <Box
+            alignSelf='center'
+            alignItems='center'
+            justify='between'
+            margin='xl'
+            maxWidth='1250px'
+            width='87%'>
             {
-              solutions.map((solution, key) => <Anchor key={`key__${key}`} weight='bold'>
-                <Box>
-                  <FontAwesomeIcon icon={[ 'fal', solution.icon ]} size='lg' />
-                  <Box margin={{ left: 'sm' }}>{solution.name}</Box>
-                </Box>
+              solutions.map((solution, key) => (
+                <Anchor key={`key__${key}`} weight='bold'>
+                  <Box>
+                    <FontAwesomeIcon icon={[ 'fal', solution.icon ]} size='lg' />
+                    <Box margin={{ left: 'sm' }}>{solution.name}</Box>
+                  </Box>
               </Anchor>
-              )
+              ))
             }
           </Box>
           {
             solutions.map((solution, key) => {
               const first = <Box basis='1/2' key='key__1'></Box>;
-              const second = <Box basis='1/2' key='key__2' direction='column' pad={{ vertical: '12%' }} textAlign='center' textSize='lg' weight='light'>
+              const second = <Box
+                basis='1/2'
+                direction='column'
+                key='key__2'
+                pad={{ vertical: '12%' }}
+                textAlign='center'
+                textSize='lg'
+                weight='light'>
                 {solution.blurb}
-                <Button alignSelf='center' fill='#222' height='40px' margin={{ top: 'xl' }} pad='0' primary>
+                <Button
+                  alignSelf='center'
+                  fill='#222'
+                  height='40px'
+                  margin={{ top: 'xl' }}
+                  pad='0'
+                  primary>
                   More about {solution.name.toLowerCase()}
                 </Button>
               </Box>;
 
-              return <Box alignSelf='center' alignItems='center' justify='between' key={`key__${key}`} maxWidth='1250px' responsive width='87%'>
+              return <Box
+                alignSelf='center'
+                alignItems='center'
+                justify='between'
+                key={`key__${key}`}
+                maxWidth='1250px'
+                responsive
+                width='87%'>
                 { key % 2 === 0 ? [ first, second ] : [ second, first ] }
               </Box>
             })
